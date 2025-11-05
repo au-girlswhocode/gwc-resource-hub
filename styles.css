@@ -1,0 +1,174 @@
+/* Global Styles */
+:root {
+  --teal-3: #0D9C90;
+  --blue-3: #0169E1;
+  --yellow-3: #FDD946;
+  --teal-1: #D7F9F4;
+  --blue-1: #E5F8FF;
+  --black-3: #7A7A78;
+  --white: #ffffff;
+  --grey-bg: #F5F7FA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--white);
+  color: var(--black-3);
+  line-height: 1.6;
+  text-align: center;
+}
+
+header {
+  background-color: var(--teal-3);
+  color: var(--white);
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+nav {
+  background-color: var(--blue-3);
+  padding: 1rem;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-family: 'Roboto Mono', monospace;
+}
+
+nav a:hover {
+  text-decoration: underline wavy var(--yellow-3);
+}
+
+.hero {
+  padding: 4rem 2rem;
+  background-color: var(--blue-1);
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: var(--teal-3);
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+.hero .start-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--yellow-3);
+  color: var(--black-3);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.hero .start-button:hover {
+  background-color: var(--teal-3);
+  color: var(--white);
+}
+
+.meeting {
+  background-color: var(--white);
+  padding: 2rem;
+}
+
+.meeting img {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.exec-team {
+  background-color: var(--grey-bg);
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.exec-team .team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.exec-team .member {
+  width: 180px;
+}
+
+.exec-team .member img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  border: 3px solid var(--teal-3);
+}
+
+.exec-team .member p {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.exec-name {
+  font-weight: 300;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.join-us {
+  background-color: var(--blue-1);
+  padding: 2rem;
+}
+
+.join-us .button {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--teal-3);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.join-us .button:hover {
+  background-color: var(--blue-3);
+}
+
+.instagram {
+  background-color: var(--white);
+  padding: 2rem;
+}
+
+.insta-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: var(--blue-3);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
