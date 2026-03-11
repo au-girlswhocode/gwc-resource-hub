@@ -150,8 +150,8 @@ img { max-width: 100%; height: auto; display: block; }
 .calendar-note { font-family: var(--font-mono); font-size: 0.72rem; color: var(--black-3); text-align: center; margin-top: 0.75rem; }
 
 /* ===== EXEC TEAM ===== */
-.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
-.member-card { text-align: center; }
+.team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem 2rem; margin-top: 2.5rem; }
+.member-card { text-align: center; width: 155px; flex-shrink: 0; }
 .member-img {
   width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
   object-position: center top; border: 3px solid var(--teal-3);
@@ -167,6 +167,7 @@ img { max-width: 100%; height: auto; display: block; }
 .member-role { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal-3); margin-bottom: 0.2rem; line-height: 1.3; }
 .member-name { font-size: 0.92rem; font-weight: 700; color: var(--blue-4); }
 .member-name.tbd { font-style: italic; color: var(--black-3); font-weight: 400; }
+.member-major { font-size: 0.75rem; color: var(--black-3); margin-top: 0.2rem; line-height: 1.3; }
 
 /* ===== JOIN / CTA ===== */
 .join-section {
