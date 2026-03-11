@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_official_logo.png" alt="GWC @ Augusta University" style="height:58px;width:auto;">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="learn.html">Learn</a>
+        <a href="jobs.html">Jobs &amp; Internships</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="cyber.html">Cybersecurity</a>
+        <a href="community.html">Community</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="suggestion.html">Suggest</a>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
+    <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
+    <a href="certifications.html">Certifications</a><a href="cyber.html">Cybersecurity</a>
+    <a href="community.html">Community</a><a href="gallery.html">Gallery</a>
+    <a href="suggestion.html">Suggest a Resource</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Gallery</div>
+      <h1>Our <span class="accent">Gallery</span></h1>
+      <p>Meetings, workshops, collabs, competitions, and community moments. Hover over photos for details.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <span class="section-label">Photos</span>
+      <h2 class="section-title">Chapter <span class="accent">Moments</span></h2>
+      <span class="wave-bar"></span>
+
+      <!-- FILTER BUTTONS -->
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="meeting">Meetings</button>
+        <button class="filter-btn" data-filter="workshop">Workshops</button>
+        <button class="filter-btn" data-filter="competition">Competitions</button>
+        <button class="filter-btn" data-filter="collab">Collabs</button>
+        <button class="filter-btn" data-filter="fundraising">Fundraising</button>
+        <button class="filter-btn" data-filter="social">Social</button>
+      </div>
+
+      <!-- GALLERY GRID -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- SAMPLE CARDS — Replace src with real photos when you have them. -->
+        <!-- Each card: data-category, data-title, data-date, data-desc -->
+
+        <div class="gallery-item" data-category="workshop" data-index="0"
+          data-title="Resume Building Workshop"
+          data-date="November 3, 2025"
+          data-desc="Members brought their laptops and printed resumes to get real-time feedback. We covered tech-specific keywords, formatting best practices, and professional storytelling. Snacks provided!">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#D7F9F4,#43D6B9);">📄</div>
+          <div class="gallery-overlay">
+            <span class="go-tag">Workshop</span>
+            <h3>Resume Building Workshop</h3>
+            <p>Nov 3, 2025 · UH 242 · Open to all majors</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="meeting" data-index="1"
+          data-title="Fall Kick-Off General Body Meeting"
+          data-date="September 2025"
+          data-desc="Our first GBM of the fall semester! We introduced the executive board, walked through the semester calendar, and welcomed new members to the GWC family at Augusta University.">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#E5F8FF,#0169E1);">🎉</div>
+          <div class="gallery-overlay">
+            <span class="go-tag">Meeting</span>
+            <h3>Fall Kick-Off GBM</h3>
+            <p>September 2025 · University Hall</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="competition" data-index="2"
+          data-title="CTF Team Practice Session"
+          data-date="October 2025"
+          data-desc="Our members teamed up to practice Capture The Flag challenges on picoCTF. Categories covered included web exploitation, cryptography, and OSINT. A great way to sharpen skills before a big event!">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#003046,#0D9C90); color:#FDD946">🚩</div>
+          <div class="gallery-overlay">
+            <span class="go-tag">Competition</span>
+            <h3>CTF Practice Session</h3>
+            <p>October 2025 · STEM Building</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="collab" data-index="3"
+          data-title="Collab with ACM @ Augusta"
+          data-date="Fall 2025"
+          data-desc="We partnered with the ACM chapter at Augusta University for a joint networking and tech talk event. Members got to connect, share resources, and hear from a guest speaker in industry.">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#FDD946,#f0cb00);">🤝</div>
+          <div class="gallery-overlay">
+            <span class="go-tag">Collab</span>
+            <h3>ACM × GWC Joint Event</h3>
+            <p>Fall 2025 · Augusta University</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="social" data-index="4"
+          data-title="Meet the Board Photoshoot"
+          data-date="August 2025"
+          data-desc="The 2025–2026 executive board got their official headshots taken at the Augusta University fountain — a GWC tradition. Meet Jade, Ericka, Carolina, and the rest of the team!">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#D7F9F4,#003046);">📸</div>
+          <div class="gallery-overlay">
+            <span class="go-tag">Social</span>
+            <h3>Exec Board Photoshoot</h3>
+            <p>August 2025 · AU Campus Fountain</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="workshop" data-index="5"
+          data-title="Intro to Python Workshop"
+          data-date="Spring 2025"
+          data-desc="An introductory coding session for members who were just getting started with Python. We covered variables, loops, and wrote a small number guessing game together by the end of the hour.">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#E5F8FF,#0D38D3);">🐍</div>
+          <div class="gallery-overlay">
+            <span class="go-tag">Workshop</span>
+            <h3>Intro to Python Workshop</h3>
+            <p>Spring 2025</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="fundraising" data-index="6"
+          data-title="Bake Sale Fundraiser"
+          data-date="Spring 2025"
+          data-desc="Members baked, decorated, and sold goodies to help fund future club events. We raised enough to cover our next workshop materials and snacks budget. Community effort at its finest!">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#fff3cd,#FDD946);">🧁</div>
+          <div class="gallery-overlay">
+            <span class="go-tag">Fundraising</span>
+            <h3>Bake Sale</h3>
+            <p>Spring 2025 · Campus Commons</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="competition" data-index="7"
+          data-title="Hackathon Team Sendoff"
+          data-date="Fall 2024"
+          data-desc="Four GWC members competed in a regional hackathon representing Augusta University. They built a web app prototype in 24 hours and finished in the top half of their category — a fantastic first showing!">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#0C6B68,#43D6B9);">💻</div>
+          <div class="gallery-overlay">
+            <span class="go-tag">Competition</span>
+            <h3>Hackathon Team Sendoff</h3>
+            <p>Fall 2024</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="meeting" data-index="8"
+          data-title="Spring General Body Meeting"
+          data-date="Spring 2025"
+          data-desc="Our spring GBM featured a resource fair where members shared their favorite learning platforms, upcoming scholarship deadlines, and internship leads. A lot of great knowledge-sharing happened.">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#fce4ec,#e91e63);">🌸</div>
+          <div class="gallery-overlay">
+            <span class="go-tag">Meeting</span>
+            <h3>Spring GBM</h3>
+            <p>Spring 2025 · University Hall</p>
+          </div>
+        </div>
+
+        <!-- ADD MORE: copy a .gallery-item block above and change the data-* attributes -->
+      </div>
+
+      <!-- Upload prompt -->
+      <div style="background:var(--teal-1);border-radius:12px;padding:2rem;margin-top:3rem;display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap;">
+        <div style="font-size:2rem;flex-shrink:0;">📷</div>
+        <div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--blue-4);margin-bottom:0.4rem;">Have photos from a GWC event?</h3>
+          <p style="font-size:0.875rem;color:var(--black-3);line-height:1.6;">Drop them in the <strong>#photos</strong> channel on Discord and our board will add them to the gallery. Help us document our chapter's story!</p>
+          <a href="https://discord.gg/your-discord-invite" target="_blank" class="btn btn-discord" style="margin-top:1rem;font-size:0.78rem;padding:0.55rem 1.25rem;">Share in Discord ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-bg" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <div class="lightbox-inner">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-info">
+        <div class="lightbox-tag" id="lightboxTag"></div>
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-date" id="lightboxDate">📅</div>
+        <div class="lightbox-desc" id="lightboxDesc"></div>
+        <div class="lightbox-nav">
+          <button id="lightboxPrev">← Prev</button>
+          <button id="lightboxNext">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="join-section" style="padding:3.5rem 2rem;">
+    <div class="section-inner" style="text-align:center;">
+      <h2 class="section-title">Want to be in the next photo?</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.7);margin:0 auto 1.5rem;">Come to a meeting, workshop, or event — everyone is welcome.</p>
+      <div class="join-buttons">
+        <a href="events.html" class="btn btn-yellow">See Events</a>
+        <a href="community.html" class="btn btn-secondary">Join Our Community</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+        <p>A GWC College Loop at Augusta University.</p>
+      </div>
+      <div class="footer-col"><h4>Resources</h4><ul>
+        <li><a href="learn.html">Learn to Code</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li>
+        <li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul>
+        <li><a href="events.html">Events Calendar</a></li><li><a href="community.html">Community</a></li>
+        <li><a href="gallery.html">Gallery</a></li><li><a href="suggestion.html">Suggest a Resource</a></li>
+        <li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
+  </footer>
+
+  <script>
+    // =============================================
+    // GALLERY FILTER + LIGHTBOX JAVASCRIPT
+    // =============================================
+
+    const items = Array.from(document.querySelectorAll('.gallery-item'));
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const lightbox = document.getElementById('lightbox');
+    let currentIndex = 0;
+    let visibleItems = [...items];
+
+    // --- FILTERING ---
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+        visibleItems = items.filter(i => !i.classList.contains('hidden'));
+      });
+    });
+
+    // --- LIGHTBOX OPEN ---
+    items.forEach((item, idx) => {
+      item.addEventListener('click', () => {
+        visibleItems = items.filter(i => !i.classList.contains('hidden'));
+        currentIndex = visibleItems.indexOf(item);
+        openLightbox(item);
+      });
+    });
+
+    function openLightbox(item) {
+      const imgEl = item.querySelector('img');
+      const placeholderEl = item.querySelector('.gallery-placeholder');
+      const tag = item.dataset.category;
+      const title = item.dataset.title;
+      const date = item.dataset.date;
+      const desc = item.dataset.desc;
+      const overlay = item.querySelector('.gallery-overlay');
+      const goTag = overlay ? overlay.querySelector('.go-tag') : null;
+
+      // Set lightbox image or fallback
+      if (imgEl) {
+        document.getElementById('lightboxImg').src = imgEl.src;
+        document.getElementById('lightboxImg').alt = title;
+        document.getElementById('lightboxImg').style.display = 'block';
+      } else if (placeholderEl) {
+        // Clone placeholder as a decorative element
+        document.getElementById('lightboxImg').src = '';
+        document.getElementById('lightboxImg').style.display = 'none';
+        // Show emoji in a styled div instead
+        let ph = lightbox.querySelector('.lb-placeholder');
+        if (!ph) {
+          ph = document.createElement('div');
+          ph.className = 'lb-placeholder';
+          ph.style.cssText = 'width:100%;height:100%;min-height:240px;display:flex;align-items:center;justify-content:center;font-size:5rem;' + placeholderEl.style.background.replace('background:', 'background:');
+          document.querySelector('.lightbox-inner').insertBefore(ph, document.querySelector('.lightbox-info'));
+        }
+        ph.style.background = placeholderEl.style.background || 'var(--teal-1)';
+        ph.textContent = placeholderEl.textContent.trim();
+        ph.style.display = 'flex';
+      }
+
+      document.getElementById('lightboxTag').textContent = (goTag ? goTag.textContent : tag).toUpperCase();
+      document.getElementById('lightboxTitle').textContent = title;
+      document.getElementById('lightboxDate').textContent = '📅 ' + date;
+      document.getElementById('lightboxDesc').textContent = desc;
+
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      const ph = lightbox.querySelector('.lb-placeholder');
+      if (ph) ph.style.display = 'none';
+    }
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    document.getElementById('lightboxPrev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+      openLightbox(visibleItems[currentIndex]);
+    });
+    document.getElementById('lightboxNext').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % visibleItems.length;
+      openLightbox(visibleItems[currentIndex]);
+    });
+
+    // Keyboard nav
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
+      if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+    });
+
+    // Fix lb-placeholder initial state
+    const ph = document.createElement('div');
+    ph.className = 'lb-placeholder';
+    ph.style.cssText = 'width:100%;min-height:280px;display:none;align-items:center;justify-content:center;font-size:5rem;';
+    document.querySelector('.lightbox-inner').insertBefore(ph, document.querySelector('.lightbox-info'));
+  </script>
+</body>
+</html>

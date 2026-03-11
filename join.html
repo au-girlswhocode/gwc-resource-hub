@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join GWC | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_official_logo.png" alt="GWC @ Augusta University" style="height:58px;width:auto;">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
+        <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
+        <a href="certifications.html">Certifications</a><a href="cyber.html">Cybersecurity</a>
+        <a href="community.html">Community</a><a href="gallery.html">Gallery</a>
+        <a href="join.html" class="active">Join</a><a href="suggestion.html">Suggest</a>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
+    <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
+    <a href="certifications.html">Certifications</a><a href="cyber.html">Cybersecurity</a>
+    <a href="community.html">Community</a><a href="gallery.html">Gallery</a>
+    <a href="join.html">Join GWC</a><a href="suggestion.html">Suggest a Resource</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Join</div>
+      <h1>Join <span class="accent">GWC @ AU</span></h1>
+      <p>No experience needed — just curiosity and a desire to grow. Fill out the form below and we'll be in touch!</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="form-wrap">
+
+        <!-- PERKS before the form -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem;">
+          <div style="text-align:center;padding:1.25rem;background:var(--teal-1);border-radius:8px;">
+            <div style="font-size:1.75rem;margin-bottom:0.4rem;">💸</div>
+            <div style="font-size:0.78rem;font-weight:700;color:var(--blue-4);">100% Free</div>
+          </div>
+          <div style="text-align:center;padding:1.25rem;background:var(--blue-1);border-radius:8px;">
+            <div style="font-size:1.75rem;margin-bottom:0.4rem;">🎓</div>
+            <div style="font-size:0.78rem;font-weight:700;color:var(--blue-4);">All Majors</div>
+          </div>
+          <div style="text-align:center;padding:1.25rem;background:#fff3cd;border-radius:8px;">
+            <div style="font-size:1.75rem;margin-bottom:0.4rem;">🤝</div>
+            <div style="font-size:0.78rem;font-weight:700;color:var(--blue-4);">Sisterhood</div>
+          </div>
+        </div>
+
+        <!-- THE FORM -->
+        <div class="gwc-form" id="interestForm">
+          <span class="section-label">Interest Form</span>
+          <h2 class="section-title" style="font-size:1.6rem;margin-bottom:0.25rem;">Tell Us <span class="accent">About You</span></h2>
+          <span class="wave-bar"></span>
+          <p style="font-size:0.875rem;color:var(--black-3);margin-bottom:1.75rem;">Fields marked <span style="color:var(--teal-3);">*</span> are required.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name <span class="required">*</span></label>
+              <input type="text" id="firstName" placeholder="Jade" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name <span class="required">*</span></label>
+              <input type="text" id="lastName" placeholder="Huynh" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>AU Email <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="youremail@augusta.edu" required>
+            <div class="form-hint">Use your @augusta.edu address so we can reach you on campus.</div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Major / Program <span class="required">*</span></label>
+              <select id="major" required>
+                <option value="" disabled selected>Select your major</option>
+                <option>Computer Science</option>
+                <option>Information Technology</option>
+                <option>Cybersecurity</option>
+                <option>Data Science</option>
+                <option>Software Engineering</option>
+                <option>Computer Information Systems</option>
+                <option>Mathematics</option>
+                <option>Biology / Pre-Med</option>
+                <option>Business</option>
+                <option>Nursing / Allied Health</option>
+                <option>Liberal Arts / Humanities</option>
+                <option>Undeclared</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Classification <span class="required">*</span></label>
+              <select id="classification" required>
+                <option value="" disabled selected>Select year</option>
+                <option>Freshman</option>
+                <option>Sophomore</option>
+                <option>Junior</option>
+                <option>Senior</option>
+                <option>Graduate Student</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Discord Username</label>
+            <input type="text" id="discord" placeholder="username or username#0000">
+            <div class="form-hint">Optional — helps us add you to our server channels.</div>
+          </div>
+
+          <div class="form-group">
+            <label>What interests you about GWC? <span class="required">*</span></label>
+            <textarea id="interest" placeholder="Tell us what drew you to Girls Who Code, what you hope to learn or get out of the club, or anything else you'd like us to know!" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Areas of Interest (check all that apply)</label>
+            <div class="check-group">
+              <label class="check-item"><input type="checkbox" value="Web Development"> <span>Web Development</span></label>
+              <label class="check-item"><input type="checkbox" value="Data Science / Analytics"> <span>Data Science / Analytics</span></label>
+              <label class="check-item"><input type="checkbox" value="Cybersecurity / CTFs"> <span>Cybersecurity / CTFs</span></label>
+              <label class="check-item"><input type="checkbox" value="AI / Machine Learning"> <span>AI / Machine Learning</span></label>
+              <label class="check-item"><input type="checkbox" value="Career Prep / Internships"> <span>Career Prep / Internships</span></label>
+              <label class="check-item"><input type="checkbox" value="Hackathons / Competitions"> <span>Hackathons / Competitions</span></label>
+              <label class="check-item"><input type="checkbox" value="Community / Social Events"> <span>Community / Social Events</span></label>
+              <label class="check-item"><input type="checkbox" value="Not sure yet — just exploring!"> <span>Not sure yet — just exploring!</span></label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>How did you hear about us?</label>
+            <select id="heardFrom">
+              <option value="" disabled selected>Select one</option>
+              <option>Instagram (@aug_girlswhocode)</option>
+              <option>Discord</option>
+              <option>A friend or classmate</option>
+              <option>A professor or advisor</option>
+              <option>Flyer / poster on campus</option>
+              <option>Club fair / org event</option>
+              <option>This website</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <button class="form-submit" id="submitBtn" type="button">Submit Interest Form ✓</button>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div class="form-success" id="formSuccess">
+          <div class="ico">🎉</div>
+          <h3>You're in the loop!</h3>
+          <p>Thanks for submitting your interest form. We'll be in touch via your AU email. In the meantime, join our Discord and follow us on Instagram for real-time updates!</p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
+            <a href="https://discord.gg/your-discord-invite" target="_blank" class="btn btn-discord">Join Discord ↗</a>
+            <a href="events.html" class="btn btn-outline-teal">See Upcoming Events</a>
+          </div>
+          <button onclick="resetForm()" style="margin-top:1.25rem;background:none;border:none;color:var(--black-3);font-size:0.78rem;cursor:pointer;text-decoration:underline;">Submit another response</button>
+        </div>
+
+        <!-- OFFICER DOWNLOAD PANEL -->
+        <details class="admin-toggle" id="adminDetails">
+          <summary>🔒 Officer Access — View &amp; Export Submissions</summary>
+          <div class="admin-panel">
+            <h3>Interest Form Submissions</h3>
+            <div class="admin-count" id="adminCount">Loading…</div>
+            <div class="admin-table-wrap">
+              <table class="admin-table" id="adminTable">
+                <thead>
+                  <tr>
+                    <th>Submitted</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Major</th>
+                    <th>Year</th>
+                    <th>Discord</th>
+                    <th>Interests</th>
+                    <th>Heard From</th>
+                  </tr>
+                </thead>
+                <tbody id="adminTableBody"></tbody>
+              </table>
+            </div>
+            <div class="admin-actions">
+              <button class="btn btn-yellow" onclick="exportCSV('interest')" style="font-size:0.75rem;padding:0.5rem 1rem;">⬇ Download CSV</button>
+              <button onclick="clearData('interest')" style="background:rgba(255,80,80,0.15);border:1px solid rgba(255,80,80,0.3);color:rgba(255,120,120,0.8);border-radius:4px;padding:0.5rem 1rem;font-size:0.75rem;cursor:pointer;">🗑 Clear All Data</button>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+        <p>A GWC College Loop at Augusta University.</p>
+      </div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="learn.html">Learn to Code</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li><li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="events.html">Events</a></li><li><a href="community.html">Community</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
+  </footer>
+
+  <script>
+    // =============================================
+    // INTEREST FORM — localStorage + CSV Export
+    // =============================================
+
+    const STORAGE_KEY = 'gwc_interest_submissions';
+
+    function getSubmissions() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+      catch { return []; }
+    }
+
+    function saveSubmission(data) {
+      const all = getSubmissions();
+      all.push(data);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
+    }
+
+    // Validate & submit
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName  = document.getElementById('lastName').value.trim();
+      const email     = document.getElementById('email').value.trim();
+      const major     = document.getElementById('major').value;
+      const classification = document.getElementById('classification').value;
+      const discord   = document.getElementById('discord').value.trim();
+      const interest  = document.getElementById('interest').value.trim();
+      const heardFrom = document.getElementById('heardFrom').value;
+
+      const checked = [...document.querySelectorAll('.check-item input:checked')]
+        .map(c => c.value).join('; ');
+
+      // Basic validation
+      if (!firstName || !lastName || !email || !major || !classification || !interest) {
+        alert('Please fill in all required fields (marked with *).');
+        return;
+      }
+      if (!email.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      const entry = {
+        submitted: new Date().toLocaleString(),
+        firstName, lastName,
+        email, major, classification,
+        discord: discord || '—',
+        interests: checked || '—',
+        heardFrom: heardFrom || '—',
+        statement: interest
+      };
+
+      saveSubmission(entry);
+      document.getElementById('interestForm').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+      refreshAdminTable();
+    });
+
+    function resetForm() {
+      document.getElementById('firstName').value = '';
+      document.getElementById('lastName').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('major').value = '';
+      document.getElementById('classification').value = '';
+      document.getElementById('discord').value = '';
+      document.getElementById('interest').value = '';
+      document.getElementById('heardFrom').value = '';
+      document.querySelectorAll('.check-item input').forEach(c => c.checked = false);
+      document.getElementById('interestForm').style.display = 'block';
+      document.getElementById('formSuccess').classList.remove('show');
+    }
+
+    // Admin table
+    function refreshAdminTable() {
+      const data = getSubmissions();
+      const tbody = document.getElementById('adminTableBody');
+      document.getElementById('adminCount').textContent = `${data.length} submission${data.length !== 1 ? 's' : ''} stored in this browser.`;
+      tbody.innerHTML = data.length === 0
+        ? '<tr><td colspan="8" style="text-align:center;opacity:0.4;padding:1.5rem;">No submissions yet.</td></tr>'
+        : data.map(r => `
+          <tr>
+            <td>${r.submitted}</td>
+            <td>${r.firstName} ${r.lastName}</td>
+            <td>${r.email}</td>
+            <td>${r.major}</td>
+            <td>${r.classification}</td>
+            <td>${r.discord}</td>
+            <td style="max-width:140px;white-space:normal;">${r.interests}</td>
+            <td>${r.heardFrom}</td>
+          </tr>`).join('');
+    }
+
+    // CSV export
+    function exportCSV(type) {
+      const data = getSubmissions();
+      if (!data.length) { alert('No submissions to export yet!'); return; }
+      const headers = ['Submitted','First Name','Last Name','Email','Major','Classification','Discord','Interests','Heard From','Why Interested'];
+      const rows = data.map(r => [
+        r.submitted, r.firstName, r.lastName, r.email, r.major, r.classification,
+        r.discord, r.interests, r.heardFrom, r.statement
+      ].map(v => `"${String(v).replace(/"/g,'""')}"`).join(','));
+      const csv = [headers.join(','), ...rows].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'gwc_interest_forms.csv'; a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function clearData(type) {
+      if (confirm('Are you sure? This will delete ALL stored interest form submissions from this browser.')) {
+        localStorage.removeItem(STORAGE_KEY);
+        refreshAdminTable();
+      }
+    }
+
+    // Init admin table on load
+    document.getElementById('adminDetails').addEventListener('toggle', function() {
+      if (this.open) refreshAdminTable();
+    });
+  </script>
+</body>
+</html>

@@ -38,15 +38,84 @@
     </div>
   </div>
 
+
+
   <section class="section">
     <div class="section-inner" style="max-width:700px;">
 
-      <div class="suggest-card" style="margin-top:0;">
-        <div style="font-size:3rem;margin-bottom:1rem;">💡</div>
-        <h2>Share What You Know</h2>
-        <p>Found a course, scholarship, job board, CTF platform, or tool that helped you? Submit it via our Google Form and we'll review it for the site.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEZ80UKUK5xPqnZZv5SahZDcq2RmJEOgF-z2iJLudRIF35yg/viewform?usp=sharing" target="_blank" class="btn btn-primary" style="font-size:0.9rem;padding:0.85rem 2rem;">Open Suggestion Box Form ↗</a>
+      <!-- RESOURCE SUGGESTION FORM -->
+      <div id="suggestionFormWrap">
+        <div class="gwc-form">
+          <div style="font-size:2.5rem;margin-bottom:.75rem;">💡</div>
+          <span class="section-label">Anonymous Suggestion Box</span>
+          <h2 class="section-title" style="font-size:1.5rem;">Share What <span class="accent">You Know</span></h2>
+          <span class="wave-bar"></span>
+          <p style="font-size:.875rem;color:var(--black-3);margin-bottom:1.25rem;">Found a course, scholarship, job board, CTF platform, or tool that helped you? Submit it below — no login needed!</p>
+          <div class="anon-note">🔒 <span>This form is <strong>completely anonymous</strong>. No account or name required.</span></div>
+
+          <div class="form-group">
+            <label>Category <span style="color:var(--teal-3)">*</span></label>
+            <select id="sugCategory" required>
+              <option value="" disabled selected>What type of resource?</option>
+              <option>Coding / Learning Resource</option>
+              <option>Job Board / Internship</option>
+              <option>Scholarship / Fellowship</option>
+              <option>Certification / Badge</option>
+              <option>Cybersecurity / CTF</option>
+              <option>Community / Event</option>
+              <option>Club Suggestion / Feedback</option>
+              <option>Website Improvement</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Resource Name or Topic <span style="color:var(--teal-3)">*</span></label>
+            <input type="text" id="sugName" placeholder="e.g. 'Coursera Python Course' or 'more frequent meetings'">
+          </div>
+
+          <div class="form-group">
+            <label>Link (if applicable)</label>
+            <input type="url" id="sugLink" placeholder="https://...">
+          </div>
+
+          <div class="form-group">
+            <label>Why should we add this? <span style="color:var(--teal-3)">*</span></label>
+            <textarea id="sugWhy" placeholder="Tell us what makes this valuable for GWC members…"></textarea>
+          </div>
+
+          <button class="form-submit" id="sugSubmitBtn" type="button">Submit Suggestion ✓</button>
+        </div>
       </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="form-success" id="sugFormSuccess">
+        <div style="font-size:2.5rem;margin-bottom:.75rem;">✅</div>
+        <h3 style="font-size:1.2rem;font-weight:900;color:var(--blue-4);margin-bottom:.5rem;">Got it, thanks!</h3>
+        <p style="color:var(--black-3);font-size:.875rem;line-height:1.6;">Your suggestion has been saved and will be reviewed by the board. We appreciate you helping build this hub!</p>
+        <button onclick="resetSugForm()" style="margin-top:1.25rem;background:none;border:none;color:var(--teal-3);font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:underline;">Submit another suggestion</button>
+      </div>
+
+      <!-- OFFICER PANEL -->
+      <details class="admin-toggle" id="sugAdminDetails">
+        <summary>🔒 Officer Access — View &amp; Export Suggestions</summary>
+        <div class="admin-panel">
+          <h3>Anonymous Suggestions</h3>
+          <div class="admin-count" id="sugAdminCount">Loading…</div>
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="sugAdminTable">
+              <thead>
+                <tr><th>Submitted</th><th>Category</th><th>Resource / Topic</th><th>Link</th><th>Why Add It?</th></tr>
+              </thead>
+              <tbody id="sugAdminTableBody"></tbody>
+            </table>
+          </div>
+          <div class="admin-actions">
+            <button class="btn btn-yellow" onclick="exportSugCSV()" style="font-size:.74rem;padding:.5rem 1rem;">⬇ Download CSV</button>
+            <button onclick="clearSugData()" style="background:rgba(255,80,80,.15);border:1px solid rgba(255,80,80,.3);color:rgba(255,120,120,.8);border-radius:4px;padding:.5rem 1rem;font-size:.74rem;cursor:pointer;">🗑 Clear All</button>
+          </div>
+        </div>
+      </details>
 
       <div style="margin-top:3rem;">
         <span class="section-label">Categories We're Looking For</span>
@@ -103,5 +172,66 @@
     </div>
     <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
+
+  <script>
+    const SUG_KEY = 'gwc_suggestions';
+    function getSuggestions() { try { return JSON.parse(localStorage.getItem(SUG_KEY)) || []; } catch { return []; } }
+
+    document.getElementById('sugSubmitBtn').addEventListener('click', () => {
+      const cat   = document.getElementById('sugCategory').value;
+      const name  = document.getElementById('sugName').value.trim();
+      const link  = document.getElementById('sugLink').value.trim();
+      const why   = document.getElementById('sugWhy').value.trim();
+      if (!cat || !name || !why) { alert('Please fill in the required fields (Category, Name, and Why).'); return; }
+      const entry = { submitted: new Date().toLocaleString(), category: cat, name, link: link || '—', why };
+      const all = getSuggestions(); all.push(entry);
+      localStorage.setItem(SUG_KEY, JSON.stringify(all));
+      document.getElementById('suggestionFormWrap').style.display = 'none';
+      document.getElementById('sugFormSuccess').classList.add('show');
+      refreshSugTable();
+    });
+
+    function resetSugForm() {
+      ['sugCategory','sugName','sugLink','sugWhy'].forEach(id => { document.getElementById(id).value = ''; });
+      document.getElementById('suggestionFormWrap').style.display = 'block';
+      document.getElementById('sugFormSuccess').classList.remove('show');
+    }
+
+    function refreshSugTable() {
+      const data = getSuggestions();
+      document.getElementById('sugAdminCount').textContent = `${data.length} suggestion${data.length !== 1 ? 's' : ''} stored in this browser.`;
+      document.getElementById('sugAdminTableBody').innerHTML = data.length === 0
+        ? '<tr><td colspan="5" style="text-align:center;opacity:.4;padding:1.25rem;">No suggestions yet.</td></tr>'
+        : data.map(r => `<tr>
+            <td>${r.submitted}</td><td>${r.category}</td>
+            <td>${r.name}</td>
+            <td style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.link !== '—' ? `<a href="${r.link}" target="_blank" style="color:var(--teal-2)">${r.link}</a>` : '—'}</td>
+            <td style="max-width:200px;white-space:normal;">${r.why}</td>
+          </tr>`).join('');
+    }
+
+    function exportSugCSV() {
+      const data = getSuggestions();
+      if (!data.length) { alert('No suggestions to export yet!'); return; }
+      const headers = ['Submitted','Category','Resource / Topic','Link','Why Add It?'];
+      const rows = data.map(r => [r.submitted, r.category, r.name, r.link, r.why]
+        .map(v => `"${String(v).replace(/"/g,'""')}"`).join(','));
+      const csv = [headers.join(','), ...rows].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'gwc_suggestions.csv'; a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function clearSugData() {
+      if (confirm('Delete ALL stored suggestions from this browser?')) {
+        localStorage.removeItem(SUG_KEY); refreshSugTable();
+      }
+    }
+
+    document.getElementById('sugAdminDetails').addEventListener('toggle', function() {
+      if (this.open) refreshSugTable();
+    });
+  </script>
 </body>
 </html>
