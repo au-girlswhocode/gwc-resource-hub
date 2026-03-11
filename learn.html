@@ -3,202 +3,271 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn to Code | Girls Who Code @ Augusta</title>
+  <title>Learn to Code | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Learn to Code</h1>
-    <nav>
-      <a href="index.html">← Back to Home</a> |
-      <a href="jobs.html">Jobs & Internships</a> |
-      <a href="scholarships.html">Scholarships</a> |
-      <a href="certifications.html">Certifications & Skill Badges</a> |
-      <a href="cyber.html">Cybersecurity & CTFs</a> |
-      <a href="suggestion.html">Suggestions</a>
-    </nav>
-    <p><em>Explore beginner to advanced coding resources curated by GWC @ Augusta.</em></p>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_pfp.png" alt="GWC @ AU">
+        <div class="logo-text-block">
+          <span class="script">girls who</span>
+          <span class="codeword">code</span>
+          <span class="au-sub">Augusta University</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="learn.html" class="active">Learn</a>
+        <a href="jobs.html">Jobs &amp; Internships</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="cyber.html">Cybersecurity</a>
+        <a href="community.html">Community</a>
+        <a href="suggestion.html">Suggest</a>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
+  <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="learn.html">Learn</a>
+    <a href="jobs.html">Jobs &amp; Internships</a>
+    <a href="scholarships.html">Scholarships</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="cyber.html">Cybersecurity</a>
+    <a href="community.html">Community</a>
+    <a href="suggestion.html">Suggest a Resource</a>
+  </nav>
 
-  <main>
-    <!-- ================= WEB DEVELOPMENT ================= -->
-    <section id="webdev">
-      <h2>🌐 Web Development</h2>
-      <p>Learn HTML, CSS, and JavaScript fundamentals — build your first websites and interactive apps.</p>
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Learn</div>
+      <h1>Learn to <span class="accent">Code</span></h1>
+      <p>Beginner to advanced resources curated by GWC @ Augusta — web dev, data science, cybersecurity, tools, and more.</p>
+    </div>
+  </div>
 
-      <ul>
-        <li>
-          <strong><a href="https://web.dev/learn/css/" target="_blank">web.dev</a></strong>  
-          — 🟢 Beginner | Modern tutorials on HTML, CSS, and performance best practices.
-        </li>
+  <section class="section">
+    <div class="section-inner">
 
-        <li>
-          <strong><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></strong>  
-          — 🟢 Beginner → 🔵 Advanced | Full learning paths for web development, data, and more.
-        </li>
+      <!-- WEB DEV -->
+      <div class="cat-header">
+        <span class="cat-icon">🌐</span>
+        <h2>Web Development</h2>
+        <div class="cat-bar"></div>
+      </div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">HTML, CSS, JavaScript fundamentals — build your first websites and interactive apps.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://web.dev/learn/css/" target="_blank">web.dev ↗</a></h3>
+          <p>Modern tutorials on HTML, CSS, and performance best practices by Google.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner → Advanced</span>
+          <h3><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp ↗</a></h3>
+          <p>Full learning paths for web development, data, and more. Completely free with certifications.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">🟡 Intermediate</span>
+          <h3><a href="https://javascript30.com/" target="_blank">JavaScript30 ↗</a></h3>
+          <p>30-day challenge to learn vanilla JavaScript through real projects. No frameworks needed.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://www.codecademy.com/" target="_blank">Codecademy ↗</a></h3>
+          <p>Interactive tutorials for HTML, CSS, JS, and frameworks like React. Great for structured learners.</p>
+        </div>
+      </div>
 
-        <li>
-          <strong><a href="https://javascript30.com/" target="_blank">JavaScript30</a></strong>  
-          — 🟡 Intermediate | 30-day coding challenge to learn vanilla JavaScript through real projects.
-        </li>
+      <!-- DATA SCIENCE -->
+      <div class="cat-header">
+        <span class="cat-icon">📊</span>
+        <h2>Data Science &amp; Analytics</h2>
+        <div class="cat-bar"></div>
+      </div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">Python, SQL, and BI tools for data-driven projects and analysis.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner → Advanced</span>
+          <h3><a href="https://www.datacamp.com/" target="_blank">DataCamp ↗</a></h3>
+          <p>Learn Python, SQL, Tableau, and Power BI with interactive notebooks. Also has certifications!</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">🟡 Intermediate</span>
+          <h3><a href="https://www.kaggle.com/learn" target="_blank">Kaggle Learn ↗</a></h3>
+          <p>Free micro-courses on data visualization, machine learning, and AI tools from real practitioners.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-a">🔵 Advanced</span>
+          <h3><a href="https://pandas.pydata.org/docs/getting_started/" target="_blank">Pandas Docs ↗</a></h3>
+          <p>Official Python library for data analysis and cleaning. The gold standard reference for data work.</p>
+        </div>
+      </div>
 
-        <li>
-          <strong><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></strong>  
-          — 🟢 Beginner | Interactive tutorials for HTML, CSS, JS, and frameworks like React.
-        </li>
-      </ul>
-    </section>
+      <!-- CYBERSECURITY -->
+      <div class="cat-header">
+        <span class="cat-icon">🛡️</span>
+        <h2>Cybersecurity &amp; Networking</h2>
+        <div class="cat-bar"></div>
+      </div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">Ethical hacking, networking, and defensive security — check out the <a href="cyber.html" style="color:var(--teal-3);">Cybersecurity page</a> for more.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner → Intermediate</span>
+          <h3><a href="https://tryhackme.com/" target="_blank">TryHackMe ↗</a></h3>
+          <p>Guided virtual labs for learning ethical hacking in a hands-on, gamified environment.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">🟡 Intermediate → Advanced</span>
+          <h3><a href="https://www.hackthebox.com/" target="_blank">Hack The Box ↗</a></h3>
+          <p>Realistic penetration testing environments for sharpening real-world security skills.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://www.coursera.org/specializations/intro-cyber-security" target="_blank">Coursera: Intro to Cybersecurity ↗</a></h3>
+          <p>Learn core cybersecurity principles with practical labs through a structured, university-style path.</p>
+        </div>
+      </div>
 
-    <hr>
+      <!-- TOOLS -->
+      <div class="cat-header">
+        <span class="cat-icon">🧰</span>
+        <h2>Tools &amp; Version Control</h2>
+        <div class="cat-bar"></div>
+      </div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">Git, GitHub, and command-line tools used in real-world development.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://learngitbranching.js.org/?locale=en_US" target="_blank">Learn Git Branching ↗</a></h3>
+          <p>Interactive visual tutorials for mastering Git commands and branches. The most fun way to learn Git.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://gitlab.com/augusta-university-students/csci-4711-softwareengineering/property-listing-system/-/blob/main/GIT-TUTORIAL.md" target="_blank">Augusta Git Tutorial ↗</a></h3>
+          <p>Student-made guide for version control basics, written specifically for AU students.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner → Advanced</span>
+          <h3><a href="https://exercism.org/" target="_blank">Exercism ↗</a></h3>
+          <p>Over 60 languages with mentor feedback and test-driven challenges. Great for interview prep too.</p>
+        </div>
+      </div>
 
-    <!-- ================= DATA & ANALYTICS ================= -->
-    <section id="data">
-      <h2>📊 Data Science & Analytics</h2>
-      <p>Resources to develop your Python, SQL, and BI skills for data-driven projects.</p>
+      <!-- AI & ML -->
+      <div class="cat-header">
+        <span class="cat-icon">🤖</span>
+        <h2>AI &amp; Machine Learning</h2>
+        <div class="cat-bar"></div>
+      </div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">Explore the frontier of artificial intelligence and learn to build intelligent systems.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://www.fast.ai/" target="_blank">fast.ai ↗</a></h3>
+          <p>Free practical deep learning courses taught top-down — build real models before diving into theory.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">🟡 Intermediate</span>
+          <h3><a href="https://developers.google.com/machine-learning/crash-course" target="_blank">Google ML Crash Course ↗</a></h3>
+          <p>Google's free machine learning course with TensorFlow — structured, practical, and thorough.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://huggingface.co/learn" target="_blank">Hugging Face Learn ↗</a></h3>
+          <p>Free NLP and AI courses — learn to use the latest transformer models and build AI applications.</p>
+        </div>
+      </div>
 
-      <ul>
-        <li>
-          <strong><a href="https://www.datacamp.com/" target="_blank">DataCamp</a></strong>  
-          — 🟢 Beginner → 🔵 Advanced | Learn Python, SQL, Tableau, and Power BI with interactive notebooks.
-        </li>
+      <!-- YOUTUBE -->
+      <div class="cat-header">
+        <span class="cat-icon">📺</span>
+        <h2>YouTube Learning Channels</h2>
+        <div class="cat-bar"></div>
+      </div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">High-quality, free coding lessons from experienced developers.</p>
+      <div class="video-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/gaGaPpnexxA" title="Tech With Tim" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Tech With Tim</h3>
+            <p>Python, web development, and CS concepts — from beginner tutorials to AI and game dev.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/1p7xa_BHYDs" title="mCoding" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>mCoding</h3>
+            <p>Advanced Python, CS theory, and software engineering best practices with clean examples and wit.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/tadUeiNe5-g" title="Core Dumped" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Core Dumped</h3>
+            <p>Low-level computing, OS, and C/C++ — understanding how computers really work under the hood.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/pCtkD5AMbDo" title="freeCodeCamp" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>freeCodeCamp.org</h3>
+            <p>University-quality full-length courses for free — web dev, data, machine learning, and more.</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/RVFAyFWO4go" title="Dave Gray" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-info">
+            <h3>Dave Gray</h3>
+            <p>Beginner-friendly web dev — HTML, CSS, JavaScript, React, and backend technologies with clear explanations.</p>
+          </div>
+        </div>
+      </div>
 
-        <li>
-          <strong><a href="https://www.kaggle.com/learn" target="_blank">Kaggle Learn</a></strong>  
-          — 🟡 Intermediate | Micro-courses on data visualization, machine learning, and AI tools.
-        </li>
+      <div class="suggest-card">
+        <h2>Know a great resource?</h2>
+        <p>Have a course, tutorial, or tool you love? Submit it and we'll add it to the hub!</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEZ80UKUK5xPqnZZv5SahZDcq2RmJEOgF-z2iJLudRIF35yg/viewform" target="_blank" class="btn btn-primary">Submit a Resource ↗</a>
+      </div>
+    </div>
+  </section>
 
-        <li>
-          <strong><a href="https://pandas.pydata.org/docs/getting_started/" target="_blank">Pandas Documentation</a></strong>  
-          — 🔵 Advanced | Official Python library for data analysis and cleaning.
-        </li>
-      </ul>
-    </section>
-
-    <hr>
-
-    <!-- ================= CYBERSECURITY ================= -->
-    <section id="cyber">
-      <h2>🛡️ Cybersecurity & Networking</h2>
-      <p>Practice ethical hacking, networking, and defensive security skills.</p>
-
-      <ul>
-        <li>
-          <strong><a href="https://tryhackme.com/" target="_blank">TryHackMe</a></strong>  
-          — 🟢 Beginner → 🟡 Intermediate | Guided virtual labs for learning ethical hacking.
-        </li>
-
-        <li>
-          <strong><a href="https://www.hackthebox.com/" target="_blank">Hack The Box</a></strong>  
-          — 🟡 Intermediate → 🔵 Advanced | Realistic penetration testing environments.
-        </li>
-
-        <li>
-          <strong><a href="https://www.coursera.org/specializations/intro-cyber-security" target="_blank">Coursera: Intro to Cybersecurity</a></strong>  
-          — 🟢 Beginner | Learn core cybersecurity principles with practical labs.
-        </li>
-      </ul>
-    </section>
-
-    <hr>
-
-    <!-- ================= TOOLS & VERSION CONTROL ================= -->
-    <section id="tools">
-      <h2>🧰 Tools & Version Control</h2>
-      <p>Master Git, GitHub, and command-line tools used in real-world development.</p>
-
-      <ul>
-        <li>
-          <strong><a href="https://learngitbranching.js.org/?locale=en_US" target="_blank">Learn Git Branching</a></strong>  
-          — 🟢 Beginner | Interactive visual tutorials for mastering Git commands and branches.
-        </li>
-
-        <li>
-          <strong><a href="https://gitlab.com/augusta-university-students/csci-4711-softwareengineering/property-listing-system/-/blob/main/GIT-TUTORIAL.md" target="_blank">Augusta Git Tutorial</a></strong>  
-          — 🟢 Beginner | Student-made guide for version control basics.
-        </li>
-
-        <li>
-          <strong><a href="https://exercism.org/" target="_blank">Exercism</a></strong>  
-          — 🟢 Beginner → 🔵 Advanced | Over 60 languages with mentor feedback and test-driven challenges.
-        </li>
-      </ul>
-    </section>
-
-    <hr>
-
-    <!-- ================= YOUTUBE LEARNING ================= -->
-    <section id="youtube">
-      <h2>📺 YouTube Learning Channels</h2>
-      <p>Watch free, high-quality coding lessons from experienced developers.</p>
-
-      <ul>
-        <li>
-          <h3>Tech With Tim</h3>
-          <p>Focused on Python, web development, and computer science concepts. Tim teaches everything from beginner tutorials to AI, game development, and project-based learning.</p>
-          <iframe width="560" height="315"
-  src="https://www.youtube.com/embed/gaGaPpnexxA"
-  title="YouTube Video gaGaPpnexxA"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-        </li>
-
-        <li>
-          <h3>mCoding</h3>
-          <p>Explores advanced Python programming, computer science theory, and software engineering best practices — all explained with clean code examples and humor.</p>
-          <iframe width="560" height="315"
-  src="https://www.youtube.com/embed/1p7xa_BHYDs"
-  title="YouTube Video – ID 1p7xa_BHYDs"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-        </li>
-
-        <li>
-          <h3>Core Dumped</h3>
-          <p>Covers low-level computing, computer architecture, operating systems, and C/C++ development. A great resource for understanding how computers really work under the hood.</p>
-          <iframe width="560" height="315"
-  src="https://www.youtube.com/embed/tadUeiNe5-g"
-  title="YouTube Video – ID tadUeiNe5-g"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-        </li>
-
-        <li>
-          <h3>freeCodeCamp.org</h3>
-          <p>A nonprofit that publishes full-length, university-quality courses for free — from web development and data analysis to machine learning and cybersecurity.</p>
-          <iframe width="560" height="315"
-  src="https://www.youtube.com/embed/pCtkD5AMbDo"
-  title="YouTube Video – ID pCtkD5AMbDo"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-        </li>
-
-        <li>
-          <h3>Dave Gray</h3>
-          <p>Practical, beginner-friendly web development tutorials covering HTML, CSS, JavaScript, React, and backend technologies. Known for clear explanations and project-based lessons.</p>
-          <iframe width="560" height="315"
-  src="https://www.youtube.com/embed/RVFAyFWO4go"
-  title="React JS Full Course for Beginners | Dave Gray"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-
-        </li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>💡 Have a resource to share? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEZ80UKUK5xPqnZZv5SahZDcq2RmJEOgF-z2iJLudRIF35yg/viewform" target="_blank">Submit it here.</a></p>
-    <p><em>Last updated: October 2025 | Girls Who Code @ Augusta University</em></p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+        <p>A GWC College Loop at Augusta University.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="learn.html">Learn to Code</a></li>
+          <li><a href="jobs.html">Jobs &amp; Internships</a></li>
+          <li><a href="scholarships.html">Scholarships</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="events.html">Events Calendar</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="suggestion.html">Suggest a Resource</a></li>
+          <li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li>
+          <li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
 </body>
 </html>
-

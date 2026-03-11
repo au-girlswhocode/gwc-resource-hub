@@ -2,29 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Scholarships | GWC Resource Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarships | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Scholarships</h1>
-    <nav>
-      <a href="index.html">← Back to Home</a> |
-      <a href="jobs.html">Jobs & Internships</a> |
-      <a href="learn.html">Learn to Code</a> |
-      <a href="certifications.html">Certifications & Skill Badges</a> |
-      <a href="cyber.html">Cybersecurity & CTFs</a> |
-      <a href="suggestion.html">Suggestions</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_pfp.png" alt="GWC @ AU">
+        <div class="logo-text-block"><span class="script">girls who</span><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
+        <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html" class="active">Scholarships</a>
+        <a href="certifications.html">Certifications</a><a href="cyber.html">Cybersecurity</a>
+        <a href="community.html">Community</a><a href="suggestion.html">Suggest</a>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </header>
+  <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
+    <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
+    <a href="certifications.html">Certifications</a><a href="cyber.html">Cybersecurity</a>
+    <a href="community.html">Community</a><a href="suggestion.html">Suggest a Resource</a>
+  </nav>
 
-  <main>
-    <ul>
-      <li><a href="https://isaca.secure-platform.com/a/page/ISACAfoundation/aboutscholarships" target="_blank">ISACA Foundation Scholarships</a> – For IT, cybersecurity, and governance students.</li>
-    </ul>
-  </main>
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Scholarships</div>
+      <h1><span class="accent">Scholarships</span> &amp; Funding</h1>
+      <p>Financial support opportunities for women in tech — scholarships, grants, and fellowships curated for GWC members.</p>
+    </div>
+  </div>
 
-  <footer>
-    <p>© 2025 Girls Who Code @ Augusta University</p>
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="cat-header"><span class="cat-icon">🏅</span><h2>Tech &amp; Cybersecurity Scholarships</h2><div class="cat-bar"></div></div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3><a href="https://isaca.secure-platform.com/a/page/ISACAfoundation/aboutscholarships" target="_blank">ISACA Foundation Scholarships ↗</a></h3>
+          <p>For IT, cybersecurity, and governance students. ISACA is a major professional org in the IT audit and security space — having this scholarship on your resume carries weight.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-major/computer-science-scholarships/women-in-computer-science-scholarships/" target="_blank">Women in CS Scholarships ↗</a></h3>
+          <p>Aggregated list of scholarships specifically for women pursuing computer science degrees and careers.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://www.adobe.com/scholarship.html" target="_blank">Adobe Research Women-in-Technology ↗</a></h3>
+          <p>Scholarship for undergraduate and graduate women working in computer science, electrical engineering, and related fields.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://ghc.anitab.org/scholarships-2/" target="_blank">Grace Hopper Conference Scholarships ↗</a></h3>
+          <p>Funding to attend the world's largest gathering of women technologists. Massive networking opportunity.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">🌐</span><h2>Fellowships &amp; Programs</h2><div class="cat-bar"></div></div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3><a href="https://www.palantir.com/careers/students/path/" target="_blank">Palantir Path Scholarship ↗</a></h3>
+          <p>For women, non-binary, and underrepresented students in STEM. Includes mentorship and a tech conference trip.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship" target="_blank">Generation Google Scholarship ↗</a></h3>
+          <p>For women and students with disabilities pursuing degrees in CS or a related technical field.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://www.codeforamerica.org/programs/fellowship" target="_blank">Code for America Fellowship ↗</a></h3>
+          <p>Work with governments to improve public services through tech. Great for civic-minded technologists.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">🎓</span><h2>General STEM Funding</h2><div class="cat-bar"></div></div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3><a href="https://www.fastweb.com/" target="_blank">Fastweb ↗</a></h3>
+          <p>One of the largest scholarship search engines. Filter by major, year, and identity to find relevant awards.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://www.scholarships.com/" target="_blank">Scholarships.com ↗</a></h3>
+          <p>Free scholarship search with a large database. Useful for finding niche, smaller scholarships with lower competition.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://bold.org/" target="_blank">Bold.org ↗</a></h3>
+          <p>Scholarship marketplace with short-essay awards — some as quick as 250 words. Good for stacking smaller awards.</p>
+        </div>
+      </div>
+
+      <div style="background:var(--yellow-2);border-radius:12px;padding:2rem;margin-top:3rem;display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap;">
+        <div style="font-size:2rem;flex-shrink:0;">💡</div>
+        <div>
+          <h3 style="font-size:1.1rem;font-weight:700;color:var(--blue-4);margin-bottom:0.5rem;">Application Tips</h3>
+          <p style="font-size:0.875rem;color:var(--blue-4);line-height:1.6;">Start scholarship applications early — many open months before deadlines. Reuse and tailor your personal essays across multiple applications. Emphasize your GWC involvement, any coding projects, and your goals in tech. Some scholarships recur annually, so even if you miss this cycle, bookmark them for next year!</p>
+        </div>
+      </div>
+
+      <div class="suggest-card">
+        <h2>Found a scholarship we're missing?</h2>
+        <p>Submit it and help your fellow GWC members access more funding opportunities.</p>
+        <a href="suggestion.html" class="btn btn-primary">Suggest a Scholarship</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div><p>A GWC College Loop at Augusta University.</p></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="learn.html">Learn to Code</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li><li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="events.html">Events Calendar</a></li><li><a href="community.html">Community</a></li><li><a href="suggestion.html">Suggest a Resource</a></li><li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li><li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
 </body>
 </html>

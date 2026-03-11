@@ -2,33 +2,178 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Job Boards & Internships | GWC Resource Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs &amp; Internships | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Job Boards & Internships</h1>
-    <nav>
-      <a href="index.html">← Back to Home</a> |
-      <a href="learn.html">Learn to Code</a> |
-      <a href="scholarships.html">Scholarships</a> |
-      <a href="certifications.html">Certifications & Skill Badges</a> |
-      <a href="cyber.html">Cybersecurity & CTFs</a> |
-      <a href="suggestion.html">Suggestions</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_pfp.png" alt="GWC @ AU">
+        <div class="logo-text-block">
+          <span class="script">girls who</span>
+          <span class="codeword">code</span>
+          <span class="au-sub">Augusta University</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="learn.html">Learn</a>
+        <a href="jobs.html" class="active">Jobs &amp; Internships</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="cyber.html">Cybersecurity</a>
+        <a href="community.html">Community</a>
+        <a href="suggestion.html">Suggest</a>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
+  <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
+    <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
+    <a href="certifications.html">Certifications</a><a href="cyber.html">Cybersecurity</a>
+    <a href="community.html">Community</a><a href="suggestion.html">Suggest a Resource</a>
+  </nav>
 
-  <main>
-    <ul>
-      <li><a href="https://wellfound.com/" target="_blank">Wellfound</a> – Startup-focused job board for early-stage opportunities.</li>
-      <li><a href="https://us.welcometothejungle.com/" target="_blank">Welcome To The Jungle</a> – Showcases company culture and job postings.</li>
-      <li><a href="https://builtin.com/" target="_blank">Built In</a> – Highlights jobs at startups and established tech firms.</li>
-      <li><a href="https://www.gooverseas.com/program-search/intern?" target="_blank">Go Overseas</a> – Explore international internships across fields.</li>
-      <li><a href="https://apply.intelligencecareers.gov/job-listings?agency=NSA" target="_blank">NSA Careers</a> – Internships and full-time roles in cybersecurity and intelligence.</li>
-    </ul>
-  </main>
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Jobs &amp; Internships</div>
+      <h1>Jobs &amp; <span class="accent">Internships</span></h1>
+      <p>Job boards, internship listings, and platforms curated to help you land your first (or next) tech role.</p>
+    </div>
+  </div>
 
-  <footer>
-    <p>© 2025 Girls Who Code @ Augusta University</p>
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="cat-header">
+        <span class="cat-icon">🚀</span>
+        <h2>Startup &amp; Tech Job Boards</h2>
+        <div class="cat-bar"></div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3><a href="https://wellfound.com/" target="_blank">Wellfound ↗</a></h3>
+          <p>Startup-focused job board for early-stage opportunities. Great for finding roles at fast-growing companies before they go mainstream.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://us.welcometothejungle.com/" target="_blank">Welcome To The Jungle ↗</a></h3>
+          <p>Showcases company culture alongside job postings — helps you understand the team vibe before you apply.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://builtin.com/" target="_blank">Built In ↗</a></h3>
+          <p>Highlights jobs at startups and established tech firms, with company overviews and benefit details built in.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://www.linkedin.com/jobs/" target="_blank">LinkedIn Jobs ↗</a></h3>
+          <p>The most widely used professional network. Set up job alerts for tech roles and connect with recruiters.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://www.levels.fyi/internships/" target="_blank">Levels.fyi Internships ↗</a></h3>
+          <p>Transparent salary and compensation data alongside internship listings at top tech companies.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://simplify.jobs/" target="_blank">Simplify ↗</a></h3>
+          <p>Autofills internship and job applications for you. Especially useful for applying to many companies quickly.</p>
+        </div>
+      </div>
+
+      <div class="cat-header">
+        <span class="cat-icon">🌏</span>
+        <h2>International &amp; Government</h2>
+        <div class="cat-bar"></div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3><a href="https://www.gooverseas.com/program-search/intern" target="_blank">Go Overseas ↗</a></h3>
+          <p>Explore international internships across a range of fields — tech, research, NGO, and more.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://apply.intelligencecareers.gov/job-listings?agency=NSA" target="_blank">NSA Careers ↗</a></h3>
+          <p>Internships and full-time roles in cybersecurity and intelligence — strong pipeline for AU students in CS.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://www.usajobs.gov/" target="_blank">USAJobs ↗</a></h3>
+          <p>Official federal government job listings including tech, data, and cybersecurity roles across all agencies.</p>
+        </div>
+      </div>
+
+      <div class="cat-header">
+        <span class="cat-icon">🎓</span>
+        <h2>Programs for Women in Tech</h2>
+        <div class="cat-bar"></div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3><a href="https://careers.google.com/programs/bold/" target="_blank">Google BOLD Internship ↗</a></h3>
+          <p>Google's internship program specifically for students from historically underrepresented groups in tech.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://diversity.microsoft.com/en-us/programs" target="_blank">Microsoft Diversity Programs ↗</a></h3>
+          <p>Microsoft's internship and early-career programs including LEAP and Explorer — aimed at broadening tech access.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://www.pathrise.com/" target="_blank">Pathrise ↗</a></h3>
+          <p>Free mentorship and career coaching to help you land tech offers — they only get paid when you do.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://girlswhocode.com/programs/college-loops" target="_blank">GWC Career Resources ↗</a></h3>
+          <p>Official Girls Who Code career resources, job board, and community exclusively for GWC alumni and members.</p>
+        </div>
+      </div>
+
+      <div class="cat-header">
+        <span class="cat-icon">💡</span>
+        <h2>Application Tips</h2>
+        <div class="cat-bar"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem;margin-top:1rem;">
+        <div style="background:var(--teal-1);border-radius:8px;padding:1.5rem;">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">📄</div>
+          <h3 style="font-size:0.95rem;font-weight:700;color:var(--blue-4);margin-bottom:0.3rem;">Resume Workshop</h3>
+          <p style="font-size:0.83rem;color:var(--black-3);">Attend our Resume Building Workshop (check <a href="events.html" style="color:var(--teal-3);">Events</a>) or get feedback in Discord.</p>
+        </div>
+        <div style="background:var(--blue-1);border-radius:8px;padding:1.5rem;">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🔗</div>
+          <h3 style="font-size:0.95rem;font-weight:700;color:var(--blue-4);margin-bottom:0.3rem;">LinkedIn Presence</h3>
+          <p style="font-size:0.83rem;color:var(--black-3);">Keep your LinkedIn updated with projects, coursework, and GWC involvement. Recruiters look!</p>
+        </div>
+        <div style="background:var(--grey-bg);border-radius:8px;padding:1.5rem;">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🏆</div>
+          <h3 style="font-size:0.95rem;font-weight:700;color:var(--blue-4);margin-bottom:0.3rem;">Build Projects</h3>
+          <p style="font-size:0.83rem;color:var(--black-3);">Personal projects and hackathon wins stand out. Check <a href="certifications.html" style="color:var(--teal-3);">Certifications</a> to build your skills.</p>
+        </div>
+        <div style="background:#fff3cd;border-radius:8px;padding:1.5rem;">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">📅</div>
+          <h3 style="font-size:0.95rem;font-weight:700;color:var(--blue-4);margin-bottom:0.3rem;">Apply Early</h3>
+          <p style="font-size:0.83rem;color:var(--black-3);">Many big-tech internship apps open in August–September for the following summer. Don't sleep on it!</p>
+        </div>
+      </div>
+
+      <div class="suggest-card" style="margin-top:3rem;">
+        <h2>Know a great opportunity?</h2>
+        <p>Found a job board, fellowship, or program we should add? Submit it and we'll feature it here.</p>
+        <a href="suggestion.html" class="btn btn-primary">Suggest a Resource</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+        <p>A GWC College Loop at Augusta University.</p>
+      </div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="learn.html">Learn to Code</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li><li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="events.html">Events Calendar</a></li><li><a href="community.html">Community</a></li><li><a href="suggestion.html">Suggest a Resource</a></li><li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li><li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
 </body>
 </html>

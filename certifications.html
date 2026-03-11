@@ -2,31 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Certifications & Skill Badges | GWC Resource Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Certifications & Skill Badges</h1>
-    <nav>
-      <a href="index.html">← Back to Home</a> |
-      <a href="jobs.html">Jobs & Internships</a> |
-      <a href="learn.html">Learn to Code</a> |
-      <a href="scholarships.html">Scholarships</a> |
-      <a href="cyber.html">Cybersecurity & CTFs</a> |
-      <a href="suggestion.html">Suggestions</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_pfp.png" alt="GWC @ AU">
+        <div class="logo-text-block"><span class="script">girls who</span><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
+        <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
+        <a href="certifications.html" class="active">Certifications</a><a href="cyber.html">Cybersecurity</a>
+        <a href="community.html">Community</a><a href="suggestion.html">Suggest</a>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </header>
+  <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
+    <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
+    <a href="certifications.html">Certifications</a><a href="cyber.html">Cybersecurity</a>
+    <a href="community.html">Community</a><a href="suggestion.html">Suggest a Resource</a>
+  </nav>
 
-  <main>
-    <ul>
-      <li><a href="https://www.datacamp.com/certification" target="_blank">DataCamp Certifications</a></li>
-      <li>SQL Associate, Power BI (PL-300), Tableau Certified Data Analyst, Azure Fundamentals</li>
-      <li>Python Data Associate, AWS Cloud Practitioner, GitHub Foundations, KNIME, Alteryx Fundamentals</li>
-    </ul>
-  </main>
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Certifications</div>
+      <h1>Certifications &amp; <span class="accent">Skill Badges</span></h1>
+      <p>Industry-recognized credentials to boost your resume and prove your skills — many are free or low-cost.</p>
+    </div>
+  </div>
 
-  <footer>
-    <p>© 2025 Girls Who Code @ Augusta University</p>
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="cat-header"><span class="cat-icon">📊</span><h2>Data &amp; Analytics</h2><div class="cat-bar"></div></div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free Trial Available</span>
+          <h3><a href="https://www.datacamp.com/certification" target="_blank">DataCamp Certifications ↗</a></h3>
+          <p>Python Data Associate, SQL Associate, Data Scientist, Data Engineer, and more. Timed assessments that result in shareable, verifiable credentials.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">Paid</span>
+          <h3><a href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/" target="_blank">Power BI (PL-300) ↗</a></h3>
+          <p>Microsoft's Power BI Data Analyst Associate certification — highly valued in business intelligence roles.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">Paid</span>
+          <h3><a href="https://www.tableau.com/learn/certification" target="_blank">Tableau Certified Data Analyst ↗</a></h3>
+          <p>Industry-standard Tableau certification that demonstrates visualization and analytics skills.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free + Paid Tiers</span>
+          <h3><a href="https://www.alteryx.com/certification" target="_blank">Alteryx Fundamentals ↗</a></h3>
+          <p>Credential in the popular data prep and analytics platform widely used in enterprise environments.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free</span>
+          <h3><a href="https://www.knime.com/learning/courses" target="_blank">KNIME Analytics ↗</a></h3>
+          <p>Free courses and badges in the KNIME open-source data science platform. Good for no-code/low-code analytics.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">☁️</span><h2>Cloud &amp; Infrastructure</h2><div class="cat-bar"></div></div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free Prep Available</span>
+          <h3><a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank">AWS Cloud Practitioner ↗</a></h3>
+          <p>The entry-level AWS cert — validates foundational cloud literacy. Excellent first cloud certification and very hireable.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free Prep Available</span>
+          <h3><a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/" target="_blank">Azure Fundamentals (AZ-900) ↗</a></h3>
+          <p>Microsoft's foundational Azure cloud certification. Free practice exams are available via Microsoft Learn.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free</span>
+          <h3><a href="https://cloud.google.com/certification/cloud-digital-leader" target="_blank">Google Cloud Digital Leader ↗</a></h3>
+          <p>Entry-level Google Cloud credential — great for demonstrating cloud fundamentals beyond AWS/Azure.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">💻</span><h2>Development &amp; DevOps</h2><div class="cat-bar"></div></div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free</span>
+          <h3><a href="https://examregistration.github.com/certification/GHF" target="_blank">GitHub Foundations ↗</a></h3>
+          <p>Official GitHub certification covering fundamentals of Git workflows, collaboration, and GitHub features.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free</span>
+          <h3><a href="https://www.freecodecamp.org/learn/" target="_blank">freeCodeCamp Certifications ↗</a></h3>
+          <p>300-hour curriculum certifications in Responsive Web Design, JavaScript, Data Visualization, APIs, and more.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free</span>
+          <h3><a href="https://www.kaggle.com/learn" target="_blank">Kaggle Micro-Certifications ↗</a></h3>
+          <p>Quick, verifiable certificates in Python, Pandas, Machine Learning, Data Visualization, and SQL.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">🛡️</span><h2>Cybersecurity</h2><div class="cat-bar"></div></div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free Prep</span>
+          <h3><a href="https://www.comptia.org/certifications/security" target="_blank">CompTIA Security+ ↗</a></h3>
+          <p>The most widely-recognized entry-level security cert. Required for many government and defense contractor roles.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">Free</span>
+          <h3><a href="https://tryhackme.com/paths" target="_blank">TryHackMe Learning Paths ↗</a></h3>
+          <p>Completion badges and certificates for guided learning paths — great to show practical hands-on experience.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">Paid</span>
+          <h3><a href="https://www.isc2.org/certifications/cc" target="_blank">ISC² CC (Certified in Cybersecurity) ↗</a></h3>
+          <p>Free to study, low exam cost — ISC² opened this entry-level cert to help diversify the cybersecurity workforce.</p>
+        </div>
+      </div>
+
+      <div style="background:var(--teal-1);border-radius:12px;padding:2rem;margin-top:3rem;">
+        <h3 style="font-size:1.1rem;font-weight:700;color:var(--blue-4);margin-bottom:0.75rem;">🎯 Which cert should I get first?</h3>
+        <p style="font-size:0.875rem;color:var(--black-3);line-height:1.7;max-width:700px;">It depends on your goals! For <strong>data science/analytics</strong> → start with DataCamp or Kaggle. For <strong>cloud computing</strong> → AWS Cloud Practitioner. For <strong>cybersecurity</strong> → CompTIA Security+ or ISC² CC. For <strong>development</strong> → GitHub Foundations or freeCodeCamp. When in doubt, ask in the Discord — your GWC peers have been through this!</p>
+      </div>
+
+      <div class="suggest-card">
+        <h2>Know another cert we should list?</h2>
+        <p>Suggest a certification and help your fellow members grow their credentials.</p>
+        <a href="suggestion.html" class="btn btn-primary">Suggest a Certification</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div><p>A GWC College Loop at Augusta University.</p></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="learn.html">Learn to Code</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li><li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="events.html">Events Calendar</a></li><li><a href="community.html">Community</a></li><li><a href="suggestion.html">Suggest a Resource</a></li><li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li><li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
 </body>
 </html>

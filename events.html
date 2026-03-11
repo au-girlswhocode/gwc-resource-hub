@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_pfp.png" alt="GWC @ AU">
+        <div class="logo-text-block">
+          <span class="script">girls who</span>
+          <span class="codeword">code</span>
+          <span class="au-sub">Augusta University</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="learn.html">Learn</a>
+        <a href="jobs.html">Jobs &amp; Internships</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="cyber.html">Cybersecurity</a>
+        <a href="community.html">Community</a>
+        <a href="suggestion.html">Suggest</a>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="learn.html">Learn</a>
+    <a href="jobs.html">Jobs &amp; Internships</a>
+    <a href="scholarships.html">Scholarships</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="cyber.html">Cybersecurity</a>
+    <a href="community.html">Community</a>
+    <a href="suggestion.html">Suggest a Resource</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Events</div>
+      <h1>Events &amp; <span class="accent">Calendar</span></h1>
+      <p>Workshops, meetings, hackathons, and community hangouts — everything happening with GWC @ AU.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <span class="section-label">Latest Flyer</span>
+      <h2 class="section-title">Recent &amp; <span class="accent">Upcoming</span></h2>
+      <span class="wave-bar"></span>
+
+      <!-- FEATURED EVENT -->
+      <div style="background:var(--teal-1);border-radius:12px;padding:2rem;margin-bottom:3rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+        <div>
+          <span class="event-tag" style="background:var(--yellow-2);color:var(--blue-4);font-weight:700;">Featured</span>
+          <h3 style="font-size:1.5rem;font-weight:900;color:var(--blue-4);margin:0.5rem 0 0.75rem;line-height:1.2;">Resume Building Workshop<br><span style="color:var(--teal-3);">with Girls Who Code</span></h3>
+          <p style="color:var(--black-3);margin-bottom:1.25rem;line-height:1.6;">Learn to format your resume, use tech-specific keywords, and get real feedback. Bring your laptop or a printed copy — or start from scratch with us!</p>
+          <div style="font-family:var(--font-mono);font-size:0.8rem;color:var(--blue-4);display:flex;flex-direction:column;gap:0.35rem;margin-bottom:1.25rem;">
+            <span>📅 November 3, 2025</span>
+            <span>⏰ 5:00 PM</span>
+            <span>📍 University Hall Room 242</span>
+            <span style="color:var(--teal-3);font-weight:700;">✅ Open to all majors!</span>
+          </div>
+          <a href="community.html" class="btn btn-primary" style="font-size:0.8rem;">Join Our Discord for Updates</a>
+        </div>
+        <div class="flyer-img" style="margin:0;">
+          <img src="fuckass_flyer.png" alt="Resume Building Workshop Flyer">
+        </div>
+      </div>
+
+      <!-- UPCOMING LIST -->
+      <span class="section-label">All Events</span>
+      <h2 class="section-title">Events <span class="accent">Schedule</span></h2>
+      <span class="wave-bar"></span>
+
+      <div class="events-grid" style="margin-bottom:3rem;">
+        <div class="event-card">
+          <div class="event-date"><span class="mo">Nov</span><span class="dy">3</span></div>
+          <div class="event-info">
+            <span class="event-tag">Workshop</span>
+            <h3>Resume Building Workshop</h3>
+            <div class="event-meta">⏰ 5:00 PM &nbsp;·&nbsp; 📍 UH 242</div>
+            <p>Polish your resume with tips and feedback. Open to all majors. Bring your laptop!</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-date" style="background:var(--blue-3);"><span class="mo">TBA</span><span class="dy" style="font-size:1.1rem;">Next</span></div>
+          <div class="event-info">
+            <span class="event-tag" style="background:var(--blue-1);color:var(--blue-3);">Meeting</span>
+            <h3>General Body Meeting</h3>
+            <div class="event-meta">📍 University Hall</div>
+            <p>Regular GBM — updates, resources, and community time. All are welcome!</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-date" style="background:var(--yellow-3);"><span class="mo" style="color:var(--blue-4);">TBA</span><span class="dy" style="font-size:1rem;color:var(--blue-4);">CTF</span></div>
+          <div class="event-info">
+            <span class="event-tag" style="background:#fff3cd;color:#664d03;">Competition</span>
+            <h3>Capture The Flag Event</h3>
+            <div class="event-meta">📍 TBD</div>
+            <p>Practice your cybersecurity skills in a fun, competitive setting. All skill levels welcome.</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-date" style="background:var(--teal-4);"><span class="mo">TBA</span><span class="dy" style="font-size:1rem;">Hack</span></div>
+          <div class="event-info">
+            <span class="event-tag">Hackathon</span>
+            <h3>Hackathon Prep Session</h3>
+            <div class="event-meta">📍 TBD</div>
+            <p>Team formation, project ideation, and tips for competing in upcoming hackathons.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CALENDAR SECTION -->
+      <span class="section-label">Live Calendar</span>
+      <h2 class="section-title">Google <span class="accent">Calendar</span></h2>
+      <span class="wave-bar"></span>
+      <p class="section-subtitle">Our events calendar is embedded below. To add it to your own Google Calendar, click the <strong>+ Google Calendar</strong> button in the bottom right of the embed.</p>
+
+      <div class="calendar-placeholder">
+        <div class="cal-icon">📅</div>
+        <h3>Embed Your Google Calendar Here</h3>
+        <p>Replace this placeholder with your Google Calendar embed code. Go to <strong>Google Calendar → Settings → your calendar → Integrate calendar → Embed code</strong>. Paste the <code>&lt;iframe&gt;</code> tag below.</p>
+        <p style="font-family:var(--font-mono);font-size:0.75rem;background:rgba(0,0,0,0.06);padding:0.75rem;border-radius:6px;margin-top:0.75rem;text-align:left;color:var(--blue-4);">
+          &lt;!-- Replace this entire div with your Google Calendar iframe --&gt;<br>
+          &lt;iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID..." width="800" height="600" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;
+        </p>
+        <div style="margin-top:1.25rem;display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+          <a href="https://calendar.google.com" target="_blank" class="btn btn-primary" style="font-size:0.8rem;">Open Google Calendar</a>
+          <a href="community.html" class="btn btn-outline-teal" style="font-size:0.8rem;">Get Event Updates on Discord</a>
+        </div>
+      </div>
+      <p class="calendar-note">💡 Tip: You can also share your TimeTree or Google Calendar link in the Discord server so members can subscribe directly.</p>
+    </div>
+  </section>
+
+  <section class="join-section" style="padding:3.5rem 2rem;">
+    <div class="section-inner">
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.75);margin:0 auto 1.5rem;">Never miss an event — join our Discord for real-time announcements.</p>
+      <a href="https://discord.gg/your-discord-invite" target="_blank" class="btn btn-yellow">Join the Discord</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+        <p>A GWC College Loop at Augusta University.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="learn.html">Learn to Code</a></li>
+          <li><a href="jobs.html">Jobs &amp; Internships</a></li>
+          <li><a href="scholarships.html">Scholarships</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="events.html">Events Calendar</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="suggestion.html">Suggest a Resource</a></li>
+          <li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li>
+          <li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
+  </footer>
+</body>
+</html>

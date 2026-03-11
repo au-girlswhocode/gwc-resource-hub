@@ -2,27 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CTF & Cybersecurity Resources | GWC Resource Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity &amp; CTFs | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>CTF & Cybersecurity Resources</h1>
-    <nav>
-      <a href="index.html">← Back to Home</a> |
-      <a href="jobs.html">Jobs & Internships</a> |
-      <a href="learn.html">Learn to Code</a> |
-      <a href="scholarships.html">Scholarships</a> |
-      <a href="certifications.html">Certifications & Skill Badges</a>  |
-      <a href="suggestion.html">Suggestions</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_pfp.png" alt="GWC @ AU">
+        <div class="logo-text-block"><span class="script">girls who</span><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
+        <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
+        <a href="certifications.html">Certifications</a><a href="cyber.html" class="active">Cybersecurity</a>
+        <a href="community.html">Community</a><a href="suggestion.html">Suggest</a>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </header>
+  <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
+    <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
+    <a href="certifications.html">Certifications</a><a href="cyber.html">Cybersecurity</a>
+    <a href="community.html">Community</a><a href="suggestion.html">Suggest a Resource</a>
+  </nav>
 
-  <main>
-    <p>⚙️ Under construction… Stay tuned for resources on CTF competitions, TryHackMe labs, and cybersecurity practice platforms!</p>
-  </main>
+  <div class="page-hero" style="background: linear-gradient(135deg, var(--blue-4) 0%, #001a2e 100%);">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Cybersecurity</div>
+      <h1>🛡️ Cybersecurity &amp; <span class="accent">CTFs</span></h1>
+      <p>Practice platforms, Capture the Flag competitions, learning paths, and career resources in cybersecurity.</p>
+    </div>
+  </div>
 
-  <footer>
-    <p>© 2025 Girls Who Code @ Augusta University</p>
+  <section class="section">
+    <div class="section-inner">
+
+      <!-- INTRO -->
+      <div style="background:var(--teal-1);border-radius:12px;padding:2rem;margin-bottom:3rem;display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap;">
+        <div style="font-size:2.5rem;flex-shrink:0;">⚙️</div>
+        <div>
+          <h3 style="font-size:1.15rem;font-weight:700;color:var(--blue-4);margin-bottom:0.5rem;">This page is growing!</h3>
+          <p style="font-size:0.9rem;color:var(--black-3);line-height:1.6;">We're building out our cybersecurity resources. In the meantime, here's a curated set of starting points. Have a platform or resource to add? <a href="suggestion.html" style="color:var(--teal-3);font-weight:600;">Submit it here →</a></p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">🧪</span><h2>Practice Platforms</h2><div class="cat-bar"></div></div>
+      <div class="cyber-grid">
+        <div class="cyber-card">
+          <div class="cc-icon">🟢</div>
+          <h3><a href="https://tryhackme.com/" target="_blank">TryHackMe ↗</a></h3>
+          <p>Guided virtual labs for learning ethical hacking in a browser-based environment. Great starting point — no setup needed.</p>
+          <br><span class="rtag rtag-b">Beginner → Intermediate</span>
+        </div>
+        <div class="cyber-card">
+          <div class="cc-icon">🟡</div>
+          <h3><a href="https://www.hackthebox.com/" target="_blank">Hack The Box ↗</a></h3>
+          <p>Realistic penetration testing machines and challenges. Highly respected by the industry — great for portfolios.</p>
+          <br><span class="rtag rtag-i">Intermediate → Advanced</span>
+        </div>
+        <div class="cyber-card">
+          <div class="cc-icon">🔵</div>
+          <h3><a href="https://picoctf.org/" target="_blank">picoCTF ↗</a></h3>
+          <p>Beginner-friendly CTF platform from Carnegie Mellon. Runs annual competitions and has a practice arena year-round.</p>
+          <br><span class="rtag rtag-b">Beginner</span>
+        </div>
+        <div class="cyber-card">
+          <div class="cc-icon">🟢</div>
+          <h3><a href="https://overthewire.org/wargames/" target="_blank">OverTheWire ↗</a></h3>
+          <p>Wargames for practicing security concepts through command-line challenges. Start with Bandit for Linux basics.</p>
+          <br><span class="rtag rtag-b">Beginner → Intermediate</span>
+        </div>
+        <div class="cyber-card">
+          <div class="cc-icon">🟡</div>
+          <h3><a href="https://ctftime.org/" target="_blank">CTFtime ↗</a></h3>
+          <p>The definitive listing of active CTF competitions worldwide. Browse upcoming events and form or join teams.</p>
+          <br><span class="rtag rtag-i">All levels</span>
+        </div>
+        <div class="cyber-card">
+          <div class="cc-icon">🔵</div>
+          <h3><a href="https://www.vulnhub.com/" target="_blank">VulnHub ↗</a></h3>
+          <p>Downloadable vulnerable VMs for offline practice — like Hack The Box but local. Great for deep-dive practice.</p>
+          <br><span class="rtag rtag-a">Advanced</span>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">📚</span><h2>Learning Resources</h2><div class="cat-bar"></div></div>
+      <div class="cyber-grid">
+        <div class="cyber-card">
+          <div class="cc-icon">📖</div>
+          <h3><a href="https://www.coursera.org/specializations/intro-cyber-security" target="_blank">Coursera: Intro to Cybersecurity ↗</a></h3>
+          <p>Structured beginner course covering core cybersecurity principles, threats, and defensive techniques.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="cc-icon">🎓</div>
+          <h3><a href="https://www.cybrary.it/" target="_blank">Cybrary ↗</a></h3>
+          <p>Free and paid cybersecurity career paths — includes content aligned with CompTIA, CEH, and CISSP certs.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="cc-icon">🐍</div>
+          <h3><a href="https://tryhackme.com/path/outline/beginner" target="_blank">TryHackMe: Pre-Security Path ↗</a></h3>
+          <p>Structured learning path for complete beginners in cybersecurity — covers networking, Linux, and web fundamentals.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="cc-icon">📺</div>
+          <h3><a href="https://www.youtube.com/@DavidBombal" target="_blank">David Bombal (YouTube) ↗</a></h3>
+          <p>Practical networking and cybersecurity content — great for CCNA, ethical hacking, and Kali Linux walkthroughs.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">🏆</span><h2>CTF &amp; Competitions</h2><div class="cat-bar"></div></div>
+      <div style="background:var(--blue-4);border-radius:12px;padding:2rem;color:var(--white);margin-bottom:1.5rem;">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;color:var(--teal-2);">What is a CTF?</h3>
+        <p style="font-size:0.875rem;line-height:1.7;color:rgba(255,255,255,0.8);">Capture The Flag (CTF) competitions are hacking challenges where you solve cybersecurity puzzles to find "flags" — strings hidden in vulnerable systems or files. Categories include: web exploitation, cryptography, reverse engineering, forensics, binary exploitation, and OSINT. They're one of the best ways to build real security skills and look great on your resume!</p>
+      </div>
+      <div class="cyber-grid">
+        <div class="cyber-card">
+          <div class="cc-icon">🚩</div>
+          <h3><a href="https://ctftime.org/" target="_blank">CTFtime Events ↗</a></h3>
+          <p>Browse and register for upcoming CTF competitions. Filter by difficulty — many welcome beginners!</p>
+        </div>
+        <div class="cyber-card">
+          <div class="cc-icon">👩‍💻</div>
+          <h3><a href="https://wicys.org/initiatives/ctf/" target="_blank">WiCyS CTF ↗</a></h3>
+          <p>Women in CyberSecurity runs annual CTF competitions specifically for women and non-binary participants.</p>
+        </div>
+        <div class="cyber-card">
+          <div class="cc-icon">🏫</div>
+          <h3><a href="https://nationalcyberleague.org/" target="_blank">National Cyber League ↗</a></h3>
+          <p>Seasonal cybersecurity competitions with individual and team brackets. Very popular among college students.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">💼</span><h2>Cybersecurity Careers</h2><div class="cat-bar"></div></div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3><a href="https://apply.intelligencecareers.gov/job-listings?agency=NSA" target="_blank">NSA Student Programs ↗</a></h3>
+          <p>Internships and full-time roles in cybersecurity and intelligence — a major employer of AU CS graduates.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://www.cisa.gov/careers" target="_blank">CISA Careers ↗</a></h3>
+          <p>The Cybersecurity &amp; Infrastructure Security Agency — federal cyber defense and career opportunities.</p>
+        </div>
+        <div class="resource-card">
+          <h3><a href="https://niccs.cisa.gov/workforce-development/cyber-career-pathways-tool" target="_blank">NICE Cyber Career Pathways ↗</a></h3>
+          <p>Interactive tool to explore different cybersecurity career paths and the skills needed for each role.</p>
+        </div>
+      </div>
+
+      <div class="suggest-card">
+        <h2>Know a CTF or resource we're missing?</h2>
+        <p>This page is actively being built out — your suggestions make it better for everyone.</p>
+        <a href="suggestion.html" class="btn btn-primary">Suggest a Resource</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div><p>A GWC College Loop at Augusta University.</p></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="learn.html">Learn to Code</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li><li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="events.html">Events Calendar</a></li><li><a href="community.html">Community</a></li><li><a href="suggestion.html">Suggest a Resource</a></li><li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li><li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
 </body>
 </html>
