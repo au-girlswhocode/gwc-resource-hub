@@ -152,6 +152,22 @@ img { max-width: 100%; height: auto; display: block; }
 /* ===== EXEC TEAM ===== */
 .team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem 2rem; margin-top: 2.5rem; }
 .member-card { text-align: center; width: 155px; flex-shrink: 0; }
+
+/* Two-tier exec layout */
+.exec-board { margin-top: 2.5rem; }
+.exec-top {
+  display: flex; justify-content: center; gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+.exec-top .member-card { width: 175px; }
+.exec-top .member-img { width: 160px; height: 160px; border-width: 4px; }
+.exec-top .member-placeholder { width: 160px; height: 160px; }
+.exec-top .member-name { font-size: 1rem; }
+.exec-bottom {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem 1.75rem;
+  padding-top: 2rem;
+  border-top: 2px dashed var(--teal-1);
+}
 .member-img {
   width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
   object-position: center top; border: 3px solid var(--teal-3);
@@ -294,7 +310,7 @@ img { max-width: 100%; height: auto; display: block; }
   :root { --section-pad: 3rem 1.25rem; }
   .hero { padding: 3.5rem 1.25rem 3rem; }
   .hero-ctas { flex-direction: column; align-items: center; }
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid-bottom { gap: 1.5rem; }
   .events-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
   .stats-strip { gap: 2rem; }
