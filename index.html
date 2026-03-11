@@ -3,93 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Girls Who Code @ Augusta</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <title>Girls Who Code @ Augusta University</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-  <div style="display: flex; flex-direction: column; align-items: center;">
-    <img src="gwc_pfp.png" alt="GWC Logo" style="max-height: 120px; width: auto;">
-    <h1><a href="index.html" style="color: inherit; text-decoration: none;">Girls Who Code @ Augusta</a></h1>
-  </div>
-</header>
-
-  <nav>
-    <a href="#jobs">Jobs & Internships</a>
-     <a href="learn.html">Learn</a>
-    <a href="#scholarships">Scholarships</a>
-    <a href="#certs">Certifications</a>
-    <a href="#cyber">CTFs & Cybersecurity</a>
-    <a href="#suggest">Suggest a Resource</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_pfp.png" alt="GWC @ AU">
+        <div class="logo-text-block">
+          <span class="script">girls who</span>
+          <span class="codeword">code</span>
+          <span class="au-sub">Augusta University</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="events.html">Events</a>
+        <a href="learn.html">Learn</a>
+        <a href="jobs.html">Jobs &amp; Internships</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="cyber.html">Cybersecurity</a>
+        <a href="community.html">Community</a>
+        <a href="suggestion.html">Suggest</a>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="learn.html">Learn</a>
+    <a href="jobs.html">Jobs &amp; Internships</a>
+    <a href="scholarships.html">Scholarships</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="cyber.html">Cybersecurity</a>
+    <a href="community.html">Community</a>
+    <a href="suggestion.html">Suggest a Resource</a>
   </nav>
 
   <section class="hero">
-  <h2>Welcome to the Ultimate Resource Hub</h2>
-  <p>Created by and for members of Girls Who Code @ Augusta, this site is your go-to spot for everything from coding tutorials to career-boosting opportunities. Whether you’re just starting or ready to lead, you belong here.</p>
-  <a href="learn.html" class="start-button">Start Here</a>
-</section>
-
-
-  <section class="meeting">
-    <h2>Upcoming Meeting</h2>
-    <p><strong>📅 Date:</strong> November 3, 2025<br>
-<strong>⏰ Time:</strong> 5:00 PM<br>
-<strong>📍 Location:</strong> University Hall Room 242 (UH 242)</p>
-
-    <img src="fuckass flyer.png" alt="Meeting Flyer">
-  </section>
-
-  <section class="exec-team">
-    <h2>Meet the Executive Team</h2>
-    <div class="team-grid">
-      <div class="member">
-        <img src="jade_hs.jpg" alt="President">
-        <p><strong>President</strong><br><span class="exec-name">Jade Huynh</span></p>
-      </div>
-      <div class="member">
-        <img src="ericka_hs.jpg" alt="Vice President">
-        <p><strong>Vice President</strong><br><span class="exec-name">Ericka Tyndall</span></p>
-      </div>
-      <div class="member">
-        <img src="brianna_hs.jpg" alt="Secretary">
-        <p><strong>Secretary</strong><br><span class="exec-name">Brianna</span></p>
-      </div>
-      <div class="member">
-        <img src="carolina_hs.jpg" alt="Treasurer">
-        <p><strong>Treasurer</strong><br><span class="exec-name">Carolina</span></p>
-      </div>
-      <div class="member">
-        <img src="amaya_hs.jpg" alt="Social Media Coordinator">
-        <p><strong>Social Media</strong><br><span class="exec-name">Amaya</span></p>
+    <div class="hero-wave-bg"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Girls Who Code @ Augusta University</span>
+      <h1>
+        GIRLS<br>
+        <span class="teal">WHO</span><br>
+        <span class="yellow">CODE</span><br>
+        MAKE WAVES
+      </h1>
+      <p>Your go-to hub for coding resources, career opportunities, certifications, and a community built to lift each other up. Whether you're just starting out or ready to lead — you belong here.</p>
+      <div class="hero-ctas">
+        <a href="learn.html" class="btn btn-primary">Start Learning</a>
+        <a href="community.html" class="btn btn-secondary">Our Community</a>
+        <a href="https://discord.gg/your-discord-invite" target="_blank" class="btn btn-yellow">Join Discord</a>
       </div>
     </div>
   </section>
 
-  <section class="join-us">
-    <h2>Join Us!</h2>
-    <p>Interested in joining our community?<br>
-    <a class="button" href="https://your-interest-form-link.com" target="_blank">Fill out our Interest Form</a><br>
-    <a class="button" href="https://discord.gg/your-discord-invite" target="_blank">Join our Discord Server</a></p>
+  <div class="mission-strip">
+    <p>"We use computer science to <span class="hi">change the world</span> — one line of code, one sister at a time."</p>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat-item"><div class="num">2025</div><div class="lbl">Founded</div></div>
+    <div class="stat-item"><div class="num">7</div><div class="lbl">Exec Board Roles</div></div>
+    <div class="stat-item"><div class="num">100%</div><div class="lbl">Free to Join</div></div>
+    <div class="stat-item"><div class="num">AU</div><div class="lbl">Augusta University</div></div>
+  </div>
+
+  <section class="section" id="about">
+    <div class="section-inner">
+      <span class="section-label">Who We Are</span>
+      <h2 class="section-title">A College Loop at <span class="accent">Augusta University</span></h2>
+      <span class="wave-bar"></span>
+      <p class="section-subtitle">Girls Who Code College Loops are on-campus student organizations committed to reaching gender parity in tech. At Augusta University, we build sisterhood, grow technical skills, and connect members to real-world opportunities — for free.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="https://your-interest-form-link.com" target="_blank" class="btn btn-primary">Fill Out Interest Form</a>
+        <a href="community.html" class="btn btn-outline-teal">Learn More</a>
+      </div>
+    </div>
   </section>
 
-  <section class="instagram">
-    <h2>Follow Us on Instagram</h2>
-    <div class="insta-wrapper">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/aug_girlswhocode/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; max-width:540px; min-width:326px; padding:0; width:calc(100% - 2px);">
-        <div style="padding:16px;">
-          <a href="https://www.instagram.com/aug_girlswhocode/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-            View this profile on Instagram
-          </a>
+  <section class="section events-section">
+    <div class="section-inner">
+      <span class="section-label">What's Coming Up</span>
+      <h2 class="section-title">Upcoming <span class="accent">Events</span></h2>
+      <span class="wave-bar"></span>
+      <p class="section-subtitle">Workshops, meetings, hackathons, and more. Stay in the loop.</p>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-date"><span class="mo">Nov</span><span class="dy">3</span></div>
+          <div class="event-info">
+            <span class="event-tag">Workshop</span>
+            <h3>Resume Building Workshop</h3>
+            <div class="event-meta">⏰ 5:00 PM &nbsp;·&nbsp; 📍 UH 242</div>
+            <p>Tips on formatting, tech keywords, and feedback from peers. Open to all majors!</p>
+          </div>
         </div>
-      </blockquote>
+        <div class="event-card">
+          <div class="event-date" style="background:var(--blue-3);"><span class="mo">TBA</span><span class="dy" style="font-size:1.1rem;">Next</span></div>
+          <div class="event-info">
+            <span class="event-tag" style="background:var(--blue-1);color:var(--blue-3);">Meeting</span>
+            <h3>General Body Meeting</h3>
+            <div class="event-meta">📍 University Hall</div>
+            <p>Updates, resources, and a great chance to connect with the GWC community.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2rem;text-align:center;">
+        <a href="events.html" class="btn btn-outline-teal">Full Events Calendar →</a>
+      </div>
     </div>
-    <script async src="//www.instagram.com/embed.js"></script>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Girls Who Code @ Augusta. All rights reserved.</p>
+  <section class="section" style="background:var(--white);">
+    <div class="section-inner">
+      <span class="section-label">Leadership</span>
+      <h2 class="section-title">Meet the <span class="accent">Executive Board</span></h2>
+      <span class="wave-bar"></span>
+      <div class="team-grid">
+        <div class="member-card">
+          <img src="jade_hs.jpg" alt="Jade Huynh" class="member-img">
+          <div class="member-role">President</div>
+          <div class="member-name">Jade Huynh</div>
+        </div>
+        <div class="member-card">
+          <img src="ericka_hs.jpg" alt="Ericka Tyndall" class="member-img">
+          <div class="member-role">Vice President</div>
+          <div class="member-name">Ericka Tyndall</div>
+        </div>
+        <div class="member-card">
+          <img src="brianna_hs.jpg" alt="Brianna" class="member-img">
+          <div class="member-role">Secretary</div>
+          <div class="member-name">Brianna</div>
+        </div>
+        <div class="member-card">
+          <img src="carolina_hs.jpg" alt="Carolina" class="member-img">
+          <div class="member-role">Treasurer</div>
+          <div class="member-name">Carolina</div>
+        </div>
+        <div class="member-card">
+          <img src="amaya_hs.jpg" alt="Amaya" class="member-img">
+          <div class="member-role">Community Engagement &amp; Outreach</div>
+          <div class="member-name">Amaya</div>
+        </div>
+        <div class="member-card">
+          <div class="member-placeholder">🎨</div>
+          <div class="member-role">Marketing &amp; Branding</div>
+          <div class="member-name tbd">TBD</div>
+        </div>
+        <div class="member-card">
+          <div class="member-placeholder">🏆</div>
+          <div class="member-role">Competitions &amp; Technical Programs</div>
+          <div class="member-name tbd">TBD</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join-section">
+    <div class="section-inner">
+      <span class="section-label" style="color:var(--teal-2);">Get Involved</span>
+      <h2 class="section-title">Ready to <span style="color:var(--yellow-2);">Make Waves?</span></h2>
+      <span class="wave-bar" style="margin:0.5rem auto 1.25rem;"></span>
+      <p class="section-subtitle" style="margin:0 auto 2.5rem;">Join a community of women building the future of tech. From day one, you belong here.</p>
+      <div class="join-buttons">
+        <a href="https://your-interest-form-link.com" target="_blank" class="btn btn-yellow">Fill Out Interest Form</a>
+        <a href="https://discord.gg/your-discord-invite" target="_blank" class="btn btn-discord">Join our Discord</a>
+        <a href="community.html" class="btn btn-secondary">Our Community</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="instagram-section">
+    <div class="section-inner">
+      <span class="section-label">Social</span>
+      <h2 class="section-title">Follow Us <span class="accent">@aug_girlswhocode</span></h2>
+      <span class="wave-bar" style="margin:0.5rem auto 0;"></span>
+      <div class="insta-wrap">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/aug_girlswhocode/?utm_source=ig_embed" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px auto;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);">
+          <div style="padding:16px;"><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">View this profile on Instagram</a></div>
+        </blockquote>
+      </div>
+      <script async src="//www.instagram.com/embed.js"></script>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+        <p>A GWC College Loop at Augusta University, dedicated to closing the gender gap in tech through sisterhood, education, and opportunity.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="learn.html">Learn to Code</a></li>
+          <li><a href="jobs.html">Jobs &amp; Internships</a></li>
+          <li><a href="scholarships.html">Scholarships</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="events.html">Events Calendar</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="suggestion.html">Suggest a Resource</a></li>
+          <li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li>
+          <li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
 </body>
 </html>
-
