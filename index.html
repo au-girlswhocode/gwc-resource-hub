@@ -12,36 +12,44 @@
       <a href="index.html" class="header-logo">
         <img src="gwc_official_logo.png" alt="GWC @ Augusta University" style="height:58px;width:auto;">
       </a>
-      <nav class="main-nav">
+            <nav class="main-nav">
         <a href="index.html" class="active">Home</a>
         <a href="events.html">Events</a>
-        <a href="learn.html">Learn</a>
-        <a href="jobs.html">Jobs &amp; Internships</a>
-        <a href="scholarships.html">Scholarships</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="cyber.html">Cybersecurity</a>
-        <a href="community.html">Community</a>
         <a href="gallery.html">Gallery</a>
         <a href="join.html">Join</a>
         <a href="suggestion.html">Suggest</a>
+              <div class="nav-item">
+        <a href="#" onclick="return false;">Resources <span class="nav-caret"></span></a>
+        <div class="nav-dropdown">
+          <a href="devresources.html"><span class="dd-icon">💡</span>Dev Resources</a>
+          <a href="jobs.html"><span class="dd-icon">💼</span>Jobs &amp; Internships</a>
+          <a href="scholarships.html"><span class="dd-icon">🎓</span>Scholarships</a>
+          <a href="certifications.html"><span class="dd-icon">📜</span>Certifications</a>
+          <a href="cyber.html"><span class="dd-icon">🛡</span>Cybersecurity</a>
+        </div>
+      </div>
       </nav>
       <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
-  <nav class="mobile-nav" id="mn">
+    <nav class="mobile-nav" id="mn">
     <a href="index.html">Home</a>
     <a href="events.html">Events</a>
-    <a href="learn.html">Learn</a>
-    <a href="jobs.html">Jobs &amp; Internships</a>
-    <a href="scholarships.html">Scholarships</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="cyber.html">Cybersecurity</a>
-    <a href="community.html">Community</a>
     <a href="gallery.html">Gallery</a>
     <a href="join.html">Join GWC</a>
     <a href="suggestion.html">Suggest a Resource</a>
+        <button class="mobile-nav-accordion" onclick="toggleMobileResources(this)" aria-expanded="false">
+      Resources <span class="mobile-acc-caret">&#9658;</span>
+    </button>
+    <div class="mobile-nav-subnav" id="mobileResourcesSub">
+      <a href="devresources.html" class="mobile-nav-sub">💡 Dev Resources</a>
+      <a href="jobs.html" class="mobile-nav-sub">💼 Jobs &amp; Internships</a>
+      <a href="scholarships.html" class="mobile-nav-sub">🎓 Scholarships</a>
+      <a href="certifications.html" class="mobile-nav-sub">📜 Certifications</a>
+      <a href="cyber.html" class="mobile-nav-sub">🛡 Cybersecurity</a>
+    </div>
   </nav>
 
   <section class="hero">
@@ -57,7 +65,7 @@
       <p>Your go-to hub for coding resources, career opportunities, certifications, and a community built to lift each other up. Whether you're just starting out or ready to lead — you belong here.</p>
       <div class="hero-ctas">
         <a href="join.html" class="btn btn-yellow">Join GWC</a>
-        <a href="learn.html" class="btn btn-primary">Start Learning</a>
+        <a href="devresources.html" class="btn btn-primary">Start Learning</a>
         <a href="community.html" class="btn btn-secondary">Our Community</a>
       </div>
     </div>
@@ -208,7 +216,7 @@
       <div class="footer-col">
         <h4>Resources</h4>
         <ul>
-          <li><a href="learn.html">Learn to Code</a></li>
+          <li><a href="devresources.html">Dev Resources</a></li>
           <li><a href="jobs.html">Jobs &amp; Internships</a></li>
           <li><a href="scholarships.html">Scholarships</a></li>
           <li><a href="certifications.html">Certifications</a></li>
@@ -230,5 +238,14 @@
     </div>
     <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
+  <script>
+  function toggleMobileResources(btn) {
+    var sub = document.getElementById('mobileResourcesSub');
+    var caret = btn.querySelector('.mobile-acc-caret');
+    var open = sub.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    caret.innerHTML = open ? '&#9660;' : '&#9658;';
+  }
+  </script>
 </body>
 </html>

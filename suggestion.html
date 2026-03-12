@@ -13,20 +13,42 @@
         <img src="gwc_official_logo.png" alt="GWC @ AU">
         <div class="logo-text-block"><span class="script">girls who</span><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
       </a>
-      <nav class="main-nav">
-        <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
-        <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
-        <a href="certifications.html">Certifications</a><a href="cyber.html">Cybersecurity</a>
-        <a href="community.html">Community</a><a href="suggestion.html" class="active">Suggest</a>
+            <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join</a>
+        <a href="suggestion.html" class="active">Suggest</a>
+              <div class="nav-item">
+        <a href="#" onclick="return false;">Resources <span class="nav-caret"></span></a>
+        <div class="nav-dropdown">
+          <a href="devresources.html"><span class="dd-icon">💡</span>Dev Resources</a>
+          <a href="jobs.html"><span class="dd-icon">💼</span>Jobs &amp; Internships</a>
+          <a href="scholarships.html"><span class="dd-icon">🎓</span>Scholarships</a>
+          <a href="certifications.html"><span class="dd-icon">📜</span>Certifications</a>
+          <a href="cyber.html"><span class="dd-icon">🛡</span>Cybersecurity</a>
+        </div>
+      </div>
       </nav>
       <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </header>
-  <nav class="mobile-nav" id="mn">
-    <a href="index.html">Home</a><a href="events.html">Events</a><a href="learn.html">Learn</a>
-    <a href="jobs.html">Jobs &amp; Internships</a><a href="scholarships.html">Scholarships</a>
-    <a href="certifications.html">Certifications</a><a href="cyber.html">Cybersecurity</a>
-    <a href="community.html">Community</a><a href="suggestion.html">Suggest a Resource</a>
+    <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="join.html">Join GWC</a>
+    <a href="suggestion.html">Suggest a Resource</a>
+        <button class="mobile-nav-accordion" onclick="toggleMobileResources(this)" aria-expanded="false">
+      Resources <span class="mobile-acc-caret">&#9658;</span>
+    </button>
+    <div class="mobile-nav-subnav" id="mobileResourcesSub">
+      <a href="devresources.html" class="mobile-nav-sub">💡 Dev Resources</a>
+      <a href="jobs.html" class="mobile-nav-sub">💼 Jobs &amp; Internships</a>
+      <a href="scholarships.html" class="mobile-nav-sub">🎓 Scholarships</a>
+      <a href="certifications.html" class="mobile-nav-sub">📜 Certifications</a>
+      <a href="cyber.html" class="mobile-nav-sub">🛡 Cybersecurity</a>
+    </div>
   </nav>
 
   <div class="page-hero">
@@ -123,7 +145,7 @@
         <span class="wave-bar"></span>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:1rem;">
-          <a href="learn.html" style="background:var(--teal-1);border-radius:8px;padding:1.25rem;transition:all 0.2s;display:block;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+          <a href="devresources.html" style="background:var(--teal-1);border-radius:8px;padding:1.25rem;transition:all 0.2s;display:block;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
             <div style="font-size:1.5rem;margin-bottom:0.4rem;">🌐</div>
             <div style="font-weight:700;color:var(--blue-4);font-size:0.9rem;">Coding Resources</div>
             <div style="font-size:0.78rem;color:var(--black-3);margin-top:0.2rem;">Courses, tutorials, platforms</div>
@@ -167,7 +189,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand"><div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div><p>A GWC College Loop at Augusta University.</p></div>
-      <div class="footer-col"><h4>Resources</h4><ul><li><a href="learn.html">Learn to Code</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li><li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="devresources.html">Dev Resources</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li><li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li></ul></div>
       <div class="footer-col"><h4>Connect</h4><ul><li><a href="events.html">Events Calendar</a></li><li><a href="community.html">Community</a></li><li><a href="suggestion.html">Suggest a Resource</a></li><li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li><li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li></ul></div>
     </div>
     <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
@@ -232,6 +254,15 @@
     document.getElementById('sugAdminDetails').addEventListener('toggle', function() {
       if (this.open) refreshSugTable();
     });
+  </script>
+  <script>
+  function toggleMobileResources(btn) {
+    var sub = document.getElementById('mobileResourcesSub');
+    var caret = btn.querySelector('.mobile-acc-caret');
+    var open = sub.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    caret.innerHTML = open ? '&#9660;' : '&#9658;';
+  }
   </script>
 </body>
 </html>

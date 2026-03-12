@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Resources | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_official_logo.png" alt="GWC @ Augusta University" style="height:58px;width:auto;">
+      </a>
+            <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join</a>
+        <a href="suggestion.html">Suggest</a>
+              <div class="nav-item">
+        <a href="#" onclick="return false;" class="active">Resources <span class="nav-caret"></span></a>
+        <div class="nav-dropdown">
+          <a href="devresources.html"><span class="dd-icon">💡</span>Dev Resources</a>
+          <a href="jobs.html"><span class="dd-icon">💼</span>Jobs &amp; Internships</a>
+          <a href="scholarships.html"><span class="dd-icon">🎓</span>Scholarships</a>
+          <a href="certifications.html"><span class="dd-icon">📜</span>Certifications</a>
+          <a href="cyber.html"><span class="dd-icon">🛡</span>Cybersecurity</a>
+        </div>
+      </div>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+    <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="join.html">Join GWC</a>
+    <a href="suggestion.html">Suggest a Resource</a>
+        <button class="mobile-nav-accordion" onclick="toggleMobileResources(this)" aria-expanded="false">
+      Resources <span class="mobile-acc-caret">&#9658;</span>
+    </button>
+    <div class="mobile-nav-subnav" id="mobileResourcesSub">
+      <a href="devresources.html" class="mobile-nav-sub">💡 Dev Resources</a>
+      <a href="jobs.html" class="mobile-nav-sub">💼 Jobs &amp; Internships</a>
+      <a href="scholarships.html" class="mobile-nav-sub">🎓 Scholarships</a>
+      <a href="certifications.html" class="mobile-nav-sub">📜 Certifications</a>
+      <a href="cyber.html" class="mobile-nav-sub">🛡 Cybersecurity</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Dev Resources</div>
+      <h1>Learn to <span class="accent">Code</span></h1>
+      <p>Beginner to advanced resources curated by GWC @ Augusta — web dev, data science, cybersecurity, tools, and more.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="cat-header"><span class="cat-icon">🌐</span><h2>Web Development</h2><div class="cat-bar"></div></div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">HTML, CSS, JavaScript fundamentals — build your first websites and interactive apps.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://web.dev/learn/css/" target="_blank">web.dev ↗</a></h3>
+          <p>Modern tutorials on HTML, CSS, and performance best practices by Google.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner → Advanced</span>
+          <h3><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp ↗</a></h3>
+          <p>Full learning paths for web development, data, and more. Completely free with certifications.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">🟡 Intermediate</span>
+          <h3><a href="https://javascript30.com/" target="_blank">JavaScript30 ↗</a></h3>
+          <p>30-day challenge to learn vanilla JavaScript through real projects. No frameworks needed.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://www.codecademy.com/" target="_blank">Codecademy ↗</a></h3>
+          <p>Interactive tutorials for HTML, CSS, JS, and frameworks like React. Great for structured learners.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">📊</span><h2>Data Science &amp; Analytics</h2><div class="cat-bar"></div></div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">Python, SQL, and BI tools for data-driven projects and analysis.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner → Advanced</span>
+          <h3><a href="https://www.datacamp.com/" target="_blank">DataCamp ↗</a></h3>
+          <p>Learn Python, SQL, Tableau, and Power BI with interactive notebooks. Also has certifications!</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">🟡 Intermediate</span>
+          <h3><a href="https://www.kaggle.com/learn" target="_blank">Kaggle Learn ↗</a></h3>
+          <p>Free micro-courses on data visualization, machine learning, and AI tools from real practitioners.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-a">🔵 Advanced</span>
+          <h3><a href="https://pandas.pydata.org/docs/getting_started/" target="_blank">Pandas Docs ↗</a></h3>
+          <p>Official Python library for data analysis and cleaning. The gold standard reference for data work.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">🛡️</span><h2>Cybersecurity &amp; Networking</h2><div class="cat-bar"></div></div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">Ethical hacking, networking, and defensive security — check out the <a href="cyber.html" style="color:var(--teal-3);">Cybersecurity page</a> for more.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner → Intermediate</span>
+          <h3><a href="https://tryhackme.com/" target="_blank">TryHackMe ↗</a></h3>
+          <p>Guided virtual labs for learning ethical hacking in a hands-on, gamified environment.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">🟡 Intermediate → Advanced</span>
+          <h3><a href="https://www.hackthebox.com/" target="_blank">Hack The Box ↗</a></h3>
+          <p>Realistic penetration testing environments for sharpening real-world security skills.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://www.coursera.org/specializations/intro-cyber-security" target="_blank">Coursera: Intro to Cybersecurity ↗</a></h3>
+          <p>Learn core cybersecurity principles with practical labs through a structured, university-style path.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">🧰</span><h2>Tools &amp; Version Control</h2><div class="cat-bar"></div></div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">Git, GitHub, and command-line tools used in real-world development.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://learngitbranching.js.org/?locale=en_US" target="_blank">Learn Git Branching ↗</a></h3>
+          <p>Interactive visual tutorials for mastering Git commands and branches. The most fun way to learn Git.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://gitlab.com/augusta-university-students/csci-4711-softwareengineering/property-listing-system/-/blob/main/GIT-TUTORIAL.md" target="_blank">Augusta Git Tutorial ↗</a></h3>
+          <p>Student-made guide for version control basics, written specifically for AU students.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner → Advanced</span>
+          <h3><a href="https://exercism.org/" target="_blank">Exercism ↗</a></h3>
+          <p>Over 60 languages with mentor feedback and test-driven challenges. Great for interview prep too.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">🤖</span><h2>AI &amp; Machine Learning</h2><div class="cat-bar"></div></div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">Explore the frontier of artificial intelligence and learn to build intelligent systems.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://www.fast.ai/" target="_blank">fast.ai ↗</a></h3>
+          <p>Free practical deep learning courses taught top-down — build real models before diving into theory.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-i">🟡 Intermediate</span>
+          <h3><a href="https://developers.google.com/machine-learning/crash-course" target="_blank">Google ML Crash Course ↗</a></h3>
+          <p>Google's free machine learning course with TensorFlow — structured, practical, and thorough.</p>
+        </div>
+        <div class="resource-card">
+          <span class="rtag rtag-b">🟢 Beginner</span>
+          <h3><a href="https://huggingface.co/learn" target="_blank">Hugging Face Learn ↗</a></h3>
+          <p>Free NLP and AI courses — learn to use the latest transformer models and build AI applications.</p>
+        </div>
+      </div>
+
+      <div class="cat-header"><span class="cat-icon">📺</span><h2>YouTube Learning Channels</h2><div class="cat-bar"></div></div>
+      <p style="color:var(--black-3);margin-bottom:1rem;font-size:0.9rem;">High-quality, free coding lessons from experienced developers.</p>
+      <div class="video-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/gaGaPpnexxA" title="Tech With Tim" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-info"><h3>Tech With Tim</h3><p>Python, web development, and CS concepts — from beginner tutorials to AI and game dev.</p></div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/1p7xa_BHYDs" title="mCoding" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-info"><h3>mCoding</h3><p>Advanced Python, CS theory, and software engineering best practices with clean examples and wit.</p></div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/tadUeiNe5-g" title="Core Dumped" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-info"><h3>Core Dumped</h3><p>Low-level computing, OS, and C/C++ — understanding how computers really work under the hood.</p></div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/pCtkD5AMbDo" title="freeCodeCamp" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-info"><h3>freeCodeCamp.org</h3><p>University-quality full-length courses for free — web dev, data, machine learning, and more.</p></div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/RVFAyFWO4go" title="Dave Gray" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-info"><h3>Dave Gray</h3><p>Beginner-friendly web dev — HTML, CSS, JavaScript, React, and backend with clear explanations.</p></div>
+        </div>
+      </div>
+
+      <div class="suggest-card">
+        <h2>Know a great resource?</h2>
+        <p>Have a course, tutorial, or tool you love? Submit it and we'll add it to the hub!</p>
+        <a href="suggestion.html" class="btn btn-primary">Submit a Resource ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+        <p>A GWC College Loop at Augusta University.</p>
+      </div>
+      <div class="footer-col"><h4>Resources</h4><ul>
+        <li><a href="devresources.html">Dev Resources</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li>
+        <li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul>
+        <li><a href="events.html">Events Calendar</a></li><li><a href="gallery.html">Gallery</a></li>
+        <li><a href="community.html">Community</a></li><li><a href="join.html">Join GWC</a></li>
+        <li><a href="suggestion.html">Suggest a Resource</a></li>
+        <li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li>
+        <li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
+  </footer>
+  <script>
+  function toggleMobileResources(btn) {
+    var sub = document.getElementById('mobileResourcesSub');
+    var caret = btn.querySelector('.mobile-acc-caret');
+    var open = sub.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    caret.innerHTML = open ? '&#9660;' : '&#9658;';
+  }
+  </script>
+</body>
+</html>
