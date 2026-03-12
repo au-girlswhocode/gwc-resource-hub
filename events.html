@@ -6,7 +6,7 @@
   <title>Events | GWC @ Augusta University</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="events">
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="header-logo">
@@ -90,46 +90,25 @@
           style="border:0;display:block;" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
       </div>
 
-      <!-- COMMUNITY EVENTS -->
+            <!-- COMMUNITY EVENTS -->
       <span class="section-label">Beyond GWC</span>
       <h2 class="section-title">Community <span class="accent">Events</span></h2>
       <span class="wave-bar"></span>
-      <p class="section-subtitle">Local, national, and international events you can attend — hackathons, conferences, networking opportunities, and more. Updated by our officers throughout the semester.</p>
+      <p class="section-subtitle">Local, national, and international events — hackathons, conferences, networking opportunities, and more. Updated by our officers throughout the semester.</p>
 
       <div class="community-events-wrap">
-        <div class="cev-filters">
-          <button class="cev-filter-btn active" data-scope="all">All</button>
-          <button class="cev-filter-btn" data-scope="local">🏙 Local</button>
-          <button class="cev-filter-btn" data-scope="national">🇺🇸 National</button>
-          <button class="cev-filter-btn" data-scope="international">🌍 International</button>
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1);margin-bottom:1.25rem;">
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMxstj0Y3xYI5C9iwahjBAL4pTQkAN-qnkQec0JQV7nZrc6zm5UupRCXhf8EmBh14KU5gNwiVHkgkY/pubhtml?gid=0&single=true&widget=true&headers=false"
+            style="border:0;display:block;width:100%;min-height:480px;" frameborder="0"></iframe>
         </div>
 
-        <div class="cev-table-wrap">
-          <table class="cev-table" id="cevTable">
-            <thead>
-              <tr>
-                <th>Event</th>
-                <th>Date</th>
-                <th>Location / Format</th>
-                <th>Scope</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody id="cevBody">
-              <tr><td colspan="5" class="cev-loading">Loading events…</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Officer instructions -->
-        <div style="background:var(--teal-1);border-radius:10px;padding:1.25rem 1.5rem;margin-top:1.25rem;display:flex;gap:1rem;align-items:flex-start;">
+        <div style="background:var(--teal-1);border-radius:10px;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;">
           <span style="font-size:1.4rem;flex-shrink:0;">📋</span>
           <div>
-            <strong style="font-size:0.875rem;color:var(--blue-4);display:block;margin-bottom:0.2rem;">Officers: How to add events to this table</strong>
+            <strong style="font-size:0.875rem;color:var(--blue-4);display:block;margin-bottom:0.2rem;">Officers: How to add events</strong>
             <p style="font-size:0.78rem;color:var(--black-3);line-height:1.6;">
-              Open the <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMxstj0Y3xYI5C9iwahjBAL4pTQkAN-qnkQec0JQV7nZrc6zm5UupRCXhf8EmBh14KU5gNwiVHkgkY/pubhtml" target="_blank" id="cevSheetLink" style="color:var(--teal-3);font-weight:700;">Community Events Google Sheet ↗</a>
-              and add a row. Columns: <strong>Event Name, Date, Location, Scope</strong> (Local / National / International), <strong>Link</strong>, <strong>Active</strong> (yes/no).
-              Changes appear on the site within a few minutes after you publish the sheet.
+              Open the <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMxstj0Y3xYI5C9iwahjBAL4pTQkAN-qnkQec0JQV7nZrc6zm5UupRCXhf8EmBh14KU5gNwiVHkgkY/pubhtml" target="_blank" style="color:var(--teal-3);font-weight:700;">Community Events Google Sheet ↗</a>
+              and add a row. The sheet updates on the site automatically once published.
             </p>
           </div>
         </div>
@@ -140,15 +119,15 @@
   <section class="join-section" style="padding:3.5rem 2rem;">
     <div class="section-inner" style="text-align:center;">
       <p class="section-subtitle" style="color:rgba(255,255,255,0.75);margin:0 auto 1.5rem;">Never miss an event — join our Discord for real-time announcements.</p>
-      <a href="https://discord.gg/your-discord-invite" target="_blank" class="btn btn-yellow">Join the Discord</a>
+      <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-yellow">Join the Discord</a>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
-        <p>A GWC College Loop at Augusta University.</p>
+            <div class="footer-brand">
+        <a href="index.html"><img src="gwc_official_logo.png" alt="GWC @ Augusta University" class="footer-logo"></a>
+        <p>A GWC College Loop at Augusta University, dedicated to closing the gender gap in tech through sisterhood, education, and opportunity.</p>
       </div>
       <div class="footer-col"><h4>Resources</h4><ul>
         <li><a href="devresources.html">Dev Resources</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li>
@@ -160,243 +139,14 @@
         <li><a href="community.html">Community</a></li><li><a href="join.html">Join GWC</a></li>
         <li><a href="suggestion.html">Suggest a Resource</a></li>
         <li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li>
-        <li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li>
+        <li><a href="https://discord.gg/9CEqm6gjn7" target="_blank">Discord ↗</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
 
-  <script>
-  // ============================================================
-  // EVENTS PAGE — reads featured event + event cards from content.json
-  // ============================================================
-
-  // Tag color map for event cards
-  const TAG_STYLES = {
-    'Workshop':    'background:var(--teal-1);color:var(--teal-3);',
-    'Meeting':     'background:var(--blue-1);color:var(--blue-3);',
-    'Competition': 'background:#fff3cd;color:#664d03;',
-    'Hackathon':   'background:var(--teal-1);color:var(--teal-4);',
-    'Social':      'background:#fce4ec;color:#c2185b;',
-    'Collab':      'background:#e8f5e9;color:#2e7d32;',
-  };
-
-  const DATE_COLORS = {
-    'Workshop':    'var(--teal-3)',
-    'Meeting':     'var(--blue-3)',
-    'Competition': 'var(--yellow-3)',
-    'Hackathon':   'var(--teal-4)',
-    'Social':      '#e91e63',
-    'Collab':      '#2e7d32',
-  };
-
-  function escHtml(s) {
-    if (!s) return '';
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function renderFeaturedEvent(fe) {
-    const imgSrc = fe.flyer_image || '';
-    const imgHtml = imgSrc
-      ? `<img src="${escHtml(imgSrc)}" alt="Event Flyer" style="max-width:100%;max-height:220px;border-radius:8px;object-fit:contain;">`
-      : `<div style="background:rgba(0,0,0,0.08);border-radius:8px;height:160px;display:flex;align-items:center;justify-content:center;color:var(--black-3);font-size:0.78rem;">Flyer coming soon</div>`;
-
-    const metaRows = [];
-    if (fe.date_display) metaRows.push(`<span>📅 ${escHtml(fe.date_display)}</span>`);
-    if (fe.time)         metaRows.push(`<span>⏰ ${escHtml(fe.time)}</span>`);
-    if (fe.location)     metaRows.push(`<span>📍 ${escHtml(fe.location)}</span>`);
-    if (fe.note)         metaRows.push(`<span style="color:var(--teal-3);font-weight:700;">✅ ${escHtml(fe.note)}</span>`);
-
-    document.getElementById('featuredEventBlock').innerHTML = `
-      <div style="background:var(--teal-1);border-radius:12px;padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
-        <div>
-          <span style="background:var(--yellow-2);color:var(--blue-4);font-weight:700;font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:2px 10px;border-radius:20px;">Featured</span>
-          <h3 style="font-size:1.4rem;font-weight:900;color:var(--blue-4);margin:0.6rem 0 0.5rem;line-height:1.2;">
-            ${escHtml(fe.title)}<br>
-            ${fe.subtitle ? `<span style="color:var(--teal-3);">${escHtml(fe.subtitle)}</span>` : ''}
-          </h3>
-          <p style="color:var(--black-3);margin-bottom:1.1rem;line-height:1.6;font-size:0.9rem;">${escHtml(fe.description)}</p>
-          <div style="font-family:var(--font-mono);font-size:0.78rem;color:var(--blue-4);display:flex;flex-direction:column;gap:0.35rem;margin-bottom:1.25rem;">
-            ${metaRows.join('')}
-          </div>
-          <a href="community.html" class="btn btn-primary" style="font-size:0.8rem;">Join Our Discord for Updates</a>
-        </div>
-        <div style="text-align:center;">${imgHtml}</div>
-      </div>`;
-  }
-
-  function renderEventCards(cards) {
-    const grid = document.getElementById('eventCardsBlock');
-    if (!cards || !cards.length) { grid.innerHTML = '<p style="color:var(--black-3);">No upcoming events scheduled. Check back soon!</p>'; return; }
-
-    grid.innerHTML = cards.map(card => {
-      const tagStyle = TAG_STYLES[card.tag] || 'background:var(--teal-1);color:var(--teal-3);';
-      const dateBg = DATE_COLORS[card.tag] || 'var(--teal-3)';
-      const [datePart, dayPart] = parseDisplayDate(card.date_display);
-      const metaParts = [];
-      if (card.time) metaParts.push(`⏰ ${escHtml(card.time)}`);
-      if (card.location) metaParts.push(`📍 ${escHtml(card.location)}`);
-
-      return `
-        <div class="event-card">
-          <div class="event-date" style="background:${dateBg};">
-            <span class="mo">${datePart}</span>
-            <span class="dy" style="${dayPart.length > 2 ? 'font-size:1rem;' : ''}">${dayPart}</span>
-          </div>
-          <div class="event-info">
-            <span class="event-tag" style="${tagStyle}">${escHtml(card.tag)}</span>
-            <h3>${escHtml(card.title)}</h3>
-            ${metaParts.length ? `<div class="event-meta">${metaParts.join(' &nbsp;·&nbsp; ')}</div>` : ''}
-            <p>${escHtml(card.description)}</p>
-          </div>
-        </div>`;
-    }).join('');
-  }
-
-  function parseDisplayDate(str) {
-    if (!str || str === 'TBA') return ['TBA', '?'];
-    // Try to parse "Nov 3" or "November 3, 2025" style
-    const parts = str.trim().split(/[\s,]+/);
-    if (parts.length >= 2) {
-      const mon = parts[0].substring(0, 3).toUpperCase();
-      const day = parts[1];
-      return [mon, day];
-    }
-    return [str, ''];
-  }
-
-  async function loadEvents() {
-    try {
-      const res = await fetch('content.json?v=' + Date.now());
-      if (!res.ok) throw new Error();
-      const data = await res.json();
-      if (data.featured_event) renderFeaturedEvent(data.featured_event);
-      if (data.event_cards)    renderEventCards(data.event_cards);
-    } catch {
-      // Graceful fallback — show placeholder cards
-      document.getElementById('featuredEventBlock').innerHTML = `
-        <div style="background:var(--teal-1);border-radius:10px;padding:1.5rem;color:var(--black-3);font-size:0.875rem;">
-          Featured event details coming soon. Check our Discord for the latest!
-        </div>`;
-      document.getElementById('eventCardsBlock').innerHTML = `
-        <div class="event-card">
-          <div class="event-date"><span class="mo">TBA</span><span class="dy" style="font-size:1rem;">Next</span></div>
-          <div class="event-info">
-            <span class="event-tag">Meeting</span>
-            <h3>General Body Meeting</h3>
-            <div class="event-meta">📍 University Hall</div>
-            <p>Stay tuned for our next general body meeting!</p>
-          </div>
-        </div>`;
-    }
-  }
-
-  loadEvents();
-
-  // ============================================================
-  // COMMUNITY EVENTS — reads from a published Google Sheet CSV
-  // ============================================================
-  // Officers: publish your Google Sheet as CSV (File → Share → Publish to web
-  // → choose "Comma-separated values (.csv)" for the events sheet) and paste
-  // the URL into SHEET_CSV_URL below, then update cevSheetLink href too.
-  // Sheet columns (row 1 = headers): Event Name, Date, Location, Scope, Link, Active
-  // Set Active = "yes" to show the row, anything else hides it.
-  // ============================================================
-
-  const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSMxstj0Y3xYI5C9iwahjBAL4pTQkAN-qnkQec0JQV7nZrc6zm5UupRCXhf8EmBh14KU5gNwiVHkgkY/pub?output=csv&gid=0';  // ← Your published Google Sheet CSV
-
-  const SCOPE_CLASS = { local: 'cev-local', national: 'cev-national', international: 'cev-intl' };
-  const SCOPE_LABEL = { local: '🏙 Local', national: '🇺🇸 National', international: '🌍 International' };
-
-  let cevAllRows = [];
-
-  function renderCevTable(rows) {
-    const tbody = document.getElementById('cevBody');
-    if (!rows.length) {
-      tbody.innerHTML = '<tr><td colspan="5" class="cev-empty">No upcoming community events right now — check back soon!</td></tr>';
-      return;
-    }
-    tbody.innerHTML = rows.map(r => {
-      const scopeKey = (r.scope || '').toLowerCase().trim();
-      const scopeClass = SCOPE_CLASS[scopeKey] || 'cev-local';
-      const scopeLabel = SCOPE_LABEL[scopeKey] || escHtml(r.scope);
-      const linkHtml = r.link
-        ? `<a href="${escHtml(r.link)}" target="_blank" rel="noopener">Register ↗</a>`
-        : '—';
-      return `
-        <tr data-scope="${escHtml(scopeKey)}">
-          <td><strong>${escHtml(r.name)}</strong></td>
-          <td style="white-space:nowrap;">${escHtml(r.date)}</td>
-          <td>${escHtml(r.location)}</td>
-          <td><span class="cev-scope-badge ${scopeClass}">${scopeLabel}</span></td>
-          <td>${linkHtml}</td>
-        </tr>`;
-    }).join('');
-  }
-
-  function parseCsvLine(line) {
-    const result = [];
-    let cur = '', inQ = false;
-    for (let i = 0; i < line.length; i++) {
-      const ch = line[i];
-      if (ch === '"') { inQ = !inQ; }
-      else if (ch === ',' && !inQ) { result.push(cur.trim()); cur = ''; }
-      else { cur += ch; }
-    }
-    result.push(cur.trim());
-    return result;
-  }
-
-  async function loadCommunityEvents() {
-    const tbody = document.getElementById('cevBody');
-    if (!SHEET_CSV_URL) {
-      tbody.innerHTML = `
-        <tr><td colspan="5" class="cev-empty" style="padding:2.5rem;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🗓</div>
-          <strong style="display:block;color:var(--blue-4);margin-bottom:0.35rem;">Community events coming soon!</strong>
-          <span style="font-size:0.78rem;color:var(--black-3);">Officers: add your Google Sheet CSV URL in events.html to populate this table.</span>
-        </td></tr>`;
-      return;
-    }
-    try {
-      const res = await fetch(SHEET_CSV_URL);
-      if (!res.ok) throw new Error();
-      const text = await res.text();
-      const lines = text.trim().split('\n').slice(1);
-      cevAllRows = lines
-        .map(l => {
-          const cols = parseCsvLine(l);
-          return { name: cols[0]||'', date: cols[1]||'', location: cols[2]||'',
-                   scope: cols[3]||'', link: cols[4]||'', active: (cols[5]||'').toLowerCase().trim() };
-        })
-        .filter(r => r.active === 'yes' && r.name);
-      renderCevTable(cevAllRows);
-    } catch {
-      tbody.innerHTML = '<tr><td colspan="5" class="cev-empty">Couldn't load community events. Try refreshing or check back later.</td></tr>';
-    }
-  }
-
-  document.querySelectorAll('.cev-filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.cev-filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const scope = btn.dataset.scope;
-      const filtered = scope === 'all' ? cevAllRows : cevAllRows.filter(r => r.scope.toLowerCase() === scope);
-      renderCevTable(filtered);
-    });
-  });
-
-  loadCommunityEvents();
-
-  </script>
-  <script>
-  function toggleMobileResources(btn) {
-    var sub = document.getElementById('mobileResourcesSub');
-    var caret = btn.querySelector('.mobile-acc-caret');
-    var open = sub.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    caret.innerHTML = open ? '&#9660;' : '&#9658;';
-  }
-  </script>
+  
+  
+  <script src="main.js" defer></script>
 </body>
 </html>

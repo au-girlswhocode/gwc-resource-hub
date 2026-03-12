@@ -6,7 +6,7 @@
   <title>Suggest a Resource | GWC @ Augusta University</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="suggestion">
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="header-logo">
@@ -181,88 +181,25 @@
       <div style="background:var(--blue-4);border-radius:12px;padding:2rem;margin-top:3rem;color:var(--white);">
         <h3 style="font-size:1rem;font-weight:700;color:var(--teal-2);margin-bottom:0.5rem;">Prefer to reach out directly?</h3>
         <p style="font-size:0.875rem;color:rgba(255,255,255,0.75);line-height:1.6;">Drop your suggestion in the <strong style="color:var(--yellow-2);">#resources</strong> channel on our Discord server. Members and board officers check it regularly and will add vetted suggestions to the site.</p>
-        <a href="https://discord.gg/your-discord-invite" target="_blank" class="btn btn-discord" style="margin-top:1rem;font-size:0.8rem;">Join Discord ↗</a>
+        <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-discord" style="margin-top:1rem;font-size:0.8rem;">Join Discord ↗</a>
       </div>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-brand"><div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div><p>A GWC College Loop at Augusta University.</p></div>
+            <div class="footer-brand">
+        <a href="index.html"><img src="gwc_official_logo.png" alt="GWC @ Augusta University" class="footer-logo"></a>
+        <p>A GWC College Loop at Augusta University, dedicated to closing the gender gap in tech through sisterhood, education, and opportunity.</p>
+      </div>
       <div class="footer-col"><h4>Resources</h4><ul><li><a href="devresources.html">Dev Resources</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li><li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a href="events.html">Events Calendar</a></li><li><a href="community.html">Community</a></li><li><a href="suggestion.html">Suggest a Resource</a></li><li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li><li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="events.html">Events Calendar</a></li><li><a href="community.html">Community</a></li><li><a href="suggestion.html">Suggest a Resource</a></li><li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li><li><a href="https://discord.gg/9CEqm6gjn7" target="_blank">Discord ↗</a></li></ul></div>
     </div>
     <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
 
-  <script>
-    const SUG_KEY = 'gwc_suggestions';
-    function getSuggestions() { try { return JSON.parse(localStorage.getItem(SUG_KEY)) || []; } catch { return []; } }
-
-    document.getElementById('sugSubmitBtn').addEventListener('click', () => {
-      const cat   = document.getElementById('sugCategory').value;
-      const name  = document.getElementById('sugName').value.trim();
-      const link  = document.getElementById('sugLink').value.trim();
-      const why   = document.getElementById('sugWhy').value.trim();
-      if (!cat || !name || !why) { alert('Please fill in the required fields (Category, Name, and Why).'); return; }
-      const entry = { submitted: new Date().toLocaleString(), category: cat, name, link: link || '—', why };
-      const all = getSuggestions(); all.push(entry);
-      localStorage.setItem(SUG_KEY, JSON.stringify(all));
-      document.getElementById('suggestionFormWrap').style.display = 'none';
-      document.getElementById('sugFormSuccess').classList.add('show');
-      refreshSugTable();
-    });
-
-    function resetSugForm() {
-      ['sugCategory','sugName','sugLink','sugWhy'].forEach(id => { document.getElementById(id).value = ''; });
-      document.getElementById('suggestionFormWrap').style.display = 'block';
-      document.getElementById('sugFormSuccess').classList.remove('show');
-    }
-
-    function refreshSugTable() {
-      const data = getSuggestions();
-      document.getElementById('sugAdminCount').textContent = `${data.length} suggestion${data.length !== 1 ? 's' : ''} stored in this browser.`;
-      document.getElementById('sugAdminTableBody').innerHTML = data.length === 0
-        ? '<tr><td colspan="5" style="text-align:center;opacity:.4;padding:1.25rem;">No suggestions yet.</td></tr>'
-        : data.map(r => `<tr>
-            <td>${r.submitted}</td><td>${r.category}</td>
-            <td>${r.name}</td>
-            <td style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.link !== '—' ? `<a href="${r.link}" target="_blank" style="color:var(--teal-2)">${r.link}</a>` : '—'}</td>
-            <td style="max-width:200px;white-space:normal;">${r.why}</td>
-          </tr>`).join('');
-    }
-
-    function exportSugCSV() {
-      const data = getSuggestions();
-      if (!data.length) { alert('No suggestions to export yet!'); return; }
-      const headers = ['Submitted','Category','Resource / Topic','Link','Why Add It?'];
-      const rows = data.map(r => [r.submitted, r.category, r.name, r.link, r.why]
-        .map(v => `"${String(v).replace(/"/g,'""')}"`).join(','));
-      const csv = [headers.join(','), ...rows].join('\n');
-      const blob = new Blob([csv], { type: 'text/csv' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'gwc_suggestions.csv'; a.click();
-      URL.revokeObjectURL(url);
-    }
-
-    function clearSugData() {
-      if (confirm('Delete ALL stored suggestions from this browser?')) {
-        localStorage.removeItem(SUG_KEY); refreshSugTable();
-      }
-    }
-
-    document.getElementById('sugAdminDetails').addEventListener('toggle', function() {
-      if (this.open) refreshSugTable();
-    });
-  </script>
-  <script>
-  function toggleMobileResources(btn) {
-    var sub = document.getElementById('mobileResourcesSub');
-    var caret = btn.querySelector('.mobile-acc-caret');
-    var open = sub.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    caret.innerHTML = open ? '&#9660;' : '&#9658;';
-  }
-  </script>
+  
+  
+  <script src="main.js" defer></script>
 </body>
 </html>

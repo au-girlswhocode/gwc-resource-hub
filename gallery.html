@@ -6,7 +6,7 @@
   <title>Gallery | GWC @ Augusta University</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="gallery">
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="header-logo">
@@ -88,7 +88,7 @@
         <div>
           <h3 style="font-size:1rem;font-weight:700;color:var(--blue-4);margin-bottom:0.4rem;">Have photos from a GWC event?</h3>
           <p style="font-size:0.875rem;color:var(--black-3);line-height:1.6;">Drop them in the <strong>#photos</strong> channel on Discord and our board will add them to the gallery. Help us document our chapter's story!</p>
-          <a href="https://discord.gg/your-discord-invite" target="_blank" class="btn btn-discord" style="margin-top:1rem;font-size:0.78rem;padding:0.55rem 1.25rem;">Share in Discord ↗</a>
+          <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-discord" style="margin-top:1rem;font-size:0.78rem;padding:0.55rem 1.25rem;">Share in Discord ↗</a>
         </div>
       </div>
     </div>
@@ -126,9 +126,9 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <div><span class="script">girls who</span><br><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
-        <p>A GWC College Loop at Augusta University.</p>
+            <div class="footer-brand">
+        <a href="index.html"><img src="gwc_official_logo.png" alt="GWC @ Augusta University" class="footer-logo"></a>
+        <p>A GWC College Loop at Augusta University, dedicated to closing the gender gap in tech through sisterhood, education, and opportunity.</p>
       </div>
       <div class="footer-col"><h4>Resources</h4><ul>
         <li><a href="devresources.html">Dev Resources</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li>
@@ -140,181 +140,14 @@
         <li><a href="community.html">Community</a></li><li><a href="join.html">Join GWC</a></li>
         <li><a href="suggestion.html">Suggest a Resource</a></li>
         <li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li>
-        <li><a href="https://discord.gg/your-discord-invite" target="_blank">Discord ↗</a></li>
+        <li><a href="https://discord.gg/9CEqm6gjn7" target="_blank">Discord ↗</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
 
-  <script>
-  const CATEGORY_EMOJI = {
-    meeting:     { emoji: '🤝', bg: 'linear-gradient(135deg,#E5F8FF,#0169E1)' },
-    workshop:    { emoji: '📄', bg: 'linear-gradient(135deg,#D7F9F4,#43D6B9)' },
-    competition: { emoji: '🚩', bg: 'linear-gradient(135deg,#003046,#0D9C90)' },
-    collab:      { emoji: '🤝', bg: 'linear-gradient(135deg,#fce4ec,#e91e63)' },
-    fundraising: { emoji: '💛', bg: 'linear-gradient(135deg,#FDD946,#f09433)' },
-    social:      { emoji: '🎉', bg: 'linear-gradient(135deg,#D7F9F4,#FDD946)' },
-  };
-  const TAG_LABELS = { meeting:'Meeting', workshop:'Workshop', competition:'Competition', collab:'Collab', fundraising:'Fundraising', social:'Social' };
-
-  let allItems = [];
-  let visibleItems = [];
-  let currentIndex = 0;
-  let photoData = [];
-  const lightbox = document.getElementById('lightbox');
-
-  function escHtml(s) {
-    if (!s) return '';
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function buildCard(photo, index) {
-    const div = document.createElement('div');
-    div.className = 'gallery-item';
-    div.dataset.category = photo.category || 'social';
-    div.dataset.index = index;
-    const fallback = CATEGORY_EMOJI[photo.category] || { emoji:'📷', bg:'var(--teal-1)' };
-    const tagLabel = TAG_LABELS[photo.category] || photo.category;
-
-    if (photo.image) {
-      div.innerHTML = `
-        <img src="${escHtml(photo.image)}" alt="${escHtml(photo.title)}"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="gallery-placeholder" style="background:${fallback.bg};display:none;">${fallback.emoji}</div>
-        <div class="gallery-overlay">
-          <span class="go-tag">${tagLabel}</span>
-          <h3>${escHtml(photo.title)}</h3>
-          <p>${escHtml(photo.caption || photo.date)}</p>
-        </div>`;
-    } else {
-      div.innerHTML = `
-        <div class="gallery-placeholder" style="background:${fallback.bg};">${fallback.emoji}</div>
-        <div class="gallery-overlay">
-          <span class="go-tag">${tagLabel}</span>
-          <h3>${escHtml(photo.title)}</h3>
-          <p>${escHtml(photo.caption || photo.date)}</p>
-        </div>`;
-    }
-
-    div.addEventListener('click', () => {
-      visibleItems = allItems.filter(el => !el.classList.contains('hidden'));
-      currentIndex = visibleItems.indexOf(div);
-      openLightbox(photo);
-    });
-    return div;
-  }
-
-  function openLightbox(photo) {
-    const fallback = CATEGORY_EMOJI[photo.category] || { emoji:'📷', bg:'var(--teal-1)' };
-    const lbImg = document.getElementById('lightboxImg');
-    const lbPh = document.getElementById('lbPlaceholder');
-
-    if (photo.image) {
-      lbImg.src = photo.image;
-      lbImg.alt = photo.title;
-      lbImg.style.display = 'block';
-      lbPh.style.display = 'none';
-      lbImg.onerror = () => {
-        lbImg.style.display = 'none';
-        lbPh.style.background = fallback.bg;
-        lbPh.textContent = fallback.emoji;
-        lbPh.style.display = 'flex';
-      };
-    } else {
-      lbImg.style.display = 'none';
-      lbPh.style.background = fallback.bg;
-      lbPh.textContent = fallback.emoji;
-      lbPh.style.display = 'flex';
-    }
-
-    document.getElementById('lightboxTag').textContent = (TAG_LABELS[photo.category] || photo.category).toUpperCase();
-    document.getElementById('lightboxTitle').textContent = photo.title;
-    document.getElementById('lightboxDate').textContent = '📅 ' + photo.date;
-    document.getElementById('lightboxDesc').textContent = photo.description;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-
-  document.getElementById('lightboxPrev').addEventListener('click', () => {
-    if (!visibleItems.length) return;
-    currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
-    const idx = parseInt(visibleItems[currentIndex].dataset.index);
-    openLightbox(photoData[idx]);
-  });
-  document.getElementById('lightboxNext').addEventListener('click', () => {
-    if (!visibleItems.length) return;
-    currentIndex = (currentIndex + 1) % visibleItems.length;
-    const idx = parseInt(visibleItems[currentIndex].dataset.index);
-    openLightbox(photoData[idx]);
-  });
-
-  document.addEventListener('keydown', e => {
-    if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
-    if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
-  });
-
-  async function loadGallery() {
-    const grid = document.getElementById('galleryGrid');
-    try {
-      const res = await fetch('content.json?v=' + Date.now());
-      if (!res.ok) throw new Error();
-      const data = await res.json();
-      photoData = data.gallery || [];
-
-      grid.innerHTML = '';
-      if (!photoData.length) {
-        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--black-3);">No photos yet — check back soon!</div>';
-        return;
-      }
-      photoData.forEach((photo, i) => {
-        const card = buildCard(photo, i);
-        grid.appendChild(card);
-        allItems.push(card);
-      });
-      visibleItems = [...allItems];
-
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          const filter = btn.dataset.filter;
-          allItems.forEach(item => {
-            item.classList.toggle('hidden', filter !== 'all' && item.dataset.category !== filter);
-          });
-          visibleItems = allItems.filter(el => !el.classList.contains('hidden'));
-        });
-      });
-
-    } catch {
-      grid.innerHTML = `
-        <div style="grid-column:1/-1;background:var(--teal-1);border-radius:10px;padding:2rem;text-align:center;">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">📷</div>
-          <p style="color:var(--blue-4);font-weight:700;">Gallery coming soon!</p>
-          <p style="color:var(--black-3);font-size:0.83rem;margin-top:0.25rem;">Photos will appear here once the site is published on GitHub Pages.</p>
-        </div>`;
-    }
-  }
-
-  loadGallery();
-  </script>
-  <script>
-  function toggleMobileResources(btn) {
-    var sub = document.getElementById('mobileResourcesSub');
-    var caret = btn.querySelector('.mobile-acc-caret');
-    var open = sub.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    caret.innerHTML = open ? '&#9660;' : '&#9658;';
-  }
-  </script>
+  
+  
+  <script src="main.js" defer></script>
 </body>
 </html>

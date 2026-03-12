@@ -209,6 +209,8 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-brand .codeword { font-family: var(--font-mono); font-size: 1.45rem; font-weight: 700; color: var(--white); border: 2px solid var(--teal-2); padding: 0 5px 1px; display: inline-block; line-height: 1.15; }
 .footer-brand .au-sub { display: block; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.15em; color: var(--yellow-2); text-transform: uppercase; margin-top: 4px; }
 .footer-brand p { font-size: 0.85rem; line-height: 1.6; margin-top: 0.75rem; color: rgba(255,255,255,0.45); }
+.footer-logo { height: 52px; width: auto; display: block; margin-bottom: 0.75rem; }
+
 .footer-col h4 { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-2); margin-bottom: 1rem; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
 .footer-col li a { font-size: 0.85rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
