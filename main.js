@@ -394,7 +394,7 @@ function initJoinPage() {
 // ─────────────────────────────────────────────────────────────
 
 // ↓↓↓ PASTE YOUR SUGGESTION FORM WEB APP URL HERE ↓↓↓
-const SUGGESTION_SHEET_URL = '';
+const SUGGESTION_SHEET_URL = 'https://script.google.com/macros/s/AKfycby6LT5fbN_5i0C43iI8OHf1MmgBZdx2al8QMGU98hTCqol8ZQlcC6lQrgkkh9WIi3W16g/exec';
 // ↑↑↑ Example: 'https://script.google.com/macros/s/XYZ789.../exec'
 
 function resetSugForm() {
