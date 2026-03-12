@@ -315,59 +315,13 @@ async function initGalleryPage() {
 }
 
 // ─────────────────────────────────────────────────────────────
-//  JOIN PAGE — Interest form + localStorage + CSV export
+//  JOIN PAGE — Interest form → Google Sheets via Apps Script
+//  After deploying your Apps Script, paste the Web App URL below
 // ─────────────────────────────────────────────────────────────
-const INTEREST_KEY = 'gwc_interest_submissions';
 
-function getInterestSubmissions() {
-  try { return JSON.parse(localStorage.getItem(INTEREST_KEY)) || []; }
-  catch { return []; }
-}
-
-function saveInterestSubmission(data) {
-  const all = getInterestSubmissions();
-  all.push(data);
-  localStorage.setItem(INTEREST_KEY, JSON.stringify(all));
-}
-
-function refreshAdminTable() {
-  const data  = getInterestSubmissions();
-  const tbody = document.getElementById('adminTableBody');
-  const count = document.getElementById('adminCount');
-  if (!tbody) return;
-  if (count) count.textContent = `${data.length} submission${data.length !== 1 ? 's' : ''} stored in this browser.`;
-  tbody.innerHTML = data.length === 0
-    ? '<tr><td colspan="8" style="text-align:center;opacity:0.4;padding:1.5rem;">No submissions yet.</td></tr>'
-    : data.map(r => `
-        <tr>
-          <td>${r.submitted}</td>
-          <td>${r.firstName} ${r.lastName}</td>
-          <td>${r.email}</td>
-          <td>${r.major}</td>
-          <td>${r.classification}</td>
-          <td>${r.discord}</td>
-          <td style="max-width:140px;white-space:normal;">${r.interests}</td>
-          <td>${r.heardFrom}</td>
-        </tr>`).join('');
-}
-
-function exportInterestCSV() {
-  const data = getInterestSubmissions();
-  if (!data.length) { alert('No submissions to export yet!'); return; }
-  const headers = ['Submitted','First Name','Last Name','Email','Major','Classification','Discord','Interests','Heard From','Why Interested'];
-  const rows = data.map(r => [
-    r.submitted, r.firstName, r.lastName, r.email, r.major, r.classification,
-    r.discord, r.interests, r.heardFrom, r.statement
-  ].map(v => `"${String(v).replace(/"/g,'""')}"`).join(','));
-  downloadCSV([headers.join(','), ...rows].join('\n'), 'gwc_interest_forms.csv');
-}
-
-function clearInterestData() {
-  if (confirm('Are you sure? This will delete ALL stored interest form submissions from this browser.')) {
-    localStorage.removeItem(INTEREST_KEY);
-    refreshAdminTable();
-  }
-}
+// ↓↓↓ PASTE YOUR INTEREST FORM WEB APP URL HERE ↓↓↓
+const INTEREST_SHEET_URL = '';
+// ↑↑↑ Example: 'https://script.google.com/macros/s/ABC123.../exec'
 
 function resetInterestForm() {
   ['firstName','lastName','email','major','classification','discord','interest','heardFrom']
@@ -383,7 +337,7 @@ function initJoinPage() {
   const submitBtn = document.getElementById('submitBtn');
   if (!submitBtn) return;
 
-  submitBtn.addEventListener('click', () => {
+  submitBtn.addEventListener('click', async () => {
     const firstName      = document.getElementById('firstName').value.trim();
     const lastName       = document.getElementById('lastName').value.trim();
     const email          = document.getElementById('email').value.trim();
@@ -399,50 +353,49 @@ function initJoinPage() {
     }
     if (!email.includes('@')) { alert('Please enter a valid email address.'); return; }
 
-    saveInterestSubmission({
-      submitted: new Date().toLocaleString(),
-      firstName, lastName, email, major, classification,
-      discord: discord || '—', interests: checked || '—',
-      heardFrom: heardFrom || '—', statement: interest
-    });
+    if (!INTEREST_SHEET_URL) {
+      alert('Form setup not complete — the Google Sheet URL has not been configured yet. Please check back soon!');
+      return;
+    }
 
-    const form    = document.getElementById('interestForm');
-    const success = document.getElementById('formSuccess');
-    if (form)    form.style.display = 'none';
-    if (success) success.classList.add('show');
-    refreshAdminTable();
-  });
+    // Disable button while submitting
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
 
-  const adminDetails = document.getElementById('adminDetails');
-  if (adminDetails) adminDetails.addEventListener('toggle', function() {
-    if (this.open) refreshAdminTable();
+    try {
+      await fetch(INTEREST_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',  // required for Apps Script web apps
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName, lastName, email, major, classification,
+          discord:   discord   || '—',
+          interests: checked   || '—',
+          heardFrom: heardFrom || '—',
+          statement: interest
+        })
+      });
+      // no-cors means we can't read the response — assume success if no exception thrown
+      const form    = document.getElementById('interestForm');
+      const success = document.getElementById('formSuccess');
+      if (form)    form.style.display = 'none';
+      if (success) success.classList.add('show');
+    } catch (err) {
+      alert('Something went wrong submitting your form. Please try again or contact us on Discord.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Interest Form ✓';
+    }
   });
 }
 
 // ─────────────────────────────────────────────────────────────
-//  SUGGESTION PAGE
+//  SUGGESTION PAGE — Suggestion form → Google Sheets via Apps Script
+//  After deploying your Apps Script, paste the Web App URL below
 // ─────────────────────────────────────────────────────────────
-const SUG_KEY = 'gwc_suggestions';
 
-function getSuggestions() {
-  try { return JSON.parse(localStorage.getItem(SUG_KEY)) || []; } catch { return []; }
-}
-
-function refreshSugTable() {
-  const data  = getSuggestions();
-  const count = document.getElementById('sugAdminCount');
-  const tbody = document.getElementById('sugAdminTableBody');
-  if (!tbody) return;
-  if (count) count.textContent = `${data.length} suggestion${data.length !== 1 ? 's' : ''} stored in this browser.`;
-  tbody.innerHTML = data.length === 0
-    ? '<tr><td colspan="5" style="text-align:center;opacity:.4;padding:1.25rem;">No suggestions yet.</td></tr>'
-    : data.map(r => `<tr>
-        <td>${r.submitted}</td><td>${r.category}</td>
-        <td>${r.name}</td>
-        <td style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.link !== '—' ? `<a href="${r.link}" target="_blank" style="color:var(--teal-2)">${r.link}</a>` : '—'}</td>
-        <td style="max-width:200px;white-space:normal;">${r.why}</td>
-      </tr>`).join('');
-}
+// ↓↓↓ PASTE YOUR SUGGESTION FORM WEB APP URL HERE ↓↓↓
+const SUGGESTION_SHEET_URL = '';
+// ↑↑↑ Example: 'https://script.google.com/macros/s/XYZ789.../exec'
 
 function resetSugForm() {
   ['sugCategory','sugName','sugLink','sugWhy'].forEach(id => {
@@ -454,58 +407,45 @@ function resetSugForm() {
   if (success) success.classList.remove('show');
 }
 
-function exportSugCSV() {
-  const data = getSuggestions();
-  if (!data.length) { alert('No suggestions to export yet!'); return; }
-  const headers = ['Submitted','Category','Resource / Topic','Link','Why Add It?'];
-  const rows = data.map(r => [r.submitted, r.category, r.name, r.link, r.why]
-    .map(v => `"${String(v).replace(/"/g,'""')}"`).join(','));
-  downloadCSV([headers.join(','), ...rows].join('\n'), 'gwc_suggestions.csv');
-}
-
-function clearSugData() {
-  if (confirm('Delete ALL stored suggestions from this browser?')) {
-    localStorage.removeItem(SUG_KEY); refreshSugTable();
-  }
-}
-
 function initSuggestionPage() {
   const submitBtn = document.getElementById('sugSubmitBtn');
   if (!submitBtn) return;
 
-  submitBtn.addEventListener('click', () => {
+  submitBtn.addEventListener('click', async () => {
     const cat  = document.getElementById('sugCategory').value;
     const name = document.getElementById('sugName').value.trim();
     const link = document.getElementById('sugLink').value.trim();
     const why  = document.getElementById('sugWhy').value.trim();
+
     if (!cat || !name || !why) {
       alert('Please fill in the required fields (Category, Name, and Why).'); return;
     }
-    const entry = { submitted: new Date().toLocaleString(), category: cat, name, link: link || '—', why };
-    const all = getSuggestions(); all.push(entry);
-    localStorage.setItem(SUG_KEY, JSON.stringify(all));
-    const wrap    = document.getElementById('suggestionFormWrap');
-    const success = document.getElementById('sugFormSuccess');
-    if (wrap)    wrap.style.display = 'none';
-    if (success) success.classList.add('show');
-    refreshSugTable();
-  });
 
-  const adminDetails = document.getElementById('sugAdminDetails');
-  if (adminDetails) adminDetails.addEventListener('toggle', function() {
-    if (this.open) refreshSugTable();
-  });
-}
+    if (!SUGGESTION_SHEET_URL) {
+      alert('Form setup not complete — the Google Sheet URL has not been configured yet. Please check back soon!');
+      return;
+    }
 
-// ─────────────────────────────────────────────────────────────
-//  SHARED: CSV download helper
-// ─────────────────────────────────────────────────────────────
-function downloadCSV(csvString, filename) {
-  const blob = new Blob([csvString], { type: 'text/csv' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href = url; a.download = filename; a.click();
-  URL.revokeObjectURL(url);
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    try {
+      await fetch(SUGGESTION_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ category: cat, name, link: link || '—', why })
+      });
+      const wrap    = document.getElementById('suggestionFormWrap');
+      const success = document.getElementById('sugFormSuccess');
+      if (wrap)    wrap.style.display = 'none';
+      if (success) success.classList.add('show');
+    } catch (err) {
+      alert('Something went wrong. Please try again or contact us on Discord.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Suggestion ✓';
+    }
+  });
 }
 
 // ─────────────────────────────────────────────────────────────

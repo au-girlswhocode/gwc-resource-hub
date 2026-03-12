@@ -194,35 +194,14 @@
           <button onclick="resetForm()" style="margin-top:1.25rem;background:none;border:none;color:var(--black-3);font-size:0.78rem;cursor:pointer;text-decoration:underline;">Submit another response</button>
         </div>
 
-        <!-- OFFICER DOWNLOAD PANEL -->
-        <details class="admin-toggle" id="adminDetails">
-          <summary>🔒 Officer Access — View &amp; Export Submissions</summary>
-          <div class="admin-panel">
-            <h3>Interest Form Submissions</h3>
-            <div class="admin-count" id="adminCount">Loading…</div>
-            <div class="admin-table-wrap">
-              <table class="admin-table" id="adminTable">
-                <thead>
-                  <tr>
-                    <th>Submitted</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Major</th>
-                    <th>Year</th>
-                    <th>Discord</th>
-                    <th>Interests</th>
-                    <th>Heard From</th>
-                  </tr>
-                </thead>
-                <tbody id="adminTableBody"></tbody>
-              </table>
-            </div>
-            <div class="admin-actions">
-              <button class="btn btn-yellow" onclick="exportCSV('interest')" style="font-size:0.75rem;padding:0.5rem 1rem;">⬇ Download CSV</button>
-              <button onclick="clearData('interest')" style="background:rgba(255,80,80,0.15);border:1px solid rgba(255,80,80,0.3);color:rgba(255,120,120,0.8);border-radius:4px;padding:0.5rem 1rem;font-size:0.75rem;cursor:pointer;">🗑 Clear All Data</button>
-            </div>
-          </div>
-        </details>
+        <!-- OFFICER NOTE -->
+        <div style="background:var(--teal-1);border-radius:10px;padding:1.1rem 1.4rem;margin-top:1.5rem;display:flex;gap:0.75rem;align-items:flex-start;">
+          <span style="font-size:1.2rem;flex-shrink:0;">📊</span>
+          <p style="font-size:0.8rem;color:var(--black-3);line-height:1.6;margin:0;">
+            <strong style="color:var(--blue-4);">Officers:</strong> All interest form submissions go directly to the
+            <strong>GWC Interest Forms</strong> Google Sheet shared with your officer team.
+          </p>
+        </div>
       </div>
     </div>
   </section>

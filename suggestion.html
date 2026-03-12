@@ -118,26 +118,14 @@
         <button onclick="resetSugForm()" style="margin-top:1.25rem;background:none;border:none;color:var(--teal-3);font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:underline;">Submit another suggestion</button>
       </div>
 
-      <!-- OFFICER PANEL -->
-      <details class="admin-toggle" id="sugAdminDetails">
-        <summary>🔒 Officer Access — View &amp; Export Suggestions</summary>
-        <div class="admin-panel">
-          <h3>Anonymous Suggestions</h3>
-          <div class="admin-count" id="sugAdminCount">Loading…</div>
-          <div class="admin-table-wrap">
-            <table class="admin-table" id="sugAdminTable">
-              <thead>
-                <tr><th>Submitted</th><th>Category</th><th>Resource / Topic</th><th>Link</th><th>Why Add It?</th></tr>
-              </thead>
-              <tbody id="sugAdminTableBody"></tbody>
-            </table>
-          </div>
-          <div class="admin-actions">
-            <button class="btn btn-yellow" onclick="exportSugCSV()" style="font-size:.74rem;padding:.5rem 1rem;">⬇ Download CSV</button>
-            <button onclick="clearSugData()" style="background:rgba(255,80,80,.15);border:1px solid rgba(255,80,80,.3);color:rgba(255,120,120,.8);border-radius:4px;padding:.5rem 1rem;font-size:.74rem;cursor:pointer;">🗑 Clear All</button>
-          </div>
-        </div>
-      </details>
+      <!-- OFFICER NOTE -->
+      <div style="background:var(--teal-1);border-radius:10px;padding:1.1rem 1.4rem;margin-top:1.5rem;display:flex;gap:0.75rem;align-items:flex-start;">
+        <span style="font-size:1.2rem;flex-shrink:0;">📊</span>
+        <p style="font-size:0.8rem;color:var(--black-3);line-height:1.6;margin:0;">
+          <strong style="color:var(--blue-4);">Officers:</strong> All suggestions go directly to the
+          <strong>GWC Suggestions</strong> Google Sheet shared with your officer team.
+        </p>
+      </div>
 
       <div style="margin-top:3rem;">
         <span class="section-label">Categories We're Looking For</span>
