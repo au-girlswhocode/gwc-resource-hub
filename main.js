@@ -320,7 +320,7 @@ async function initGalleryPage() {
 // ─────────────────────────────────────────────────────────────
 
 // ↓↓↓ PASTE YOUR INTEREST FORM WEB APP URL HERE ↓↓↓
-const INTEREST_SHEET_URL = '';
+const INTEREST_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyKUb_adzeaC1Ysx2f2UJdoEAiGU4s6Q1ZQALbuS_Xhmvgy-HG7CZDgunUVYu4DpQM7Iw/exec';
 // ↑↑↑ Example: 'https://script.google.com/macros/s/ABC123.../exec'
 
 function resetInterestForm() {
