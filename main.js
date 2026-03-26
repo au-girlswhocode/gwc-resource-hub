@@ -433,11 +433,58 @@ async function initHomePage() {
 }
 
 // ─────────────────────────────────────────────────────────────
+//  SLIDES CAROUSEL (home page about section)
+// ─────────────────────────────────────────────────────────────
+async function initSlidesCarousel() {
+  const track   = document.getElementById('slidesTrack');
+  const dotsEl  = document.getElementById('slidesDots');
+  const prevBtn = document.getElementById('slidesPrev');
+  const nextBtn = document.getElementById('slidesNext');
+  if (!track) return;
+
+  let slides = [], current = 0;
+
+  try {
+    const res  = await fetch('content.json?v=' + Date.now());
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    slides = (data.slides || []).filter(s => s);
+  } catch { slides = []; }
+
+  if (!slides.length) return; // keep placeholder visible
+
+  track.innerHTML = slides.map(src =>
+    `<img src="${escHtml(src)}" alt="GWC Slide" loading="lazy">`
+  ).join('');
+
+  dotsEl.innerHTML = slides.map((_, i) =>
+    `<button class="slides-dot${i === 0 ? ' active' : ''}" data-i="${i}" aria-label="Slide ${i+1}"></button>`
+  ).join('');
+
+  function goTo(n) {
+    current = (n + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsEl.querySelectorAll('.slides-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === current)
+    );
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+  dotsEl.addEventListener('click', e => {
+    if (e.target.dataset.i !== undefined) goTo(Number(e.target.dataset.i));
+  });
+
+  // Auto-advance every 5s
+  setInterval(() => goTo(current + 1), 5000);
+}
+
+// ─────────────────────────────────────────────────────────────
 //  PAGE ROUTER — runs on DOMContentLoaded
 // ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.body.dataset.page;
-  if (page === 'home')       initHomePage();
+  if (page === 'home')       { initHomePage(); initSlidesCarousel(); }
   if (page === 'events')     initEventsPage();
   if (page === 'gallery')    initGalleryPage();
   if (page === 'join')       initJoinPage();

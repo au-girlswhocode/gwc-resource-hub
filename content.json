@@ -21,6 +21,9 @@
     }
   ],
 
+  "slides": [
+  ],
+
   "gallery_photos": [
     { "src": "photos/gallery/hackathons/before-ceremony.jpg",       "category": "hackathons" },
     { "src": "photos/gallery/hackathons/opening-ceremony.JPG",      "category": "hackathons" },

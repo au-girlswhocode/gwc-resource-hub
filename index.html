@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Girls Who Code @ Augusta University</title>
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body data-page="home">
   <header class="site-header">
@@ -62,7 +62,7 @@
         <span class="yellow">CODE</span><br>
         MAKE WAVES
       </h1>
-      <p>Your go-to hub for coding resources, career opportunities, certifications, and a community built to lift each other up. Whether you're just starting out or ready to lead — you belong here.</p>
+      <p>Your go-to hub for coding resources, career opportunities, certifications, and a community built to lift each other up. Whether you're just starting out or ready to lead, you belong here.</p>
       <div class="hero-ctas">
         <a href="join.html" class="btn btn-yellow">Join GWC</a>
         <a href="devresources.html" class="btn btn-primary">Start Learning</a>
@@ -85,10 +85,17 @@
   <section class="section" id="about">
     <div class="section-inner">
       <span class="section-label">Who We Are</span>
-      <h2 class="section-title">A College Loop at <span class="accent">Augusta University</span></h2>
+      <h2 class="section-title">GWC at <span class="accent">Augusta University</span></h2>
       <span class="wave-bar"></span>
-      <p class="section-subtitle">Girls Who Code College Loops are on-campus student organizations committed to reaching gender parity in tech. At Augusta University, we build sisterhood, grow technical skills, and connect members to real-world opportunities — for free.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <div class="slides-carousel" id="slidesCarousel">
+        <div class="slides-track" id="slidesTrack">
+          <div class="slides-placeholder">Add slides to the <code>slides/</code> folder and list them in <code>content.json</code> to show them here.</div>
+        </div>
+        <button class="slides-btn slides-prev" id="slidesPrev" aria-label="Previous">&#8592;</button>
+        <button class="slides-btn slides-next" id="slidesNext" aria-label="Next">&#8594;</button>
+        <div class="slides-dots" id="slidesDots"></div>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
         <a href="join.html" class="btn btn-primary">Fill Out Interest Form</a>
         <a href="community.html" class="btn btn-outline-teal">Learn More</a>
       </div>
@@ -171,9 +178,8 @@
   <section class="join-section">
     <div class="section-inner">
       <span class="section-label" style="color:var(--teal-2);">Get Involved</span>
-      <h2 class="section-title">Ready to <span style="color:var(--yellow-2);">Make Waves?</span></h2>
+      <h2 class="section-title" style="color:var(--white);">Join <span style="color:var(--yellow-2);">GWC @ AU</span></h2>
       <span class="wave-bar" style="margin:0.5rem auto 1.25rem;"></span>
-      <p class="section-subtitle" style="margin:0 auto 2.5rem;">Join a community of women building the future of tech. From day one, you belong here.</p>
       <div class="join-buttons">
         <a href="join.html" class="btn btn-yellow">Fill Out Interest Form</a>
         <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-discord">Join our Discord</a>
@@ -215,6 +221,6 @@
     <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
   </footer>
   
-  <script src="main.js?v=10" defer></script>
+  <script src="main.js?v=11" defer></script>
 </body>
 </html>
