@@ -130,14 +130,7 @@ async function initEventsPage() {
     if (fe.flyer_image) {
       el.innerHTML = `
         <div class="flyer-card">
-          <div class="flyer-card-img">
-            <img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer" class="flyer-expandable" title="Click to expand">
-          </div>
-          <div class="flyer-card-info">
-            <span class="flyer-card-label">Monthly Events</span>
-            <h3 class="flyer-card-title">${escHtml(fe.title || 'This Month at GWC')}</h3>
-            ${fe.description ? `<p class="flyer-card-desc">${escHtml(fe.description)}</p>` : ''}
-          </div>
+          <img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer" class="flyer-expandable" title="Click to expand">
         </div>`;
       const flyerImg = el.querySelector('.flyer-expandable');
       if (flyerImg) {
@@ -417,14 +410,7 @@ async function initHomePage() {
     if (fe.flyer_image) {
       el.innerHTML = `
         <div class="flyer-card">
-          <div class="flyer-card-img">
-            <img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer" class="flyer-expandable" title="Click to expand">
-          </div>
-          <div class="flyer-card-info">
-            <span class="flyer-card-label">Monthly Events</span>
-            <h3 class="flyer-card-title">${escHtml(fe.title || 'This Month at GWC')}</h3>
-            ${fe.description ? `<p class="flyer-card-desc">${escHtml(fe.description)}</p>` : ''}
-          </div>
+          <img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer" class="flyer-expandable" title="Click to expand">
         </div>`;
       const flyerImg = el.querySelector('.flyer-expandable');
       if (flyerImg) {
