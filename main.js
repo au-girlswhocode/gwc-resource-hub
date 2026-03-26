@@ -415,8 +415,29 @@ async function initHomePage() {
     const data = await res.json();
     const fe   = data.featured_event || {};
     if (fe.flyer_image) {
-      el.innerHTML = `<img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer"
-        style="max-width:480px;width:100%;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.12);">`;
+      el.innerHTML = `
+        <div class="flyer-card">
+          <div class="flyer-card-img">
+            <img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer" class="flyer-expandable" title="Click to expand">
+          </div>
+          <div class="flyer-card-info">
+            <span class="flyer-card-label">Monthly Events</span>
+            <h3 class="flyer-card-title">${escHtml(fe.title || 'This Month at GWC')}</h3>
+            ${fe.description ? `<p class="flyer-card-desc">${escHtml(fe.description)}</p>` : ''}
+          </div>
+        </div>`;
+      const flyerImg = el.querySelector('.flyer-expandable');
+      if (flyerImg) {
+        flyerImg.addEventListener('click', () => {
+          const ov = document.createElement('div');
+          ov.id = 'flyerOverlay';
+          ov.innerHTML = `<img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer"><button id="flyerOverlayClose">✕</button>`;
+          ov.addEventListener('click', e => { if (e.target === ov) { ov.remove(); document.body.style.overflow = ''; } });
+          document.body.appendChild(ov);
+          document.body.style.overflow = 'hidden';
+          document.getElementById('flyerOverlayClose').addEventListener('click', () => { ov.remove(); document.body.style.overflow = ''; });
+        });
+      }
     } else {
       el.innerHTML = `<p style="color:var(--black-3);font-size:0.875rem;">Flyer coming soon — check our <a href="https://discord.gg/9CEqm6gjn7" style="color:var(--teal-3);font-weight:700;">Discord</a> for updates!</p>`;
     }
