@@ -138,16 +138,6 @@ async function initEventsPage() {
             <h3 class="flyer-card-title">${escHtml(fe.title || 'This Month at GWC')}</h3>
             ${fe.subtitle ? `<p class="flyer-card-sub">${escHtml(fe.subtitle)}</p>` : ''}
             ${fe.description ? `<p class="flyer-card-desc">${escHtml(fe.description)}</p>` : ''}
-            <div class="flyer-card-meta">
-              ${fe.date_display ? `<span>📅 ${escHtml(fe.date_display)}</span>` : ''}
-              ${fe.time ? `<span>⏰ ${escHtml(fe.time)}</span>` : ''}
-              ${fe.location ? `<span>📍 ${escHtml(fe.location)}</span>` : ''}
-            </div>
-            ${fe.note ? `<p class="flyer-card-note">✅ ${escHtml(fe.note)}</p>` : ''}
-            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1.25rem;">
-              <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-primary" style="font-size:0.8rem;">Discord</a>
-              <a href="https://www.instagram.com/aug_girlswhocode/" target="_blank" class="btn btn-outline-teal" style="font-size:0.8rem;">Instagram ↗</a>
-            </div>
           </div>
         </div>`;
     } else {
