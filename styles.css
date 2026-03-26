@@ -690,24 +690,53 @@ img { max-width: 100%; height: auto; display: block; }
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: start;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .flyer-insta-col {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-}
-.flyer-insta-label {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--teal-4);
-  font-weight: 700;
 }
 .flyer-insta-col .instagram-media {
   width: 100% !important;
   min-width: 0 !important;
+  margin: 0 !important;
+}
+.flyer-expandable {
+  cursor: zoom-in;
+}
+.flyer-expandable:hover {
+  opacity: 0.9;
+}
+#flyerOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#flyerOverlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+#flyerOverlayClose {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 @media (max-width: 860px) {
   .flyer-insta-row { grid-template-columns: 1fr; }

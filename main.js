@@ -131,15 +131,26 @@ async function initEventsPage() {
       el.innerHTML = `
         <div class="flyer-card">
           <div class="flyer-card-img">
-            <img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer">
+            <img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer" class="flyer-expandable" title="Click to expand">
           </div>
           <div class="flyer-card-info">
             <span class="flyer-card-label">Monthly Events</span>
             <h3 class="flyer-card-title">${escHtml(fe.title || 'This Month at GWC')}</h3>
-            ${fe.subtitle ? `<p class="flyer-card-sub">${escHtml(fe.subtitle)}</p>` : ''}
             ${fe.description ? `<p class="flyer-card-desc">${escHtml(fe.description)}</p>` : ''}
           </div>
         </div>`;
+      const flyerImg = el.querySelector('.flyer-expandable');
+      if (flyerImg) {
+        flyerImg.addEventListener('click', () => {
+          const ov = document.createElement('div');
+          ov.id = 'flyerOverlay';
+          ov.innerHTML = `<img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer"><button id="flyerOverlayClose">✕</button>`;
+          ov.addEventListener('click', e => { if (e.target === ov) { ov.remove(); document.body.style.overflow = ''; } });
+          document.body.appendChild(ov);
+          document.body.style.overflow = 'hidden';
+          document.getElementById('flyerOverlayClose').addEventListener('click', () => { ov.remove(); document.body.style.overflow = ''; });
+        });
+      }
     } else {
       el.innerHTML = `<div style="background:var(--teal-1);border-radius:10px;padding:2rem;color:var(--black-3);font-size:0.875rem;">Flyer coming soon — check our Discord for the latest!</div>`;
     }
