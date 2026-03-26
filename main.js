@@ -148,7 +148,7 @@ async function initEventsPage() {
 }
 
 // ─────────────────────────────────────────────────────────────
-//  GALLERY PAGE — photo grid per album, no cropping
+//  GALLERY PAGE — two carousels per row, full photo ratio
 // ─────────────────────────────────────────────────────────────
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
@@ -191,21 +191,14 @@ async function initGalleryPage() {
   }
 
   function openLb(photos, index) {
-    lbPhotos = photos;
-    lbIndex  = index;
+    lbPhotos = photos; lbIndex = index;
     showLb();
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', () => {
-    lbIndex = (lbIndex - 1 + lbPhotos.length) % lbPhotos.length;
-    showLb();
-  });
-  if (nextBtn) nextBtn.addEventListener('click', () => {
-    lbIndex = (lbIndex + 1) % lbPhotos.length;
-    showLb();
-  });
+  if (prevBtn) prevBtn.addEventListener('click', () => { lbIndex = (lbIndex - 1 + lbPhotos.length) % lbPhotos.length; showLb(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { lbIndex = (lbIndex + 1) % lbPhotos.length; showLb(); });
   document.addEventListener('keydown', e => {
     if (!lightbox || !lightbox.classList.contains('open')) return;
     if (e.key === 'Escape')     closeLightbox();
@@ -235,14 +228,34 @@ async function initGalleryPage() {
         <div class="album-header">
           <span class="event-tag" style="${tagStyle}">${escHtml(album.tag)}</span>
           <h3 class="album-title">${escHtml(album.title)}</h3>
+          <span class="carousel-counter">1 / ${photos.length}</span>
         </div>
-        <div class="album-grid">
-          ${photos.map((src, i) =>
-            `<img src="${escHtml(src)}" alt="${escHtml(album.title)}" loading="lazy" data-index="${i}">`
-          ).join('')}
+        <div class="carousel-wrap">
+          <button class="carousel-btn carousel-prev" aria-label="Previous">&#8249;</button>
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              ${photos.map(src => `
+                <div class="carousel-slide">
+                  <img src="${escHtml(src)}" alt="${escHtml(album.title)}" loading="lazy">
+                </div>`).join('')}
+            </div>
+          </div>
+          <button class="carousel-btn carousel-next" aria-label="Next">&#8250;</button>
         </div>`;
 
-      section.querySelectorAll('.album-grid img').forEach((img, i) => {
+      let cur = 0;
+      const track   = section.querySelector('.carousel-track');
+      const counter = section.querySelector('.carousel-counter');
+
+      function goTo(i) {
+        cur = (i + photos.length) % photos.length;
+        track.style.transform = `translateX(-${cur * 100}%)`;
+        counter.textContent   = `${cur + 1} / ${photos.length}`;
+      }
+
+      section.querySelector('.carousel-prev').addEventListener('click', () => goTo(cur - 1));
+      section.querySelector('.carousel-next').addEventListener('click', () => goTo(cur + 1));
+      section.querySelectorAll('.carousel-slide img').forEach((img, i) => {
         img.addEventListener('click', () => openLb(photos, i));
       });
 
