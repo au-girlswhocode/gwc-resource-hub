@@ -385,10 +385,33 @@ function initSuggestionPage() {
 }
 
 // ─────────────────────────────────────────────────────────────
+//  HOME PAGE — monthly flyer
+// ─────────────────────────────────────────────────────────────
+async function initHomePage() {
+  const el = document.getElementById('homeFlyerBlock');
+  if (!el) return;
+  try {
+    const res  = await fetch('content.json?v=' + Date.now());
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    const fe   = data.featured_event || {};
+    if (fe.flyer_image) {
+      el.innerHTML = `<img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer"
+        style="max-width:480px;width:100%;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.12);">`;
+    } else {
+      el.innerHTML = `<p style="color:var(--black-3);font-size:0.875rem;">Flyer coming soon — check our <a href="https://discord.gg/9CEqm6gjn7" style="color:var(--teal-3);font-weight:700;">Discord</a> for updates!</p>`;
+    }
+  } catch {
+    el.innerHTML = `<p style="color:var(--black-3);font-size:0.875rem;">Flyer coming soon — check our <a href="https://discord.gg/9CEqm6gjn7" style="color:var(--teal-3);font-weight:700;">Discord</a> for updates!</p>`;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
 //  PAGE ROUTER — runs on DOMContentLoaded
 // ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.body.dataset.page;
+  if (page === 'home')       initHomePage();
   if (page === 'events')     initEventsPage();
   if (page === 'gallery')    initGalleryPage();
   if (page === 'join')       initJoinPage();
