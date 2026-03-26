@@ -546,7 +546,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-item:hover > a .nav-caret { transform: rotate(180deg); opacity: 1; }
 
 .nav-dropdown {
-  display: none; position: absolute; top: calc(100% + 10px); right: 0;
+  display: none; position: absolute; top: 100%; right: 0; margin-top: 2px;
   background: var(--white); min-width: 210px; border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.14); border: 1px solid rgba(0,0,0,0.07);
   padding: 0.4rem; z-index: 200;
