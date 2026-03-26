@@ -684,6 +684,35 @@ img { max-width: 100%; height: auto; display: block; }
   .flyer-card-img img { width: 100%; }
 }
 
+/* ===== FLYER + INSTAGRAM SIDE-BY-SIDE ===== */
+.flyer-insta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+.flyer-insta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.flyer-insta-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-4);
+  font-weight: 700;
+}
+.flyer-insta-col .instagram-media {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+@media (max-width: 860px) {
+  .flyer-insta-row { grid-template-columns: 1fr; }
+}
+
 /* ===== CALENDAR KEY ===== */
 .cal-key {
   background: var(--teal-1); border-radius: 10px;

@@ -144,7 +144,10 @@ async function initEventsPage() {
               ${fe.location ? `<span>📍 ${escHtml(fe.location)}</span>` : ''}
             </div>
             ${fe.note ? `<p class="flyer-card-note">✅ ${escHtml(fe.note)}</p>` : ''}
-            <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-primary" style="margin-top:1.25rem;font-size:0.8rem;">Stay Updated on Discord</a>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1.25rem;">
+              <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-primary" style="font-size:0.8rem;">Discord</a>
+              <a href="https://www.instagram.com/aug_girlswhocode/" target="_blank" class="btn btn-outline-teal" style="font-size:0.8rem;">Instagram ↗</a>
+            </div>
           </div>
         </div>`;
     } else {
