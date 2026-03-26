@@ -1,0 +1,84 @@
+{
+  "featured_event": {
+    "title": "Monthly Events",
+    "subtitle": "Spring 2025",
+    "description": "Check out what's coming up this month for GWC @ Augusta University! Workshops, meetings, and more — something for everyone.",
+    "date_display": "TBA",
+    "time": "TBA",
+    "location": "University Hall",
+    "note": "Join our Discord for real-time updates!",
+    "flyer_image": "flyers/flyer-march-2025.png"
+  },
+
+  "event_cards": [
+    {
+      "tag": "Meeting",
+      "title": "General Body Meeting",
+      "date_display": "TBA",
+      "time": "TBA",
+      "location": "University Hall",
+      "description": "Updates, resources, and a great chance to connect with the GWC community."
+    }
+  ],
+
+  "gallery": [],
+
+  "gallery_albums": [
+    {
+      "id": "vandy-hacks26",
+      "title": "Vandy Hacks 2026",
+      "tag": "Hackathon",
+      "photos": [
+        "photos/gallery/vandy-hacks26/opening-ceremony.JPG",
+        "photos/gallery/vandy-hacks26/before-ceremony.jpg",
+        "photos/gallery/vandy-hacks26/making-uvie.JPG",
+        "photos/gallery/vandy-hacks26/team-uvie.JPG",
+        "photos/gallery/vandy-hacks26/devpost-submit.JPG",
+        "photos/gallery/vandy-hacks26/pit-stop.JPG",
+        "photos/gallery/vandy-hacks26/best-design.jpeg",
+        "photos/gallery/vandy-hacks26/winning-team.jpeg",
+        "photos/gallery/vandy-hacks26/winning-teams.JPG",
+        "photos/gallery/vandy-hacks26/parthenon.jpg",
+        "photos/gallery/vandy-hacks26/vanderbilt-sign.JPG"
+      ]
+    },
+    {
+      "id": "ncae26",
+      "title": "NCAE 2026",
+      "tag": "Competition",
+      "photos": [
+        "photos/gallery/ncae26/before-ncae.jpg",
+        "photos/gallery/ncae26/teamb-postcomp.jpg"
+      ]
+    },
+    {
+      "id": "jagathon26",
+      "title": "Jagathon 2026",
+      "tag": "Hackathon",
+      "photos": [
+        "photos/gallery/jagathon26/jagathon-team.jpg",
+        "photos/gallery/jagathon26/jagathon-game.jpg"
+      ]
+    },
+    {
+      "id": "gen-meetings",
+      "title": "General Meetings — Fall '25 / Spring '26",
+      "tag": "Meeting",
+      "photos": [
+        "photos/gallery/fall25-spring26-gen-meetings/president-intro.JPG",
+        "photos/gallery/fall25-spring26-gen-meetings/patrick-meeting.jpg",
+        "photos/gallery/fall25-spring26-gen-meetings/jar-lanterns.jpg",
+        "photos/gallery/fall25-spring26-gen-meetings/prize-winners.jpg"
+      ]
+    },
+    {
+      "id": "clubfest",
+      "title": "Club Fest",
+      "tag": "Social",
+      "photos": [
+        "photos/gallery/clubfest/clubfest-pro-photo.png",
+        "photos/gallery/clubfest/clubfest25.jpg"
+      ]
+    }
+  ]
+}

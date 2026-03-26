@@ -1,0 +1,55 @@
+================================================
+  GWC @ AU — HOW TO UPDATE THE MONTHLY FLYER
+================================================
+
+EVERY MONTH, DO THESE 3 STEPS:
+
+STEP 1 — Add your new flyer image to this folder
+  - Name it like: flyer-april-2025.png
+  - Use PNG or JPG. Keep it under 2MB if possible.
+  - Name format: flyer-[month]-[year].png
+
+STEP 2 — Open content.json (it's in the main folder)
+  Edit the "featured_event" section at the top:
+
+    "title"        → Name of the main event (or "Monthly Events")
+    "subtitle"     → e.g. "April 2025" or "Spring 2025"
+    "description"  → A short 1-2 sentence description
+    "date_display" → e.g. "April 14" or "TBA"
+    "time"         → e.g. "5:00 PM" or "TBA"
+    "location"     → e.g. "UH 242" or "University Hall"
+    "note"         → Optional callout (e.g. "Free food!" or leave blank "")
+    "flyer_image"  → "flyers/flyer-april-2025.png"  ← UPDATE THIS to match your file name
+
+STEP 3 — Update the event_cards list (optional)
+  Add, remove, or edit individual event cards below the featured event.
+  Each card looks like this:
+
+    {
+      "tag": "Workshop",
+      "title": "Resume Building Workshop",
+      "date_display": "April 3",
+      "time": "5:00 PM",
+      "location": "UH 242",
+      "description": "Tips on formatting, tech keywords, and peer feedback."
+    }
+
+  Tag options: Meeting, Workshop, Competition, Hackathon, Social, Collab
+
+STEP 4 — Save and push to GitHub
+  The website will automatically show the new flyer and events!
+
+================================================
+  EXAMPLE content.json featured_event section:
+
+  "featured_event": {
+    "title": "Intro to Python Workshop",
+    "subtitle": "April 2025",
+    "description": "A beginner-friendly workshop on Python basics. No experience needed!",
+    "date_display": "April 14",
+    "time": "5:00 PM",
+    "location": "UH 242",
+    "note": "Free snacks!",
+    "flyer_image": "flyers/flyer-april-2025.png"
+  }
+================================================
