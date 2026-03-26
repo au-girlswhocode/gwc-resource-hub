@@ -148,7 +148,7 @@ async function initEventsPage() {
 }
 
 // ─────────────────────────────────────────────────────────────
-//  GALLERY PAGE — carousel per album
+//  GALLERY PAGE — photo grid per album, no cropping
 // ─────────────────────────────────────────────────────────────
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
@@ -161,7 +161,6 @@ async function initGalleryPage() {
   const lightbox  = document.getElementById('lightbox');
   if (!container) return;
 
-  // Lightbox wiring
   const lbImg    = document.getElementById('lightboxImg');
   const lbPh     = document.getElementById('lbPlaceholder');
   const closeBtn = document.getElementById('lightboxClose');
@@ -234,39 +233,16 @@ async function initGalleryPage() {
       section.className = 'album-section';
       section.innerHTML = `
         <div class="album-header">
-          <div class="album-header-left">
-            <span class="event-tag" style="${tagStyle}">${escHtml(album.tag)}</span>
-            <h3 class="album-title">${escHtml(album.title)}</h3>
-          </div>
-          <span class="carousel-counter">1 / ${photos.length}</span>
+          <span class="event-tag" style="${tagStyle}">${escHtml(album.tag)}</span>
+          <h3 class="album-title">${escHtml(album.title)}</h3>
         </div>
-        <div class="carousel-wrap">
-          <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
-          <div class="carousel-viewport">
-            <div class="carousel-track">
-              ${photos.map(src => `
-                <div class="carousel-slide">
-                  <img src="${escHtml(src)}" alt="${escHtml(album.title)}" loading="lazy">
-                </div>`).join('')}
-            </div>
-          </div>
-          <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
+        <div class="album-grid">
+          ${photos.map((src, i) =>
+            `<img src="${escHtml(src)}" alt="${escHtml(album.title)}" loading="lazy" data-index="${i}">`
+          ).join('')}
         </div>`;
 
-      let cur = 0;
-      const track   = section.querySelector('.carousel-track');
-      const counter = section.querySelector('.carousel-counter');
-
-      function goTo(i) {
-        cur = (i + photos.length) % photos.length;
-        track.style.transform = `translateX(-${cur * 100}%)`;
-        counter.textContent   = `${cur + 1} / ${photos.length}`;
-      }
-
-      section.querySelector('.carousel-prev').addEventListener('click', () => goTo(cur - 1));
-      section.querySelector('.carousel-next').addEventListener('click', () => goTo(cur + 1));
-
-      section.querySelectorAll('.carousel-slide img').forEach((img, i) => {
+      section.querySelectorAll('.album-grid img').forEach((img, i) => {
         img.addEventListener('click', () => openLb(photos, i));
       });
 
