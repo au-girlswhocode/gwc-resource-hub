@@ -148,7 +148,7 @@ async function initEventsPage() {
 }
 
 // ─────────────────────────────────────────────────────────────
-//  GALLERY PAGE — two carousels per row, full photo ratio
+//  GALLERY PAGE — filterable masonry wall
 // ─────────────────────────────────────────────────────────────
 function closeLightbox() {
   const lightbox = document.getElementById('lightbox');
@@ -157,9 +157,9 @@ function closeLightbox() {
 }
 
 async function initGalleryPage() {
-  const container = document.getElementById('galleryCarousels');
-  const lightbox  = document.getElementById('lightbox');
-  if (!container) return;
+  const wall     = document.getElementById('galleryWall');
+  const lightbox = document.getElementById('lightbox');
+  if (!wall) return;
 
   const lbImg    = document.getElementById('lightboxImg');
   const lbPh     = document.getElementById('lbPlaceholder');
@@ -170,11 +170,12 @@ async function initGalleryPage() {
   if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
   if (lightbox) lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 
-  let lbPhotos = [], lbIndex = 0;
+  // lbVisible = photos currently shown (respects active filter)
+  let allPhotos = [], lbVisible = [], lbIndex = 0;
 
   function showLb() {
-    const src = lbPhotos[lbIndex];
-    lbImg.src = src;
+    const photo = lbVisible[lbIndex];
+    lbImg.src = photo.src;
     lbImg.alt = '';
     lbImg.style.display = 'block';
     lbPh.style.display  = 'none';
@@ -187,18 +188,11 @@ async function initGalleryPage() {
     document.getElementById('lightboxTag').textContent   = '';
     document.getElementById('lightboxTitle').textContent = '';
     document.getElementById('lightboxDate').textContent  = '';
-    document.getElementById('lightboxDesc').textContent  = `${lbIndex + 1} / ${lbPhotos.length}`;
+    document.getElementById('lightboxDesc').textContent  = `${lbIndex + 1} / ${lbVisible.length}`;
   }
 
-  function openLb(photos, index) {
-    lbPhotos = photos; lbIndex = index;
-    showLb();
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  if (prevBtn) prevBtn.addEventListener('click', () => { lbIndex = (lbIndex - 1 + lbPhotos.length) % lbPhotos.length; showLb(); });
-  if (nextBtn) nextBtn.addEventListener('click', () => { lbIndex = (lbIndex + 1) % lbPhotos.length; showLb(); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { lbIndex = (lbIndex - 1 + lbVisible.length) % lbVisible.length; showLb(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { lbIndex = (lbIndex + 1) % lbVisible.length; showLb(); });
   document.addEventListener('keydown', e => {
     if (!lightbox || !lightbox.classList.contains('open')) return;
     if (e.key === 'Escape')     closeLightbox();
@@ -209,61 +203,52 @@ async function initGalleryPage() {
   try {
     const res  = await fetch('content.json?v=' + Date.now());
     if (!res.ok) throw new Error();
-    const data   = await res.json();
-    const albums = data.gallery_albums || [];
+    const data = await res.json();
+    allPhotos  = data.gallery_photos || [];
 
-    if (!albums.length) {
-      container.innerHTML = '<div style="text-align:center;padding:3rem;color:var(--black-3);">No albums yet — check back soon!</div>';
+    if (!allPhotos.length) {
+      wall.innerHTML = '<div style="text-align:center;padding:3rem;color:var(--black-3);">No photos yet — check back soon!</div>';
       return;
     }
 
-    container.innerHTML = '';
-
-    albums.forEach(album => {
-      const photos   = album.photos || [];
-      const tagStyle = TAG_STYLES[album.tag] || 'background:var(--teal-1);color:var(--teal-3);';
-      const section  = document.createElement('div');
-      section.className = 'album-section';
-      section.innerHTML = `
-        <div class="album-header">
-          <span class="event-tag" style="${tagStyle}">${escHtml(album.tag)}</span>
-          <h3 class="album-title">${escHtml(album.title)}</h3>
-          <span class="carousel-counter">1 / ${photos.length}</span>
-        </div>
-        <div class="carousel-wrap">
-          <button class="carousel-btn carousel-prev" aria-label="Previous">&#8249;</button>
-          <div class="carousel-viewport">
-            <div class="carousel-track">
-              ${photos.map(src => `
-                <div class="carousel-slide">
-                  <img src="${escHtml(src)}" alt="${escHtml(album.title)}" loading="lazy">
-                </div>`).join('')}
-            </div>
-          </div>
-          <button class="carousel-btn carousel-next" aria-label="Next">&#8250;</button>
-        </div>`;
-
-      let cur = 0;
-      const track   = section.querySelector('.carousel-track');
-      const counter = section.querySelector('.carousel-counter');
-
-      function goTo(i) {
-        cur = (i + photos.length) % photos.length;
-        track.style.transform = `translateX(-${cur * 100}%)`;
-        counter.textContent   = `${cur + 1} / ${photos.length}`;
-      }
-
-      section.querySelector('.carousel-prev').addEventListener('click', () => goTo(cur - 1));
-      section.querySelector('.carousel-next').addEventListener('click', () => goTo(cur + 1));
-      section.querySelectorAll('.carousel-slide img').forEach((img, i) => {
-        img.addEventListener('click', () => openLb(photos, i));
+    // Build wall items
+    wall.innerHTML = '';
+    allPhotos.forEach((photo) => {
+      const item = document.createElement('div');
+      item.className = 'gallery-wall-item';
+      item.dataset.category = photo.category || 'other';
+      item.innerHTML = `<img src="${escHtml(photo.src)}" alt="" loading="lazy">`;
+      item.addEventListener('click', () => {
+        lbVisible = allPhotos.filter((_, j) =>
+          !wall.children[j].classList.contains('gw-hidden')
+        );
+        lbIndex = lbVisible.indexOf(photo);
+        showLb();
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
       });
+      wall.appendChild(item);
+    });
 
-      container.appendChild(section);
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.gallery-wall-item').forEach(item => {
+          const matches = filter === 'all' || item.dataset.category === filter;
+          if (matches) {
+            item.classList.remove('gw-hidden');
+          } else {
+            item.classList.add('gw-hidden');
+          }
+        });
+      });
     });
 
   } catch {
-    container.innerHTML = `
+    wall.innerHTML = `
       <div style="background:var(--teal-1);border-radius:10px;padding:2rem;text-align:center;">
         <div style="font-size:2rem;margin-bottom:0.5rem;">📷</div>
         <p style="color:var(--blue-4);font-weight:700;">Gallery coming soon!</p>

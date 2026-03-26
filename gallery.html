@@ -67,7 +67,16 @@
       <h2 class="section-title">Chapter <span class="accent">Moments</span></h2>
       <span class="wave-bar"></span>
 
-      <div id="galleryCarousels">
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="meetings">Meetings</button>
+        <button class="filter-btn" data-filter="hackathons">Hackathons</button>
+        <button class="filter-btn" data-filter="competitions">Competitions</button>
+        <button class="filter-btn" data-filter="tabling">Tabling</button>
+        <button class="filter-btn" data-filter="fundraisers">Fundraisers</button>
+      </div>
+
+      <div class="gallery-wall" id="galleryWall">
         <div style="text-align:center;padding:3rem;color:var(--black-3);font-family:var(--font-mono);font-size:0.8rem;">Loading gallery…</div>
       </div>
 

@@ -21,64 +21,27 @@
     }
   ],
 
-  "gallery": [],
-
-  "gallery_albums": [
-    {
-      "id": "vandy-hacks26",
-      "title": "Vandy Hacks 2026",
-      "tag": "Hackathon",
-      "photos": [
-        "photos/gallery/vandy-hacks26/before-ceremony.jpg",
-        "photos/gallery/vandy-hacks26/opening-ceremony.JPG",
-        "photos/gallery/vandy-hacks26/making-uvie.JPG",
-        "photos/gallery/vandy-hacks26/team-uvie.JPG",
-        "photos/gallery/vandy-hacks26/devpost-submit.JPG",
-        "photos/gallery/vandy-hacks26/pit-stop.JPG",
-        "photos/gallery/vandy-hacks26/best-design.jpeg",
-        "photos/gallery/vandy-hacks26/winning-team.jpeg",
-        "photos/gallery/vandy-hacks26/winning-teams.JPG",
-        "photos/gallery/vandy-hacks26/parthenon.jpg",
-        "photos/gallery/vandy-hacks26/vanderbilt-sign.JPG"
-      ]
-    },
-    {
-      "id": "ncae26",
-      "title": "NCAE 2026",
-      "tag": "Competition",
-      "photos": [
-        "photos/gallery/ncae26/before-ncae.jpg",
-        "photos/gallery/ncae26/teamb-postcomp.jpg"
-      ]
-    },
-    {
-      "id": "jagathon26",
-      "title": "Jagathon 2026",
-      "tag": "Hackathon",
-      "photos": [
-        "photos/gallery/jagathon26/jagathon-team.jpg",
-        "photos/gallery/jagathon26/jagathon-game.jpg"
-      ]
-    },
-    {
-      "id": "gen-meetings",
-      "title": "General Meetings — Fall '25 / Spring '26",
-      "tag": "Meeting",
-      "photos": [
-        "photos/gallery/fall25-spring26-gen-meetings/president-intro.JPG",
-        "photos/gallery/fall25-spring26-gen-meetings/patrick-meeting.jpg",
-        "photos/gallery/fall25-spring26-gen-meetings/jar-lanterns.jpg",
-        "photos/gallery/fall25-spring26-gen-meetings/prize-winners.jpg"
-      ]
-    },
-    {
-      "id": "clubfest",
-      "title": "Club Fest",
-      "tag": "Social",
-      "photos": [
-        "photos/gallery/clubfest/clubfest-pro-photo.png",
-        "photos/gallery/clubfest/clubfest25.jpg"
-      ]
-    }
+  "gallery_photos": [
+    { "src": "photos/gallery/vandy-hacks26/before-ceremony.jpg",    "category": "hackathons" },
+    { "src": "photos/gallery/vandy-hacks26/opening-ceremony.JPG",   "category": "hackathons" },
+    { "src": "photos/gallery/vandy-hacks26/making-uvie.JPG",        "category": "hackathons" },
+    { "src": "photos/gallery/vandy-hacks26/team-uvie.JPG",          "category": "hackathons" },
+    { "src": "photos/gallery/vandy-hacks26/devpost-submit.JPG",     "category": "hackathons" },
+    { "src": "photos/gallery/vandy-hacks26/pit-stop.JPG",           "category": "hackathons" },
+    { "src": "photos/gallery/vandy-hacks26/best-design.jpeg",       "category": "hackathons" },
+    { "src": "photos/gallery/vandy-hacks26/winning-team.jpeg",      "category": "hackathons" },
+    { "src": "photos/gallery/vandy-hacks26/winning-teams.JPG",      "category": "hackathons" },
+    { "src": "photos/gallery/vandy-hacks26/parthenon.jpg",          "category": "hackathons" },
+    { "src": "photos/gallery/vandy-hacks26/vanderbilt-sign.JPG",    "category": "hackathons" },
+    { "src": "photos/gallery/jagathon26/jagathon-team.jpg",         "category": "hackathons" },
+    { "src": "photos/gallery/jagathon26/jagathon-game.jpg",         "category": "hackathons" },
+    { "src": "photos/gallery/ncae26/before-ncae.jpg",               "category": "competitions" },
+    { "src": "photos/gallery/ncae26/teamb-postcomp.jpg",            "category": "competitions" },
+    { "src": "photos/gallery/fall25-spring26-gen-meetings/president-intro.JPG", "category": "meetings" },
+    { "src": "photos/gallery/fall25-spring26-gen-meetings/patrick-meeting.jpg", "category": "meetings" },
+    { "src": "photos/gallery/fall25-spring26-gen-meetings/jar-lanterns.jpg",    "category": "meetings" },
+    { "src": "photos/gallery/fall25-spring26-gen-meetings/prize-winners.jpg",   "category": "meetings" },
+    { "src": "photos/gallery/clubfest/clubfest-pro-photo.png",      "category": "tabling" },
+    { "src": "photos/gallery/clubfest/clubfest25.jpg",              "category": "tabling" }
   ]
 }
