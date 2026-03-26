@@ -64,32 +64,32 @@
   <section class="section">
     <div class="section-inner">
 
-      <!-- MONTHLY FLYER -->
-      <span class="section-label">This Month</span>
-      <h2 class="section-title">Monthly <span class="accent">Events Flyer</span></h2>
-      <span class="wave-bar"></span>
-      <div id="monthlyFlyerBlock" style="margin-bottom:3rem;text-align:center;">
-        <!-- Filled by JS -->
-      </div>
-
-      <!-- GOOGLE CALENDAR -->
-      <span class="section-label">Live Calendar</span>
-      <h2 class="section-title">Google <span class="accent">Calendar</span></h2>
-      <span class="wave-bar"></span>
-      <p class="section-subtitle">Our events calendar is embedded below. Click the <strong>+ Google Calendar</strong> button in the bottom right to add it to your own calendar.</p>
-      <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1);">
-        <iframe src="https://calendar.google.com/calendar/embed?src=girlswhocodeau%40gmail.com&ctz=America%2FNew_York"
-          style="border:0;display:block;" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-      </div>
-
-      <div class="cal-key">
-        <div class="cal-key-title">Calendar Key</div>
-        <div class="cal-key-grid">
-          <div class="cal-key-item"><span class="cal-emoji">👯‍♀️</span><div><strong>GWC Meetings</strong><p>Girls Who Code @ AU general body meetings, workshops, and chapter events</p></div></div>
-          <div class="cal-key-item"><span class="cal-emoji">💻</span><div><strong>ACM</strong><p>Association for Computing Machinery chapter meetings and tech events</p></div></div>
-          <div class="cal-key-item"><span class="cal-emoji">🛡️</span><div><strong>Women in Cybersecurity</strong><p>WiCyS chapter meetings, cyber workshops, and security events</p></div></div>
-          <div class="cal-key-item"><span class="cal-emoji">🎓</span><div><strong>SCCS &amp; AU Events</strong><p>Student Computing &amp; Cyber Society and Augusta University campus events</p></div></div>
-          <div class="cal-key-item"><span class="cal-emoji">🏆</span><div><strong>Competitions &amp; Conferences</strong><p>Hackathons, CTFs, tech conferences, and recruiting events</p></div></div>
+      <!-- FLYER + CALENDAR SIDE BY SIDE -->
+      <div class="flyer-cal-row">
+        <div class="flyer-col">
+          <span class="section-label">This Month</span>
+          <h2 class="section-title">Monthly <span class="accent">Flyer</span></h2>
+          <span class="wave-bar" style="margin:0.5rem 0 1.25rem;"></span>
+          <div id="monthlyFlyerBlock"><!-- Filled by JS --></div>
+        </div>
+        <div class="cal-col">
+          <span class="section-label">Live Calendar</span>
+          <h2 class="section-title">Google <span class="accent">Calendar</span></h2>
+          <span class="wave-bar" style="margin:0.5rem 0 1.25rem;"></span>
+          <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1);margin-bottom:0.75rem;">
+            <iframe src="https://calendar.google.com/calendar/embed?src=girlswhocodeau%40gmail.com&ctz=America%2FNew_York"
+              style="border:0;display:block;" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+          </div>
+          <div class="cal-key">
+            <div class="cal-key-title">Calendar Key</div>
+            <div class="cal-key-grid">
+              <div class="cal-key-item"><span class="cal-emoji">👯‍♀️</span><strong>GWC Meetings</strong></div>
+              <div class="cal-key-item"><span class="cal-emoji">💻</span><strong>ACM</strong></div>
+              <div class="cal-key-item"><span class="cal-emoji">🛡️</span><strong>Women in Cybersecurity</strong></div>
+              <div class="cal-key-item"><span class="cal-emoji">🎓</span><strong>SCCS &amp; AU Events</strong></div>
+              <div class="cal-key-item"><span class="cal-emoji">🏆</span><strong>Competitions &amp; Conferences</strong></div>
+            </div>
+          </div>
         </div>
       </div>
 

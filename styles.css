@@ -659,28 +659,38 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 768px) { .gallery-wall { columns: 2; } }
 @media (max-width: 480px) { .gallery-wall { columns: 1; } }
 
+/* ===== FLYER + CALENDAR LAYOUT ===== */
+.flyer-cal-row {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 2.5rem; align-items: start; margin-bottom: 3rem;
+}
+.flyer-col { min-width: 0; }
+.flyer-col #monthlyFlyerBlock img { max-width: 340px; width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
+.cal-col { min-width: 0; }
+@media (max-width: 900px) {
+  .flyer-cal-row { grid-template-columns: 1fr; }
+  .flyer-col { text-align: center; }
+}
+
 /* ===== CALENDAR KEY ===== */
 .cal-key {
-  background: var(--teal-1); border-radius: 12px;
-  padding: 1.5rem 2rem; margin: 1.5rem 0 3rem;
+  background: var(--teal-1); border-radius: 10px;
+  padding: 0.85rem 1rem; margin-top: 0.75rem;
 }
 .cal-key-title {
-  font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em;
+  font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--teal-4); font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 .cal-key-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
 }
 .cal-key-item {
-  display: flex; align-items: flex-start; gap: 0.75rem;
-  background: var(--white); border-radius: 8px; padding: 0.9rem 1rem;
+  display: flex; align-items: center; gap: 0.4rem;
+  background: var(--white); border-radius: 6px; padding: 0.35rem 0.65rem;
 }
-.cal-emoji { font-size: 1.5rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
-.cal-key-item strong { font-size: 0.8rem; color: var(--blue-4); display: block; margin-bottom: 0.2rem; }
-.cal-key-item p { font-size: 0.72rem; color: var(--black-3); line-height: 1.5; margin: 0; }
-@media (max-width: 768px) { .cal-key-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .cal-key-grid { grid-template-columns: 1fr; } }
+.cal-emoji { font-size: 1rem; flex-shrink: 0; line-height: 1; }
+.cal-key-item strong { font-size: 0.72rem; color: var(--blue-4); white-space: nowrap; }
 
 /* ===== SHEET EMBED ===== */
 .sheet-wrap {
