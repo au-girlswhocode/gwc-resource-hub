@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="events">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_official_logo.png" alt="GWC @ Augusta University" style="height:58px;width:auto;">
+      </a>
+            <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join</a>
+        <a href="suggestion.html">Suggest</a>
+              <div class="nav-item">
+        <a href="#" onclick="return false;">Resources <span class="nav-caret"></span></a>
+        <div class="nav-dropdown">
+          <a href="devresources.html"><span class="dd-icon">💡</span>Dev Resources</a>
+          <a href="jobs.html"><span class="dd-icon">💼</span>Jobs &amp; Internships</a>
+          <a href="scholarships.html"><span class="dd-icon">🎓</span>Scholarships</a>
+          <a href="certifications.html"><span class="dd-icon">📜</span>Certifications</a>
+          <a href="cyber.html"><span class="dd-icon">🛡</span>Cybersecurity</a>
+        </div>
+      </div>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+    <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="join.html">Join GWC</a>
+    <a href="suggestion.html">Suggest a Resource</a>
+        <button class="mobile-nav-accordion" onclick="toggleMobileResources(this)" aria-expanded="false">
+      Resources <span class="mobile-acc-caret">&#9658;</span>
+    </button>
+    <div class="mobile-nav-subnav" id="mobileResourcesSub">
+      <a href="devresources.html" class="mobile-nav-sub">💡 Dev Resources</a>
+      <a href="jobs.html" class="mobile-nav-sub">💼 Jobs &amp; Internships</a>
+      <a href="scholarships.html" class="mobile-nav-sub">🎓 Scholarships</a>
+      <a href="certifications.html" class="mobile-nav-sub">📜 Certifications</a>
+      <a href="cyber.html" class="mobile-nav-sub">🛡 Cybersecurity</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Events</div>
+      <h1>Events &amp; <span class="accent">Calendar</span></h1>
+      <p>Workshops, meetings, hackathons, and community hangouts — everything happening with GWC @ AU.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+
+      <!-- FEATURED EVENT — populated from content.json -->
+      <span class="section-label">Latest Flyer</span>
+      <h2 class="section-title">Featured <span class="accent">Event</span></h2>
+      <span class="wave-bar"></span>
+      <div id="featuredEventBlock" style="margin-bottom:3rem;">
+        <!-- Filled by JS -->
+      </div>
+
+      <!-- EVENT CARDS — populated from content.json -->
+      <span class="section-label">All Events</span>
+      <h2 class="section-title">Events <span class="accent">Schedule</span></h2>
+      <span class="wave-bar"></span>
+      <div class="events-grid" id="eventCardsBlock" style="margin-bottom:3rem;">
+        <!-- Filled by JS -->
+      </div>
+
+      <!-- GOOGLE CALENDAR -->
+      <span class="section-label">Live Calendar</span>
+      <h2 class="section-title">Google <span class="accent">Calendar</span></h2>
+      <span class="wave-bar"></span>
+      <p class="section-subtitle">Our events calendar is embedded below. Click the <strong>+ Google Calendar</strong> button in the bottom right to add it to your own calendar.</p>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1);margin-bottom:3rem;">
+        <iframe src="https://calendar.google.com/calendar/embed?src=girlswhocodeau%40gmail.com&ctz=America%2FNew_York"
+          style="border:0;display:block;" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+            <!-- COMMUNITY EVENTS -->
+      <span class="section-label">Beyond GWC</span>
+      <h2 class="section-title">Community <span class="accent">Events</span></h2>
+      <span class="wave-bar"></span>
+      <p class="section-subtitle">Local, national, and international events — hackathons, conferences, networking opportunities, and more. Updated by our officers throughout the semester.</p>
+
+      <div class="community-events-wrap">
+        <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1);margin-bottom:1.25rem;">
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMxstj0Y3xYI5C9iwahjBAL4pTQkAN-qnkQec0JQV7nZrc6zm5UupRCXhf8EmBh14KU5gNwiVHkgkY/pubhtml?gid=0&single=true&widget=true&headers=false"
+            style="border:0;display:block;width:100%;min-height:480px;" frameborder="0"></iframe>
+        </div>
+
+        <div style="background:var(--teal-1);border-radius:10px;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;">
+          <span style="font-size:1.4rem;flex-shrink:0;">📋</span>
+          <div>
+            <strong style="font-size:0.875rem;color:var(--blue-4);display:block;margin-bottom:0.2rem;">Officers: How to add events</strong>
+            <p style="font-size:0.78rem;color:var(--black-3);line-height:1.6;">
+              Open the <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMxstj0Y3xYI5C9iwahjBAL4pTQkAN-qnkQec0JQV7nZrc6zm5UupRCXhf8EmBh14KU5gNwiVHkgkY/pubhtml" target="_blank" style="color:var(--teal-3);font-weight:700;">Community Events Google Sheet ↗</a>
+              and add a row. The sheet updates on the site automatically once published.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join-section" style="padding:3.5rem 2rem;">
+    <div class="section-inner" style="text-align:center;">
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.75);margin:0 auto 1.5rem;">Never miss an event — join our Discord for real-time announcements.</p>
+      <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-yellow">Join the Discord</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+            <div class="footer-brand">
+        <a href="index.html"><img src="gwc_official_logo.png" alt="GWC @ Augusta University" class="footer-logo"></a>
+        <p>A GWC College Loop at Augusta University, dedicated to closing the gender gap in tech through sisterhood, education, and opportunity.</p>
+      </div>
+      <div class="footer-col"><h4>Resources</h4><ul>
+        <li><a href="devresources.html">Dev Resources</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li>
+        <li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul>
+        <li><a href="events.html">Events Calendar</a></li><li><a href="gallery.html">Gallery</a></li>
+        <li><a href="community.html">Community</a></li><li><a href="join.html">Join GWC</a></li>
+        <li><a href="suggestion.html">Suggest a Resource</a></li>
+        <li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li>
+        <li><a href="https://discord.gg/9CEqm6gjn7" target="_blank">Discord ↗</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
+  </footer>
+
+  
+  
+  <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join GWC | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body data-page="join">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_official_logo.png" alt="GWC @ Augusta University" style="height:58px;width:auto;">
+      </a>
+            <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html" class="active">Join</a>
+        <a href="suggestion.html">Suggest</a>
+              <div class="nav-item">
+        <a href="#" onclick="return false;">Resources <span class="nav-caret"></span></a>
+        <div class="nav-dropdown">
+          <a href="devresources.html"><span class="dd-icon">💡</span>Dev Resources</a>
+          <a href="jobs.html"><span class="dd-icon">💼</span>Jobs &amp; Internships</a>
+          <a href="scholarships.html"><span class="dd-icon">🎓</span>Scholarships</a>
+          <a href="certifications.html"><span class="dd-icon">📜</span>Certifications</a>
+          <a href="cyber.html"><span class="dd-icon">🛡</span>Cybersecurity</a>
+        </div>
+      </div>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+    <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="join.html">Join GWC</a>
+    <a href="suggestion.html">Suggest a Resource</a>
+        <button class="mobile-nav-accordion" onclick="toggleMobileResources(this)" aria-expanded="false">
+      Resources <span class="mobile-acc-caret">&#9658;</span>
+    </button>
+    <div class="mobile-nav-subnav" id="mobileResourcesSub">
+      <a href="devresources.html" class="mobile-nav-sub">💡 Dev Resources</a>
+      <a href="jobs.html" class="mobile-nav-sub">💼 Jobs &amp; Internships</a>
+      <a href="scholarships.html" class="mobile-nav-sub">🎓 Scholarships</a>
+      <a href="certifications.html" class="mobile-nav-sub">📜 Certifications</a>
+      <a href="cyber.html" class="mobile-nav-sub">🛡 Cybersecurity</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Join</div>
+      <h1>Join <span class="accent">GWC @ AU</span></h1>
+      <p>No experience needed — just curiosity and a desire to grow. Fill out the form below and we'll be in touch!</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="form-wrap">
+
+        <!-- PERKS before the form -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem;">
+          <div style="text-align:center;padding:1.25rem;background:var(--teal-1);border-radius:8px;">
+            <div style="font-size:1.75rem;margin-bottom:0.4rem;">💸</div>
+            <div style="font-size:0.78rem;font-weight:700;color:var(--blue-4);">100% Free</div>
+          </div>
+          <div style="text-align:center;padding:1.25rem;background:var(--blue-1);border-radius:8px;">
+            <div style="font-size:1.75rem;margin-bottom:0.4rem;">🎓</div>
+            <div style="font-size:0.78rem;font-weight:700;color:var(--blue-4);">All Majors</div>
+          </div>
+          <div style="text-align:center;padding:1.25rem;background:#fff3cd;border-radius:8px;">
+            <div style="font-size:1.75rem;margin-bottom:0.4rem;">🤝</div>
+            <div style="font-size:0.78rem;font-weight:700;color:var(--blue-4);">Sisterhood</div>
+          </div>
+        </div>
+
+        <!-- THE FORM -->
+        <div class="gwc-form" id="interestForm">
+          <span class="section-label">Interest Form</span>
+          <h2 class="section-title" style="font-size:1.6rem;margin-bottom:0.25rem;">Tell Us <span class="accent">About You</span></h2>
+          <span class="wave-bar"></span>
+          <p style="font-size:0.875rem;color:var(--black-3);margin-bottom:1.75rem;">Fields marked <span style="color:var(--teal-3);">*</span> are required.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name <span class="required">*</span></label>
+              <input type="text" id="firstName" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name <span class="required">*</span></label>
+              <input type="text" id="lastName" placeholder="Doe" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>AU Email <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="youremail@augusta.edu" required>
+            <div class="form-hint">Use your @augusta.edu address so we can reach you on campus.</div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Major / Program <span class="required">*</span></label>
+              <select id="major" required>
+                <option value="" disabled selected>Select your major</option>
+                <option>Computer Science</option>
+                <option>Information Technology</option>
+                <option>Cybersecurity</option>
+                <option>Data Science</option>
+                <option>Software Engineering</option>
+                <option>Computer Information Systems</option>
+                <option>Mathematics</option>
+                <option>Biology / Pre-Med</option>
+                <option>Business</option>
+                <option>Nursing / Allied Health</option>
+                <option>Liberal Arts / Humanities</option>
+                <option>Undeclared</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Classification <span class="required">*</span></label>
+              <select id="classification" required>
+                <option value="" disabled selected>Select year</option>
+                <option>Freshman</option>
+                <option>Sophomore</option>
+                <option>Junior</option>
+                <option>Senior</option>
+                <option>Graduate Student</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Discord Username</label>
+            <input type="text" id="discord" placeholder="username or username#0000">
+            <div class="form-hint">Optional — helps us add you to our server channels.</div>
+          </div>
+
+          <div class="form-group">
+            <label>What interests you about GWC? <span class="required">*</span></label>
+            <textarea id="interest" placeholder="Tell us what drew you to Girls Who Code, what you hope to learn or get out of the club, or anything else you'd like us to know!" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Areas of Interest (check all that apply)</label>
+            <div class="check-group">
+              <label class="check-item"><input type="checkbox" value="Web Development"> <span>Web Development</span></label>
+              <label class="check-item"><input type="checkbox" value="Data Science / Analytics"> <span>Data Science / Analytics</span></label>
+              <label class="check-item"><input type="checkbox" value="Cybersecurity / CTFs"> <span>Cybersecurity / CTFs</span></label>
+              <label class="check-item"><input type="checkbox" value="AI / Machine Learning"> <span>AI / Machine Learning</span></label>
+              <label class="check-item"><input type="checkbox" value="Career Prep / Internships"> <span>Career Prep / Internships</span></label>
+              <label class="check-item"><input type="checkbox" value="Hackathons / Competitions"> <span>Hackathons / Competitions</span></label>
+              <label class="check-item"><input type="checkbox" value="Community / Social Events"> <span>Community / Social Events</span></label>
+              <label class="check-item"><input type="checkbox" value="Not sure yet — just exploring!"> <span>Not sure yet — just exploring!</span></label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>How did you hear about us?</label>
+            <select id="heardFrom">
+              <option value="" disabled selected>Select one</option>
+              <option>Instagram (@aug_girlswhocode)</option>
+              <option>Discord</option>
+              <option>A friend or classmate</option>
+              <option>A professor or advisor</option>
+              <option>Flyer / poster on campus</option>
+              <option>Club fair / org event</option>
+              <option>This website</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <button class="form-submit" id="submitBtn" type="button">Submit Interest Form ✓</button>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div class="form-success" id="formSuccess">
+          <div class="ico">🎉</div>
+          <h3>You're in the loop!</h3>
+          <p>Thanks for submitting your interest form. We'll be in touch via your AU email. In the meantime, join our Discord and follow us on Instagram for real-time updates!</p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
+            <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-discord">Join Discord ↗</a>
+            <a href="events.html" class="btn btn-outline-teal">See Upcoming Events</a>
+          </div>
+          <button onclick="resetForm()" style="margin-top:1.25rem;background:none;border:none;color:var(--black-3);font-size:0.78rem;cursor:pointer;text-decoration:underline;">Submit another response</button>
+        </div>
+
+        <!-- OFFICER NOTE -->
+        <div style="background:var(--teal-1);border-radius:10px;padding:1.1rem 1.4rem;margin-top:1.5rem;display:flex;gap:0.75rem;align-items:flex-start;">
+          <span style="font-size:1.2rem;flex-shrink:0;">📊</span>
+          <p style="font-size:0.8rem;color:var(--black-3);line-height:1.6;margin:0;">
+            <strong style="color:var(--blue-4);">Officers:</strong> All interest form submissions go directly to the
+            <strong>GWC Interest Forms</strong> Google Sheet shared with your officer team.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+            <div class="footer-brand">
+        <a href="index.html"><img src="gwc_official_logo.png" alt="GWC @ Augusta University" class="footer-logo"></a>
+        <p>A GWC College Loop at Augusta University, dedicated to closing the gender gap in tech through sisterhood, education, and opportunity.</p>
+      </div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="devresources.html">Dev Resources</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li><li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="events.html">Events</a></li><li><a href="community.html">Community</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
+  </footer>
+
+  
+  
+  <script src="main.js" defer></script>
+</body>
+</html>

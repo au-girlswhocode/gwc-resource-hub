@@ -1,0 +1,25 @@
+{
+  "featured_event": {
+    "title": "Monthly Events",
+    "subtitle": "Spring 2025",
+    "description": "Check out what's coming up this month for GWC @ Augusta University! Workshops, meetings, and more — something for everyone.",
+    "date_display": "TBA",
+    "time": "TBA",
+    "location": "University Hall",
+    "note": "Join our Discord for real-time updates!",
+    "flyer_image": "flyers/flyer-march-2025.png"
+  },
+
+  "event_cards": [
+    {
+      "tag": "Meeting",
+      "title": "General Body Meeting",
+      "date_display": "TBA",
+      "time": "TBA",
+      "location": "University Hall",
+      "description": "Updates, resources, and a great chance to connect with the GWC community."
+    }
+  ],
+
+  "gallery": []
+}

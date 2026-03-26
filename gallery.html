@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="gallery">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_official_logo.png" alt="GWC @ Augusta University" style="height:58px;width:auto;">
+      </a>
+            <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="join.html">Join</a>
+        <a href="suggestion.html">Suggest</a>
+              <div class="nav-item">
+        <a href="#" onclick="return false;">Resources <span class="nav-caret"></span></a>
+        <div class="nav-dropdown">
+          <a href="devresources.html"><span class="dd-icon">💡</span>Dev Resources</a>
+          <a href="jobs.html"><span class="dd-icon">💼</span>Jobs &amp; Internships</a>
+          <a href="scholarships.html"><span class="dd-icon">🎓</span>Scholarships</a>
+          <a href="certifications.html"><span class="dd-icon">📜</span>Certifications</a>
+          <a href="cyber.html"><span class="dd-icon">🛡</span>Cybersecurity</a>
+        </div>
+      </div>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+    <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="join.html">Join GWC</a>
+    <a href="suggestion.html">Suggest a Resource</a>
+        <button class="mobile-nav-accordion" onclick="toggleMobileResources(this)" aria-expanded="false">
+      Resources <span class="mobile-acc-caret">&#9658;</span>
+    </button>
+    <div class="mobile-nav-subnav" id="mobileResourcesSub">
+      <a href="devresources.html" class="mobile-nav-sub">💡 Dev Resources</a>
+      <a href="jobs.html" class="mobile-nav-sub">💼 Jobs &amp; Internships</a>
+      <a href="scholarships.html" class="mobile-nav-sub">🎓 Scholarships</a>
+      <a href="certifications.html" class="mobile-nav-sub">📜 Certifications</a>
+      <a href="cyber.html" class="mobile-nav-sub">🛡 Cybersecurity</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Gallery</div>
+      <h1>Our <span class="accent">Gallery</span></h1>
+      <p>Meetings, workshops, collabs, competitions, and community moments. Hover over photos for details.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <span class="section-label">Photos</span>
+      <h2 class="section-title">Chapter <span class="accent">Moments</span></h2>
+      <span class="wave-bar"></span>
+
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="meeting">Meetings</button>
+        <button class="filter-btn" data-filter="workshop">Workshops</button>
+        <button class="filter-btn" data-filter="competition">Competitions</button>
+        <button class="filter-btn" data-filter="collab">Collabs</button>
+        <button class="filter-btn" data-filter="fundraising">Fundraising</button>
+        <button class="filter-btn" data-filter="social">Social</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--black-3);font-family:var(--font-mono);font-size:0.8rem;">
+          Loading gallery…
+        </div>
+      </div>
+
+      <div style="background:var(--teal-1);border-radius:12px;padding:2rem;margin-top:3rem;display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap;">
+        <div style="font-size:2rem;flex-shrink:0;">📷</div>
+        <div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--blue-4);margin-bottom:0.4rem;">Have photos from a GWC event?</h3>
+          <p style="font-size:0.875rem;color:var(--black-3);line-height:1.6;">Drop them in the <strong>#photos</strong> channel on Discord and our board will add them to the gallery. Help us document our chapter's story!</p>
+          <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-discord" style="margin-top:1rem;font-size:0.78rem;padding:0.55rem 1.25rem;">Share in Discord ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-bg" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <div class="lightbox-inner">
+      <div id="lbPlaceholder" style="display:none;width:100%;min-height:280px;align-items:center;justify-content:center;font-size:5rem;border-radius:8px;"></div>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg" style="display:none;">
+      <div class="lightbox-info">
+        <div class="lightbox-tag" id="lightboxTag"></div>
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-date" id="lightboxDate"></div>
+        <div class="lightbox-desc" id="lightboxDesc"></div>
+        <div class="lightbox-nav">
+          <button id="lightboxPrev">← Prev</button>
+          <button id="lightboxNext">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="join-section" style="padding:3.5rem 2rem;">
+    <div class="section-inner" style="text-align:center;">
+      <h2 class="section-title">Want to be in the next photo?</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.7);margin:0 auto 1.5rem;">Come to a meeting, workshop, or event — everyone is welcome.</p>
+      <div class="join-buttons">
+        <a href="events.html" class="btn btn-yellow">See Events</a>
+        <a href="community.html" class="btn btn-secondary">Join Our Community</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+            <div class="footer-brand">
+        <a href="index.html"><img src="gwc_official_logo.png" alt="GWC @ Augusta University" class="footer-logo"></a>
+        <p>A GWC College Loop at Augusta University, dedicated to closing the gender gap in tech through sisterhood, education, and opportunity.</p>
+      </div>
+      <div class="footer-col"><h4>Resources</h4><ul>
+        <li><a href="devresources.html">Dev Resources</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li>
+        <li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul>
+        <li><a href="events.html">Events Calendar</a></li><li><a href="gallery.html">Gallery</a></li>
+        <li><a href="community.html">Community</a></li><li><a href="join.html">Join GWC</a></li>
+        <li><a href="suggestion.html">Suggest a Resource</a></li>
+        <li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li>
+        <li><a href="https://discord.gg/9CEqm6gjn7" target="_blank">Discord ↗</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
+  </footer>
+
+  
+  
+  <script src="main.js" defer></script>
+</body>
+</html>

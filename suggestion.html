@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suggest a Resource | GWC @ Augusta University</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="suggestion">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="gwc_official_logo.png" alt="GWC @ AU">
+        <div class="logo-text-block"><span class="script">girls who</span><span class="codeword">code</span><span class="au-sub">Augusta University</span></div>
+      </a>
+            <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join</a>
+        <a href="suggestion.html" class="active">Suggest</a>
+              <div class="nav-item">
+        <a href="#" onclick="return false;">Resources <span class="nav-caret"></span></a>
+        <div class="nav-dropdown">
+          <a href="devresources.html"><span class="dd-icon">💡</span>Dev Resources</a>
+          <a href="jobs.html"><span class="dd-icon">💼</span>Jobs &amp; Internships</a>
+          <a href="scholarships.html"><span class="dd-icon">🎓</span>Scholarships</a>
+          <a href="certifications.html"><span class="dd-icon">📜</span>Certifications</a>
+          <a href="cyber.html"><span class="dd-icon">🛡</span>Cybersecurity</a>
+        </div>
+      </div>
+      </nav>
+      <button class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+    <nav class="mobile-nav" id="mn">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="join.html">Join GWC</a>
+    <a href="suggestion.html">Suggest a Resource</a>
+        <button class="mobile-nav-accordion" onclick="toggleMobileResources(this)" aria-expanded="false">
+      Resources <span class="mobile-acc-caret">&#9658;</span>
+    </button>
+    <div class="mobile-nav-subnav" id="mobileResourcesSub">
+      <a href="devresources.html" class="mobile-nav-sub">💡 Dev Resources</a>
+      <a href="jobs.html" class="mobile-nav-sub">💼 Jobs &amp; Internships</a>
+      <a href="scholarships.html" class="mobile-nav-sub">🎓 Scholarships</a>
+      <a href="certifications.html" class="mobile-nav-sub">📜 Certifications</a>
+      <a href="cyber.html" class="mobile-nav-sub">🛡 Cybersecurity</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-wave"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Suggest</div>
+      <h1>Suggest a <span class="accent">Resource</span></h1>
+      <p>This site is built by and for GWC members. If you know something we should add, we want to hear it!</p>
+    </div>
+  </div>
+
+
+
+  <section class="section">
+    <div class="section-inner" style="max-width:700px;">
+
+      <!-- RESOURCE SUGGESTION FORM -->
+      <div id="suggestionFormWrap">
+        <div class="gwc-form">
+          <div style="font-size:2.5rem;margin-bottom:.75rem;">💡</div>
+          <span class="section-label">Anonymous Suggestion Box</span>
+          <h2 class="section-title" style="font-size:1.5rem;">Share What <span class="accent">You Know</span></h2>
+          <span class="wave-bar"></span>
+          <p style="font-size:.875rem;color:var(--black-3);margin-bottom:1.25rem;">Found a course, scholarship, job board, CTF platform, or tool that helped you? Submit it below — no login needed!</p>
+          <div class="anon-note">🔒 <span>This form is <strong>completely anonymous</strong>. No account or name required.</span></div>
+
+          <div class="form-group">
+            <label>Category <span style="color:var(--teal-3)">*</span></label>
+            <select id="sugCategory" required>
+              <option value="" disabled selected>What type of resource?</option>
+              <option>Coding / Learning Resource</option>
+              <option>Job Board / Internship</option>
+              <option>Scholarship / Fellowship</option>
+              <option>Certification / Badge</option>
+              <option>Cybersecurity / CTF</option>
+              <option>Community / Event</option>
+              <option>Club Suggestion / Feedback</option>
+              <option>Website Improvement</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Resource Name or Topic <span style="color:var(--teal-3)">*</span></label>
+            <input type="text" id="sugName" placeholder="e.g. 'Coursera Python Course' or 'more frequent meetings'">
+          </div>
+
+          <div class="form-group">
+            <label>Link (if applicable)</label>
+            <input type="url" id="sugLink" placeholder="https://...">
+          </div>
+
+          <div class="form-group">
+            <label>Why should we add this? <span style="color:var(--teal-3)">*</span></label>
+            <textarea id="sugWhy" placeholder="Tell us what makes this valuable for GWC members…"></textarea>
+          </div>
+
+          <button class="form-submit" id="sugSubmitBtn" type="button">Submit Suggestion ✓</button>
+        </div>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="form-success" id="sugFormSuccess">
+        <div style="font-size:2.5rem;margin-bottom:.75rem;">✅</div>
+        <h3 style="font-size:1.2rem;font-weight:900;color:var(--blue-4);margin-bottom:.5rem;">Got it, thanks!</h3>
+        <p style="color:var(--black-3);font-size:.875rem;line-height:1.6;">Your suggestion has been saved and will be reviewed by the board. We appreciate you helping build this hub!</p>
+        <button onclick="resetSugForm()" style="margin-top:1.25rem;background:none;border:none;color:var(--teal-3);font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:underline;">Submit another suggestion</button>
+      </div>
+
+      <!-- OFFICER NOTE -->
+      <div style="background:var(--teal-1);border-radius:10px;padding:1.1rem 1.4rem;margin-top:1.5rem;display:flex;gap:0.75rem;align-items:flex-start;">
+        <span style="font-size:1.2rem;flex-shrink:0;">📊</span>
+        <p style="font-size:0.8rem;color:var(--black-3);line-height:1.6;margin:0;">
+          <strong style="color:var(--blue-4);">Officers:</strong> All suggestions go directly to the
+          <strong>GWC Suggestions</strong> Google Sheet shared with your officer team.
+        </p>
+      </div>
+
+      <div style="margin-top:3rem;">
+        <span class="section-label">Categories We're Looking For</span>
+        <h2 class="section-title">What to <span class="accent">Submit</span></h2>
+        <span class="wave-bar"></span>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:1rem;">
+          <a href="devresources.html" style="background:var(--teal-1);border-radius:8px;padding:1.25rem;transition:all 0.2s;display:block;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div style="font-size:1.5rem;margin-bottom:0.4rem;">🌐</div>
+            <div style="font-weight:700;color:var(--blue-4);font-size:0.9rem;">Coding Resources</div>
+            <div style="font-size:0.78rem;color:var(--black-3);margin-top:0.2rem;">Courses, tutorials, platforms</div>
+          </a>
+          <a href="jobs.html" style="background:var(--blue-1);border-radius:8px;padding:1.25rem;transition:all 0.2s;display:block;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div style="font-size:1.5rem;margin-bottom:0.4rem;">💼</div>
+            <div style="font-weight:700;color:var(--blue-4);font-size:0.9rem;">Jobs &amp; Internships</div>
+            <div style="font-size:0.78rem;color:var(--black-3);margin-top:0.2rem;">Job boards, programs, fellowships</div>
+          </a>
+          <a href="scholarships.html" style="background:#fff3cd;border-radius:8px;padding:1.25rem;transition:all 0.2s;display:block;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div style="font-size:1.5rem;margin-bottom:0.4rem;">🏅</div>
+            <div style="font-weight:700;color:var(--blue-4);font-size:0.9rem;">Scholarships</div>
+            <div style="font-size:0.78rem;color:var(--black-3);margin-top:0.2rem;">Grants, awards, funding</div>
+          </a>
+          <a href="certifications.html" style="background:var(--grey-bg);border-radius:8px;padding:1.25rem;transition:all 0.2s;display:block;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div style="font-size:1.5rem;margin-bottom:0.4rem;">🎓</div>
+            <div style="font-weight:700;color:var(--blue-4);font-size:0.9rem;">Certifications</div>
+            <div style="font-size:0.78rem;color:var(--black-3);margin-top:0.2rem;">Badges, certs, credentials</div>
+          </a>
+          <a href="cyber.html" style="background:#e8f4fd;border-radius:8px;padding:1.25rem;transition:all 0.2s;display:block;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div style="font-size:1.5rem;margin-bottom:0.4rem;">🛡️</div>
+            <div style="font-weight:700;color:var(--blue-4);font-size:0.9rem;">Cybersecurity</div>
+            <div style="font-size:0.78rem;color:var(--black-3);margin-top:0.2rem;">CTFs, labs, competitions</div>
+          </a>
+          <a href="community.html" style="background:#fce4ec;border-radius:8px;padding:1.25rem;transition:all 0.2s;display:block;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+            <div style="font-size:1.5rem;margin-bottom:0.4rem;">🤝</div>
+            <div style="font-weight:700;color:var(--blue-4);font-size:0.9rem;">Community</div>
+            <div style="font-size:0.78rem;color:var(--black-3);margin-top:0.2rem;">Events, meetups, networks</div>
+          </a>
+        </div>
+      </div>
+
+      <div style="background:var(--blue-4);border-radius:12px;padding:2rem;margin-top:3rem;color:var(--white);">
+        <h3 style="font-size:1rem;font-weight:700;color:var(--teal-2);margin-bottom:0.5rem;">Prefer to reach out directly?</h3>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.75);line-height:1.6;">Drop your suggestion in the <strong style="color:var(--yellow-2);">#resources</strong> channel on our Discord server. Members and board officers check it regularly and will add vetted suggestions to the site.</p>
+        <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-discord" style="margin-top:1rem;font-size:0.8rem;">Join Discord ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+            <div class="footer-brand">
+        <a href="index.html"><img src="gwc_official_logo.png" alt="GWC @ Augusta University" class="footer-logo"></a>
+        <p>A GWC College Loop at Augusta University, dedicated to closing the gender gap in tech through sisterhood, education, and opportunity.</p>
+      </div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="devresources.html">Dev Resources</a></li><li><a href="jobs.html">Jobs &amp; Internships</a></li><li><a href="scholarships.html">Scholarships</a></li><li><a href="certifications.html">Certifications</a></li><li><a href="cyber.html">Cybersecurity &amp; CTFs</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="events.html">Events Calendar</a></li><li><a href="community.html">Community</a></li><li><a href="suggestion.html">Suggest a Resource</a></li><li><a href="https://www.instagram.com/aug_girlswhocode/" target="_blank">Instagram ↗</a></li><li><a href="https://discord.gg/9CEqm6gjn7" target="_blank">Discord ↗</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2025 Girls Who Code @ Augusta University · All rights reserved</div>
+  </footer>
+
+  
+  
+  <script src="main.js" defer></script>
+</body>
+</html>
