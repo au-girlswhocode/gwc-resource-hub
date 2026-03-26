@@ -120,30 +120,23 @@ function renderEventCards(cards) {
 }
 
 async function initEventsPage() {
-  // Load featured event + event cards from content.json
+  const el = document.getElementById('monthlyFlyerBlock');
+  if (!el) return;
   try {
     const res  = await fetch('content.json?v=' + Date.now());
     if (!res.ok) throw new Error();
     const data = await res.json();
-    if (data.featured_event) renderFeaturedEvent(data.featured_event);
-    if (data.event_cards)    renderEventCards(data.event_cards);
+    const fe   = data.featured_event || {};
+    if (fe.flyer_image) {
+      el.innerHTML = `
+        <img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer"
+          style="max-width:560px;width:100%;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.12);">
+        ${fe.note ? `<p style="margin-top:1rem;font-family:var(--font-mono);font-size:0.78rem;color:var(--teal-3);font-weight:700;">${escHtml(fe.note)}</p>` : ''}`;
+    } else {
+      el.innerHTML = `<div style="background:var(--teal-1);border-radius:10px;padding:2rem;color:var(--black-3);font-size:0.875rem;">Flyer coming soon — check our Discord for the latest!</div>`;
+    }
   } catch {
-    const fe = document.getElementById('featuredEventBlock');
-    if (fe) fe.innerHTML = `
-      <div style="background:var(--teal-1);border-radius:10px;padding:1.5rem;color:var(--black-3);font-size:0.875rem;">
-        Featured event details coming soon. Check our Discord for the latest!
-      </div>`;
-    const ec = document.getElementById('eventCardsBlock');
-    if (ec) ec.innerHTML = `
-      <div class="event-card">
-        <div class="event-date"><span class="mo">TBA</span><span class="dy" style="font-size:1rem;">Next</span></div>
-        <div class="event-info">
-          <span class="event-tag">Meeting</span>
-          <h3>General Body Meeting</h3>
-          <div class="event-meta">📍 University Hall</div>
-          <p>Stay tuned for our next general body meeting!</p>
-        </div>
-      </div>`;
+    el.innerHTML = `<div style="background:var(--teal-1);border-radius:10px;padding:2rem;color:var(--black-3);font-size:0.875rem;">Flyer coming soon — check our Discord for the latest!</div>`;
   }
 }
 

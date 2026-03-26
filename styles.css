@@ -681,3 +681,23 @@ img { max-width: 100%; height: auto; display: block; }
 .cal-key-item p { font-size: 0.72rem; color: var(--black-3); line-height: 1.5; margin: 0; }
 @media (max-width: 768px) { .cal-key-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .cal-key-grid { grid-template-columns: 1fr; } }
+
+/* ===== SHEET EMBED ===== */
+.sheet-wrap {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+.sheet-iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: top left;
+  border: 0;
+}
