@@ -129,9 +129,24 @@ async function initEventsPage() {
     const fe   = data.featured_event || {};
     if (fe.flyer_image) {
       el.innerHTML = `
-        <img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer"
-          style="max-width:560px;width:100%;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.12);">
-        ${fe.note ? `<p style="margin-top:1rem;font-family:var(--font-mono);font-size:0.78rem;color:var(--teal-3);font-weight:700;">${escHtml(fe.note)}</p>` : ''}`;
+        <div class="flyer-card">
+          <div class="flyer-card-img">
+            <img src="${escHtml(fe.flyer_image)}" alt="Monthly Events Flyer">
+          </div>
+          <div class="flyer-card-info">
+            <span class="flyer-card-label">Monthly Events</span>
+            <h3 class="flyer-card-title">${escHtml(fe.title || 'This Month at GWC')}</h3>
+            ${fe.subtitle ? `<p class="flyer-card-sub">${escHtml(fe.subtitle)}</p>` : ''}
+            ${fe.description ? `<p class="flyer-card-desc">${escHtml(fe.description)}</p>` : ''}
+            <div class="flyer-card-meta">
+              ${fe.date_display ? `<span>📅 ${escHtml(fe.date_display)}</span>` : ''}
+              ${fe.time ? `<span>⏰ ${escHtml(fe.time)}</span>` : ''}
+              ${fe.location ? `<span>📍 ${escHtml(fe.location)}</span>` : ''}
+            </div>
+            ${fe.note ? `<p class="flyer-card-note">✅ ${escHtml(fe.note)}</p>` : ''}
+            <a href="https://discord.gg/9CEqm6gjn7" target="_blank" class="btn btn-primary" style="margin-top:1.25rem;font-size:0.8rem;">Stay Updated on Discord</a>
+          </div>
+        </div>`;
     } else {
       el.innerHTML = `<div style="background:var(--teal-1);border-radius:10px;padding:2rem;color:var(--black-3);font-size:0.875rem;">Flyer coming soon — check our Discord for the latest!</div>`;
     }

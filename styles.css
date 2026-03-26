@@ -659,17 +659,29 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 768px) { .gallery-wall { columns: 2; } }
 @media (max-width: 480px) { .gallery-wall { columns: 1; } }
 
-/* ===== FLYER + CALENDAR LAYOUT ===== */
-.flyer-cal-row {
+/* ===== FLYER CARD ===== */
+.flyer-card {
   display: grid; grid-template-columns: auto 1fr;
-  gap: 2.5rem; align-items: start; margin-bottom: 3rem;
+  gap: 2.5rem; align-items: start;
+  background: var(--teal-1); border-radius: 14px; padding: 2rem;
 }
-.flyer-col { min-width: 0; }
-.flyer-col #monthlyFlyerBlock img { max-width: 340px; width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
-.cal-col { min-width: 0; }
-@media (max-width: 900px) {
-  .flyer-cal-row { grid-template-columns: 1fr; }
-  .flyer-col { text-align: center; }
+.flyer-card-img img {
+  width: 320px; max-width: 100%; border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15); display: block;
+}
+.flyer-card-label {
+  font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal-4); font-weight: 700;
+  display: block; margin-bottom: 0.4rem;
+}
+.flyer-card-title { font-size: 1.4rem; font-weight: 900; color: var(--blue-4); margin: 0 0 0.3rem; }
+.flyer-card-sub { font-size: 1rem; color: var(--teal-3); font-weight: 700; margin: 0 0 0.75rem; }
+.flyer-card-desc { font-size: 0.875rem; color: var(--black-3); line-height: 1.6; margin-bottom: 1rem; }
+.flyer-card-meta { display: flex; flex-direction: column; gap: 0.3rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--blue-4); margin-bottom: 0.5rem; }
+.flyer-card-note { font-size: 0.8rem; color: var(--teal-3); font-weight: 700; margin: 0.5rem 0 0; }
+@media (max-width: 700px) {
+  .flyer-card { grid-template-columns: 1fr; }
+  .flyer-card-img img { width: 100%; }
 }
 
 /* ===== CALENDAR KEY ===== */
@@ -696,7 +708,7 @@ img { max-width: 100%; height: auto; display: block; }
 .sheet-wrap {
   position: relative;
   width: 100%;
-  height: 320px;
+  height: 380px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -705,9 +717,9 @@ img { max-width: 100%; height: auto; display: block; }
 .sheet-iframe {
   position: absolute;
   top: 0; left: 0;
-  width: 134%;
-  height: 427px;
-  transform: scale(0.75);
+  width: 116%;
+  height: 442px;
+  transform: scale(0.86);
   transform-origin: top left;
   border: 0;
 }
