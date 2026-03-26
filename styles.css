@@ -658,3 +658,26 @@ img { max-width: 100%; height: auto; display: block; }
 }
 @media (max-width: 768px) { .gallery-wall { columns: 2; } }
 @media (max-width: 480px) { .gallery-wall { columns: 1; } }
+
+/* ===== CALENDAR KEY ===== */
+.cal-key {
+  background: var(--teal-1); border-radius: 12px;
+  padding: 1.5rem 2rem; margin: 1.5rem 0 3rem;
+}
+.cal-key-title {
+  font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal-4); font-weight: 700;
+  margin-bottom: 1rem;
+}
+.cal-key-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+.cal-key-item {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  background: var(--white); border-radius: 8px; padding: 0.9rem 1rem;
+}
+.cal-emoji { font-size: 1.5rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+.cal-key-item strong { font-size: 0.8rem; color: var(--blue-4); display: block; margin-bottom: 0.2rem; }
+.cal-key-item p { font-size: 0.72rem; color: var(--black-3); line-height: 1.5; margin: 0; }
+@media (max-width: 768px) { .cal-key-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .cal-key-grid { grid-template-columns: 1fr; } }
